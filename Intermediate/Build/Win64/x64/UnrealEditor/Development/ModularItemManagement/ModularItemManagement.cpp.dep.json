@@ -1,12 +1,12 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "e:\\unreal projects\\dungeonsurvivors\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\private\\modularitemmanagement.cpp",
+        "Source": "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\private\\modularitemmanagement.cpp",
         "ProvidedModule": "",
-        "PCH": "e:\\unreal projects\\dungeonsurvivors\\intermediate\\build\\win64\\x64\\dungeonsurvivorseditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "PCH": "e:\\unreal projects\\itemplugin\\intermediate\\build\\win64\\x64\\itemplugineditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
         "Includes": [
-            "e:\\unreal projects\\dungeonsurvivors\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\modularitemmanagement\\definitions.modularitemmanagement.h",
-            "e:\\unreal projects\\dungeonsurvivors\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\modularitemmanagement.h"
+            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\modularitemmanagement\\definitions.modularitemmanagement.h",
+            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\modularitemmanagement.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

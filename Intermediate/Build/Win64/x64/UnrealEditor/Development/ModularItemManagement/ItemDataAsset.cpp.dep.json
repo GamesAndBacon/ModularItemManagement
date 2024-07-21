@@ -1,13 +1,13 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "e:\\unreal projects\\dungeonsurvivors\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\private\\itemdataasset.cpp",
+        "Source": "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\private\\itemdataasset.cpp",
         "ProvidedModule": "",
-        "PCH": "e:\\unreal projects\\dungeonsurvivors\\intermediate\\build\\win64\\x64\\dungeonsurvivorseditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "PCH": "e:\\unreal projects\\itemplugin\\intermediate\\build\\win64\\x64\\itemplugineditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
         "Includes": [
-            "e:\\unreal projects\\dungeonsurvivors\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\modularitemmanagement\\definitions.modularitemmanagement.h",
-            "e:\\unreal projects\\dungeonsurvivors\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\itemdataasset.h",
-            "e:\\unreal projects\\dungeonsurvivors\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\basemutator.h",
+            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\modularitemmanagement\\definitions.modularitemmanagement.h",
+            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\itemdataasset.h",
+            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\basemutator.h",
             "e:\\epic games\\ue_5.4\\engine\\plugins\\experimental\\structutils\\source\\structutils\\public\\instancedstruct.h",
             "e:\\epic games\\ue_5.4\\engine\\plugins\\experimental\\structutils\\source\\structutils\\public\\structutils.h",
             "e:\\epic games\\ue_5.4\\engine\\plugins\\experimental\\structutils\\intermediate\\build\\win64\\unrealeditor\\inc\\structutils\\uht\\instancedstruct.generated.h",
@@ -17,8 +17,8 @@
             "e:\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\math\\unitconversion.h",
             "e:\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\math\\unitconversion.inl",
             "e:\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\internationalization\\polyglottextdata.h",
-            "e:\\unreal projects\\dungeonsurvivors\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\basemutator.generated.h",
-            "e:\\unreal projects\\dungeonsurvivors\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\itemdataasset.generated.h"
+            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\basemutator.generated.h",
+            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\itemdataasset.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

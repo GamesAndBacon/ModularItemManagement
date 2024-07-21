@@ -79,7 +79,7 @@
 /DORIGINAL_FILE_NAME="UnrealEditor-ModularItemManagement.dll"
 /DBUILD_ICON_FILE_NAME="\"..\\Build\\Windows\\Resources\\Default.ico\""
 /DPROJECT_COPYRIGHT_STRING="Fill out your copyright notice in the Description page of Project Settings."
-/DPROJECT_PRODUCT_NAME="Top Down Game Template"
-/DPROJECT_PRODUCT_IDENTIFIER=DungeonSurvivors
-/fo "E:\Unreal Projects\DungeonSurvivors\plugins\ModularItemManagement\Intermediate\Build\Win64\x64\UnrealEditor\Development\ModularItemManagement\Default.rc2.res"
+/DPROJECT_PRODUCT_NAME="Third Person BP Game Template"
+/DPROJECT_PRODUCT_IDENTIFIER=ItemPlugin
+/fo "E:\Unreal Projects\ItemPlugin\plugins\ModularItemManagement\Intermediate\Build\Win64\x64\UnrealEditor\Development\ModularItemManagement\Default.rc2.res"
 "..\Build\Windows\Resources\Default.rc2"

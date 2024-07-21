@@ -30,26 +30,14 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 	UFUNCTION(BlueprintCallable, Category = "ModularItems")
-	int32 AddItem(UBaseItem* Item, int32 Quantity = 1);
+	bool AddItem(UBaseItem* Item);
 
 	UFUNCTION(BlueprintCallable, Category = "ModularItems")
-	int32 RemoveItem(UBaseItem* Item, int32 Quantity = 1);
-
-	UFUNCTION(BlueprintCallable, Category = "ModularItems")
-	void UseItem(UBaseItem* Item);
-
-	UFUNCTION(BlueprintCallable, Category = "ModularItems")
-	void EquipItem(UBaseItem* Item, AActor* Actor);
-
-	UFUNCTION(BlueprintCallable, Category = "ModularItems")
-	void UnEquipItem(UBaseItem* Item);
-
+	bool RemoveItem(UBaseItem* Item, int32 Quantity = 1);
+	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Settings")
 	TArray<UBaseItem*> Inventory;
-
-	UPROPERTY(BlueprintReadWrite, Category = Default)
-	TArray<UBaseMutator*> Mutators;
-
+	
 	// Declare functions for our delegate
 	UPROPERTY(BlueprintAssignable)
 	FInventoryChanged ItemAdded;

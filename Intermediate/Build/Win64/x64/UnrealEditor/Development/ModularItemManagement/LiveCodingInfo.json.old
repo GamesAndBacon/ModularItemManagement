@@ -19,11 +19,11 @@
 			"CustomizerComponent.cpp.obj",
 			"EquipmentComponent.cpp.obj",
 			"InventoryComponent.cpp.obj",
-			"ItemsLib.cpp.obj",
 			"ModularItemManagement.cpp.obj",
 			"BaseItem.cpp.obj",
 			"BaseMutator.cpp.obj",
-			"ItemDataAsset.cpp.obj"
+			"ItemDataAsset.cpp.obj",
+			"ItemsLib.cpp.obj"
 		]
 	}
 }

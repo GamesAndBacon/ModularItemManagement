@@ -11,10 +11,3 @@ void UBaseMutator::OnRemovedFromItem_Implementation(UBaseItem* Item)
 {
 }
 
-void UBaseMutator::OnEquip_Implementation(UBaseItem* Item, AActor* owner)
-{
-}
-
-void UBaseMutator::OnUnEquip_Implementation(UBaseItem* Item, AActor* owner)
-{
-}

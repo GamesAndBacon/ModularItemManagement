@@ -1,15 +1,15 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "e:\\unreal projects\\dungeonsurvivors\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\interfaces\\inventoryinterface.cpp",
+        "Source": "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\interfaces\\inventoryinterface.cpp",
         "ProvidedModule": "",
-        "PCH": "e:\\unreal projects\\dungeonsurvivors\\intermediate\\build\\win64\\x64\\dungeonsurvivorseditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "PCH": "e:\\unreal projects\\itemplugin\\intermediate\\build\\win64\\x64\\itemplugineditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
         "Includes": [
-            "e:\\unreal projects\\dungeonsurvivors\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\modularitemmanagement\\definitions.modularitemmanagement.h",
-            "e:\\unreal projects\\dungeonsurvivors\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\interfaces\\inventoryinterface.h",
-            "e:\\unreal projects\\dungeonsurvivors\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\inventorycomponent.h",
-            "e:\\unreal projects\\dungeonsurvivors\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\inventorycomponent.generated.h",
-            "e:\\unreal projects\\dungeonsurvivors\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\inventoryinterface.generated.h"
+            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\modularitemmanagement\\definitions.modularitemmanagement.h",
+            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\interfaces\\inventoryinterface.h",
+            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\inventorycomponent.h",
+            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\inventorycomponent.generated.h",
+            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\inventoryinterface.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

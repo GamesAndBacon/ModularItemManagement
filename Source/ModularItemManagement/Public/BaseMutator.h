@@ -20,9 +20,6 @@ public:
 	void OnAddedToItem(UBaseItem* Item);
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	void OnRemovedFromItem(UBaseItem* Item);
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
-	void OnEquip(UBaseItem* Item, AActor* owner);
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
-	void OnUnEquip(UBaseItem* Item, AActor* owner);
+
 
 };

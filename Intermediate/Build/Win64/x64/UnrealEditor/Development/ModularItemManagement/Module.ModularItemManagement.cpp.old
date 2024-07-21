@@ -16,5 +16,4 @@
 #include "E:/Unreal Projects/DungeonSurvivors/plugins/ModularItemManagement/Source/ModularItemManagement/Private/CustomizerComponent.cpp"
 #include "E:/Unreal Projects/DungeonSurvivors/plugins/ModularItemManagement/Source/ModularItemManagement/Private/EquipmentComponent.cpp"
 #include "E:/Unreal Projects/DungeonSurvivors/plugins/ModularItemManagement/Source/ModularItemManagement/Private/InventoryComponent.cpp"
-#include "E:/Unreal Projects/DungeonSurvivors/plugins/ModularItemManagement/Source/ModularItemManagement/Private/ItemsLib.cpp"
 #include "E:/Unreal Projects/DungeonSurvivors/plugins/ModularItemManagement/Source/ModularItemManagement/Private/ModularItemManagement.cpp"
