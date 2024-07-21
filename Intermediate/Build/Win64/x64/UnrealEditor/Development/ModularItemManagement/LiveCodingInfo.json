@@ -2,18 +2,18 @@
 	"RemapUnityFiles": 
 	{
 		"Module.ModularItemManagement.cpp.obj": [
-			"BaseItem.gen.cpp.obj",
-			"BaseMutator.gen.cpp.obj",
 			"InventoryComponent.gen.cpp.obj",
 			"InventoryInterface.gen.cpp.obj",
+			"Item.gen.cpp.obj",
 			"ItemDataAsset.gen.cpp.obj",
+			"ItemModule.gen.cpp.obj",
 			"ItemsLib.gen.cpp.obj",
 			"ModularItemManagement.init.gen.cpp.obj",
 			"InventoryInterface.cpp.obj",
-			"BaseItem.cpp.obj",
-			"BaseMutator.cpp.obj",
 			"InventoryComponent.cpp.obj",
+			"Item.cpp.obj",
 			"ItemDataAsset.cpp.obj",
+			"ItemModule.cpp.obj",
 			"ItemsLib.cpp.obj",
 			"ModularItemManagement.cpp.obj"
 		]

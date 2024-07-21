@@ -7,7 +7,7 @@
         "Includes": [
             "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\modularitemmanagement\\definitions.modularitemmanagement.h",
             "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\itemdataasset.h",
-            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\basemutator.h",
+            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\itemmodule.h",
             "e:\\epic games\\ue_5.4\\engine\\plugins\\experimental\\structutils\\source\\structutils\\public\\instancedstruct.h",
             "e:\\epic games\\ue_5.4\\engine\\plugins\\experimental\\structutils\\source\\structutils\\public\\structutils.h",
             "e:\\epic games\\ue_5.4\\engine\\plugins\\experimental\\structutils\\intermediate\\build\\win64\\unrealeditor\\inc\\structutils\\uht\\instancedstruct.generated.h",
@@ -17,7 +17,7 @@
             "e:\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\math\\unitconversion.h",
             "e:\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\math\\unitconversion.inl",
             "e:\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\internationalization\\polyglottextdata.h",
-            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\basemutator.generated.h",
+            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\itemmodule.generated.h",
             "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\itemdataasset.generated.h"
         ],
         "ImportedModules": [],

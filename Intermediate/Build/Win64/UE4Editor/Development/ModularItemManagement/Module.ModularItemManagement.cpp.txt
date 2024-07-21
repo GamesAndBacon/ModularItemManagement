@@ -11,14 +11,14 @@ E:\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Source\ModularItemM
 E:\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Intermediate\Build\Win64\UE4Editor\Inc\ModularItemManagement\InventoryInterface.generated.h
 E:/Unreal Projects/ProjectLost/Plugins/ModularItemManagement/Source/ModularItemManagement/Private/BaseItem.cpp
 E:\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Source\ModularItemManagement\Public\BaseItem.h
-E:\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Source\ModularItemManagement\Public\BaseMutator.h
+E:\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Source\ModularItemManagement\Public\BaseModule.h
 E:\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/NoExportTypes.h
 E:\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/PropertyAccessUtil.h
 E:\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\Math/UnitConversion.h
 E:\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\Math/UnitConversion.inl
 E:\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\Internationalization/PolyglotTextData.h
 E:\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\AssetRegistry/ARFilter.h
-E:\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Intermediate\Build\Win64\UE4Editor\Inc\ModularItemManagement\BaseMutator.generated.h
+E:\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Intermediate\Build\Win64\UE4Editor\Inc\ModularItemManagement\BaseModule.generated.h
 E:\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Intermediate\Build\Win64\UE4Editor\Inc\ModularItemManagement\BaseItem.generated.h
 E:\Epic Games\UE_4.27\Engine\Source\Runtime/Engine/Classes/Kismet/GameplayStatics.h
 E:\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet/KismetSystemLibrary.h
@@ -28,7 +28,7 @@ E:\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Dialo
 E:\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet\GameplayStaticsTypes.h
 E:\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameplayStaticsTypes.generated.h
 E:\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameplayStatics.generated.h
-E:/Unreal Projects/ProjectLost/Plugins/ModularItemManagement/Source/ModularItemManagement/Private/BaseMutator.cpp
+E:/Unreal Projects/ProjectLost/Plugins/ModularItemManagement/Source/ModularItemManagement/Private/BaseModule.cpp
 E:/Unreal Projects/ProjectLost/Plugins/ModularItemManagement/Source/ModularItemManagement/Private/Customizer.cpp
 E:\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Source\ModularItemManagement\Public\Customizer.h
 E:\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Intermediate\Build\Win64\UE4Editor\Inc\ModularItemManagement\Customizer.generated.h

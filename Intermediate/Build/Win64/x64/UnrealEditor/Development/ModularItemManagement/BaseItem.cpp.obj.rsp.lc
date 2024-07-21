@@ -1,11 +1,11 @@
-"E:\Unreal Projects\DungeonSurvivors\plugins\ModularItemManagement\Source\ModularItemManagement\Private\BaseItem.cpp"
-/FI"E:\Unreal Projects\DungeonSurvivors\Intermediate\Build\Win64\x64\DungeonSurvivorsEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h"
-/FI"E:\Unreal Projects\DungeonSurvivors\plugins\ModularItemManagement\Intermediate\Build\Win64\x64\UnrealEditor\Development\ModularItemManagement\Definitions.ModularItemManagement.h"
-/Yu"E:\Unreal Projects\DungeonSurvivors\Intermediate\Build\Win64\x64\DungeonSurvivorsEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h"
-/Fp"E:\Unreal Projects\DungeonSurvivors\Intermediate\Build\Win64\x64\DungeonSurvivorsEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.pch"
-/Fo"E:\Unreal Projects\DungeonSurvivors\plugins\ModularItemManagement\Intermediate\Build\Win64\x64\UnrealEditor\Development\ModularItemManagement\BaseItem.cpp.lc.obj"
-/sourceDependencies"E:\Unreal Projects\DungeonSurvivors\plugins\ModularItemManagement\Intermediate\Build\Win64\x64\UnrealEditor\Development\ModularItemManagement\BaseItem.cpp.dep.lc.json"
-@"E:\Unreal Projects\DungeonSurvivors\plugins\ModularItemManagement\Intermediate\Build\Win64\x64\UnrealEditor\Development\ModularItemManagement\ModularItemManagement.Shared.rsp"
+"E:\Unreal Projects\ItemPlugin\plugins\ModularItemManagement\Source\ModularItemManagement\Private\BaseItem.cpp"
+/FI"E:\Unreal Projects\ItemPlugin\Intermediate\Build\Win64\x64\ItemPluginEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h"
+/FI"E:\Unreal Projects\ItemPlugin\plugins\ModularItemManagement\Intermediate\Build\Win64\x64\UnrealEditor\Development\ModularItemManagement\Definitions.ModularItemManagement.h"
+/Yu"E:\Unreal Projects\ItemPlugin\Intermediate\Build\Win64\x64\ItemPluginEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h"
+/Fp"E:\Unreal Projects\ItemPlugin\Intermediate\Build\Win64\x64\ItemPluginEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h.pch"
+/Fo"E:\Unreal Projects\ItemPlugin\plugins\ModularItemManagement\Intermediate\Build\Win64\x64\UnrealEditor\Development\ModularItemManagement\BaseItem.cpp.lc.obj"
+/sourceDependencies"E:\Unreal Projects\ItemPlugin\plugins\ModularItemManagement\Intermediate\Build\Win64\x64\UnrealEditor\Development\ModularItemManagement\BaseItem.cpp.dep.lc.json"
+@"E:\Unreal Projects\ItemPlugin\plugins\ModularItemManagement\Intermediate\Build\Win64\x64\UnrealEditor\Development\ModularItemManagement\ModularItemManagement.Shared.rsp"
 /Zc:inline
 /nologo
 /Oi

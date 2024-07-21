@@ -2,7 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
-#include "BaseMutator.h"
+#include "ItemModule.h"
 #include "InstancedStruct.h"
 #include "ItemDataAsset.generated.h"
 
@@ -13,7 +13,7 @@ class MODULARITEMMANAGEMENT_API UItemDataAsset : public UDataAsset
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Item Data")
-	TMap<TSubclassOf<UBaseMutator>,FInstancedStruct> Mutators;
+	TMap<TSubclassOf<UItemModule>,FInstancedStruct> Modules;
 	    
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Item Data")
 	FString ItemName;

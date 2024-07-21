@@ -9,17 +9,20 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-class UBaseItem;
+class UItem;
 #ifdef MODULARITEMMANAGEMENT_InventoryComponent_generated_h
 #error "InventoryComponent.generated.h already included, missing '#pragma once' in InventoryComponent.h"
 #endif
 #define MODULARITEMMANAGEMENT_InventoryComponent_generated_h
 
 #define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_InventoryComponent_h_27_DELEGATE \
-static void FInventoryChanged_DelegateWrapper(const FMulticastScriptDelegate& InventoryChanged, UBaseItem* NewItem, int32 Index);
+static void FInventoryChanged_DelegateWrapper(const FMulticastScriptDelegate& InventoryChanged, UItem* NewItem, int32 Index);
 
 
 #define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_InventoryComponent_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execSetItemAt); \
+	DECLARE_FUNCTION(execGetItemAt); \
+	DECLARE_FUNCTION(execGetInventory); \
 	DECLARE_FUNCTION(execRemoveItem); \
 	DECLARE_FUNCTION(execAddItem);
 

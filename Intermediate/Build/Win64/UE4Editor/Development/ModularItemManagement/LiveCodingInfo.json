@@ -5,7 +5,7 @@
 			"EquipmentInterface.cpp.obj",
 			"InventoryInterface.cpp.obj",
 			"BaseItem.cpp.obj",
-			"BaseMutator.cpp.obj",
+			"BaseModule.cpp.obj",
 			"Customizer.cpp.obj",
 			"CustomizerComponent.cpp.obj",
 			"EquipmentComponent.cpp.obj",
@@ -14,7 +14,7 @@
 		],
 		"Module.ModularItemManagement.gen.cpp.obj": [
 			"BaseItem.gen.cpp.obj",
-			"BaseMutator.gen.cpp.obj",
+			"BaseModule.gen.cpp.obj",
 			"Customizer.gen.cpp.obj",
 			"CustomizerComponent.gen.cpp.obj",
 			"EquipmentComponent.gen.cpp.obj",

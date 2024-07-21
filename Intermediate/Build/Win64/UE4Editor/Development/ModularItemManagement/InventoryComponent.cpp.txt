@@ -2,14 +2,14 @@ D:\Shain\Documents\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Int
 D:\Shain\Documents\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Source\ModularItemManagement\Public\InventoryComponent.h
 D:\Shain\Documents\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Intermediate\Build\Win64\UE4Editor\Inc\ModularItemManagement\InventoryComponent.generated.h
 D:\Shain\Documents\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Source\ModularItemManagement\Public\BaseItem.h
-D:\Shain\Documents\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Source\ModularItemManagement\Public\BaseMutator.h
+D:\Shain\Documents\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Source\ModularItemManagement\Public\BaseModule.h
 D:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/NoExportTypes.h
 D:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/PropertyAccessUtil.h
 D:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\Math/UnitConversion.h
 D:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\Math/UnitConversion.inl
 D:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\Internationalization/PolyglotTextData.h
 D:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\AssetRegistry/ARFilter.h
-D:\Shain\Documents\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Intermediate\Build\Win64\UE4Editor\Inc\ModularItemManagement\BaseMutator.generated.h
+D:\Shain\Documents\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Intermediate\Build\Win64\UE4Editor\Inc\ModularItemManagement\BaseModule.generated.h
 D:\Shain\Documents\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Source\ModularItemManagement\Public\EquipmentComponent.h
 D:\Shain\Documents\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Intermediate\Build\Win64\UE4Editor\Inc\ModularItemManagement\EquipmentComponent.generated.h
 D:\Shain\Documents\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Intermediate\Build\Win64\UE4Editor\Inc\ModularItemManagement\BaseItem.generated.h

@@ -7,14 +7,14 @@
         "Includes": [
             "e:\\unreal projects\\dungeonsurvivors\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\modularitemmanagement\\definitions.modularitemmanagement.h",
             "e:\\unreal projects\\dungeonsurvivors\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\itemslib.h",
-            "e:\\unreal projects\\dungeonsurvivors\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\basemutator.h",
+            "e:\\unreal projects\\dungeonsurvivors\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\baseModule.h",
             "e:\\epic games\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\noexporttypes.h",
             "e:\\epic games\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\propertyaccessutil.h",
             "e:\\epic games\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\serialization\\testundeclaredscriptstructobjectreferences.h",
             "e:\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\math\\unitconversion.h",
             "e:\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\math\\unitconversion.inl",
             "e:\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\internationalization\\polyglottextdata.h",
-            "e:\\unreal projects\\dungeonsurvivors\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\basemutator.generated.h",
+            "e:\\unreal projects\\dungeonsurvivors\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\baseModule.generated.h",
             "e:\\unreal projects\\dungeonsurvivors\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\itemslib.generated.h"
         ],
         "ImportedModules": [],

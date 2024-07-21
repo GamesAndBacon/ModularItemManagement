@@ -1,7 +1,6 @@
 // InventoryComponent.cpp
 
 #include "InventoryComponent.h"
-#include "BaseItem.h"
 #include "ModularItemManagement/Interfaces/InventoryInterface.h"
 
 // Sets default values for this component's properties
@@ -23,7 +22,7 @@ void UInventoryComponent::TickComponent(float DeltaTime, ELevelTick TickType, FA
 }
 
 
-bool UInventoryComponent::AddItem(UBaseItem* Item)
+bool UInventoryComponent::AddItem(UItem* Item)
 {
     if (Item)
     {
@@ -33,7 +32,7 @@ bool UInventoryComponent::AddItem(UBaseItem* Item)
     return false;
 }
 
-bool UInventoryComponent::RemoveItem(UBaseItem* Item, int32 index)
+bool UInventoryComponent::RemoveItem(UItem* Item, int32 index)
 {
     if(Item && Inventory.IsValidIndex(index))
     {
@@ -44,3 +43,26 @@ bool UInventoryComponent::RemoveItem(UBaseItem* Item, int32 index)
     return false;           
 }
 
+const TArray<UItem*>& UInventoryComponent::GetInventory() const
+{
+    return Inventory;
+}
+
+
+
+UItem* UInventoryComponent::GetItemAt(int32 Index)
+{
+    if (Inventory.IsValidIndex(Index))
+    {
+        return Inventory[Index];
+    }
+    return nullptr;
+}
+
+void UInventoryComponent::SetItemAt(int32 Index, UItem* Item)
+{
+    if (Inventory.IsValidIndex(Index))
+    {
+        Inventory[Index] = Item;
+    }
+}

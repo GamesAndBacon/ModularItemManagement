@@ -2,7 +2,7 @@
 #include "E:/Unreal Projects/ProjectLost/Plugins/ModularItemManagement/Source/ModularItemManagement/Interfaces/EquipmentInterface.cpp"
 #include "E:/Unreal Projects/ProjectLost/Plugins/ModularItemManagement/Source/ModularItemManagement/Interfaces/InventoryInterface.cpp"
 #include "E:/Unreal Projects/ProjectLost/Plugins/ModularItemManagement/Source/ModularItemManagement/Private/BaseItem.cpp"
-#include "E:/Unreal Projects/ProjectLost/Plugins/ModularItemManagement/Source/ModularItemManagement/Private/BaseMutator.cpp"
+#include "E:/Unreal Projects/ProjectLost/Plugins/ModularItemManagement/Source/ModularItemManagement/Private/BaseModule.cpp"
 #include "E:/Unreal Projects/ProjectLost/Plugins/ModularItemManagement/Source/ModularItemManagement/Private/Customizer.cpp"
 #include "E:/Unreal Projects/ProjectLost/Plugins/ModularItemManagement/Source/ModularItemManagement/Private/CustomizerComponent.cpp"
 #include "E:/Unreal Projects/ProjectLost/Plugins/ModularItemManagement/Source/ModularItemManagement/Private/EquipmentComponent.cpp"

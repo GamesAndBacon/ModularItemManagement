@@ -2,11 +2,11 @@
 
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
-#include "BaseMutator.h"
+#include "ItemModule.h"
 #include "ItemDataAsset.h"
 #include "ItemsLib.generated.h"
 
-class UBaseItem;
+class UItem;
 
 USTRUCT(BlueprintType)
 struct FItemRecord
@@ -36,15 +36,8 @@ class MODULARITEMMANAGEMENT_API UItemsLib : public UBlueprintFunctionLibrary
 	GENERATED_BODY()
 public:
 	UFUNCTION(BlueprintCallable, Category = "Trinity|Item")
-	static FItemRecord SaveItem(UBaseItem* item);
+	static FItemRecord SaveItem(UItem* item);
     
 	UFUNCTION(BlueprintCallable, Category = "Trinity|Item")
-	static UBaseItem* LoadItem(FItemRecord savedata, UObject* Outer);
-    
-	UFUNCTION(BlueprintCallable, Category = "Trinity|Item")
-	static FItemRecord SaveMutator(TSubclassOf<UBaseMutator> Mutator, FInstancedStruct& MutatorData);
-    
-	// UFUNCTION(BlueprintCallable, Category = "Trinity|Item")
-	// static void LoadMutator(FItemRecord Record, UItemDataAsset* ItemDataAsset, TSubclassOf<UBaseMutator>& OutMutator, FInstancedStruct&
-	//                         OutMutatorData);
+	static UItem* LoadItem(FItemRecord savedata, UObject* Outer); 
 };

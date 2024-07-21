@@ -5,21 +5,21 @@
 #include "CoreMinimal.h"
 #include "InstancedStruct.h"
 #include "UObject/NoExportTypes.h"
-#include "BaseMutator.generated.h"
+#include "ItemModule.generated.h"
 
-class UBaseItem;
+class UItem;
 /**
  * 
  */
 UCLASS(EditInlineNew, Blueprintable, BlueprintType)
-class MODULARITEMMANAGEMENT_API UBaseMutator : public UObject
+class MODULARITEMMANAGEMENT_API UItemModule : public UObject
 {
 	GENERATED_BODY()
 public:		
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
-	void OnAddedToItem(UBaseItem* Item);
+	void OnAddedToItem(UItem* Item);
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
-	void OnRemovedFromItem(UBaseItem* Item);
+	void OnRemovedFromItem(UItem* Item);
 
 
 };

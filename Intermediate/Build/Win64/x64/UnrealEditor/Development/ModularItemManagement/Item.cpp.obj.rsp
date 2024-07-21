@@ -1,0 +1,51 @@
+"E:\Unreal Projects\ItemPlugin\plugins\ModularItemManagement\Source\ModularItemManagement\Private\Item.cpp"
+/FI"E:\Unreal Projects\ItemPlugin\Intermediate\Build\Win64\x64\ItemPluginEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h"
+/FI"E:\Unreal Projects\ItemPlugin\plugins\ModularItemManagement\Intermediate\Build\Win64\x64\UnrealEditor\Development\ModularItemManagement\Definitions.ModularItemManagement.h"
+/Yu"E:\Unreal Projects\ItemPlugin\Intermediate\Build\Win64\x64\ItemPluginEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h"
+/Fp"E:\Unreal Projects\ItemPlugin\Intermediate\Build\Win64\x64\ItemPluginEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h.pch"
+/Fo"E:\Unreal Projects\ItemPlugin\plugins\ModularItemManagement\Intermediate\Build\Win64\x64\UnrealEditor\Development\ModularItemManagement\Item.cpp.obj"
+/sourceDependencies "E:\Unreal Projects\ItemPlugin\plugins\ModularItemManagement\Intermediate\Build\Win64\x64\UnrealEditor\Development\ModularItemManagement\Item.cpp.dep.json"
+@"E:\Unreal Projects\ItemPlugin\plugins\ModularItemManagement\Intermediate\Build\Win64\x64\UnrealEditor\Development\ModularItemManagement\ModularItemManagement.Shared.rsp"
+/Zc:inline
+/nologo
+/Oi
+/FC
+/c
+/Gw
+/Gy
+/utf-8
+/wd4819
+/DSAL_NO_ATTRIBUTE_DECLARATIONS=1
+/permissive-
+/Zc:strictStrings-
+/Zc:__cplusplus
+/D_CRT_STDIO_LEGACY_WIDE_SPECIFIERS=1
+/D_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS=1
+/D_WINDLL
+/D_DISABLE_EXTENDED_ALIGNED_STORAGE
+/Ob2
+/d2ExtendedWarningInfo
+/Ox
+/Ot
+/GF
+/errorReport:prompt
+/EHsc
+/DPLATFORM_EXCEPTIONS_DISABLED=0
+/Z7
+/MD
+/bigobj
+/fp:fast
+/Zo
+/Zp8
+/we4456
+/we4458
+/we4459
+/we4668
+/wd4244
+/wd4838
+/TP
+/GR-
+/W4
+/std:c++20
+/Zc:preprocessor
+/wd5054

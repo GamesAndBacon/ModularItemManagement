@@ -1,10 +1,10 @@
-"E:\Unreal Projects\DungeonSurvivors\plugins\ModularItemManagement\Source\ModularItemManagement\Private\BaseMutator.cpp"
+"E:\Unreal Projects\DungeonSurvivors\plugins\ModularItemManagement\Source\ModularItemManagement\Private\BaseModule.cpp"
 /FI"E:\Unreal Projects\DungeonSurvivors\Intermediate\Build\Win64\x64\DungeonSurvivorsEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h"
 /FI"E:\Unreal Projects\DungeonSurvivors\plugins\ModularItemManagement\Intermediate\Build\Win64\x64\UnrealEditor\Development\ModularItemManagement\Definitions.ModularItemManagement.h"
 /Yu"E:\Unreal Projects\DungeonSurvivors\Intermediate\Build\Win64\x64\DungeonSurvivorsEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h"
 /Fp"E:\Unreal Projects\DungeonSurvivors\Intermediate\Build\Win64\x64\DungeonSurvivorsEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.pch"
-/Fo"E:\Unreal Projects\DungeonSurvivors\plugins\ModularItemManagement\Intermediate\Build\Win64\x64\UnrealEditor\Development\ModularItemManagement\BaseMutator.cpp.obj"
-/sourceDependencies "E:\Unreal Projects\DungeonSurvivors\plugins\ModularItemManagement\Intermediate\Build\Win64\x64\UnrealEditor\Development\ModularItemManagement\BaseMutator.cpp.dep.json"
+/Fo"E:\Unreal Projects\DungeonSurvivors\plugins\ModularItemManagement\Intermediate\Build\Win64\x64\UnrealEditor\Development\ModularItemManagement\BaseModule.cpp.obj"
+/sourceDependencies "E:\Unreal Projects\DungeonSurvivors\plugins\ModularItemManagement\Intermediate\Build\Win64\x64\UnrealEditor\Development\ModularItemManagement\BaseModule.cpp.dep.json"
 @"E:\Unreal Projects\DungeonSurvivors\plugins\ModularItemManagement\Intermediate\Build\Win64\x64\UnrealEditor\Development\ModularItemManagement\ModularItemManagement.Shared.rsp"
 /Zc:inline
 /nologo

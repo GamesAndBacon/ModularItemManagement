@@ -9,10 +9,8 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-class UBaseItem;
-class UBaseMutator;
+class UItem;
 class UObject;
-struct FInstancedStruct;
 struct FItemRecord;
 #ifdef MODULARITEMMANAGEMENT_ItemsLib_generated_h
 #error "ItemsLib.generated.h already included, missing '#pragma once' in ItemsLib.h"
@@ -27,7 +25,6 @@ struct FItemRecord;
 template<> MODULARITEMMANAGEMENT_API UScriptStruct* StaticStruct<struct FItemRecord>();
 
 #define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_ItemsLib_h_36_RPC_WRAPPERS_NO_PURE_DECLS \
-	DECLARE_FUNCTION(execSaveMutator); \
 	DECLARE_FUNCTION(execLoadItem); \
 	DECLARE_FUNCTION(execSaveItem);
 

@@ -8,7 +8,7 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-class UBaseMutator;
+class UItemModule;
 class UBaseItem;
 class UEquipmentComponent;
 class AActor;
@@ -18,15 +18,15 @@ class AActor;
 #define MODULARITEMMANAGEMENT_BaseItem_generated_h
 
 #define ProjectLost_Plugins_ModularItemManagement_Source_ModularItemManagement_Public_BaseItem_h_19_DELEGATE \
-struct BaseItem_eventMutatorChanged_Parms \
+struct BaseItem_eventModuleChanged_Parms \
 { \
-	UBaseMutator* slot; \
+	UItemModule* slot; \
 }; \
-static inline void FMutatorChanged_DelegateWrapper(const FMulticastScriptDelegate& MutatorChanged, UBaseMutator* slot) \
+static inline void FModuleChanged_DelegateWrapper(const FMulticastScriptDelegate& ModuleChanged, UItemModule* slot) \
 { \
-	BaseItem_eventMutatorChanged_Parms Parms; \
+	BaseItem_eventModuleChanged_Parms Parms; \
 	Parms.slot=slot; \
-	MutatorChanged.ProcessMulticastDelegate<UObject>(&Parms); \
+	ModuleChanged.ProcessMulticastDelegate<UObject>(&Parms); \
 }
 
 
@@ -42,8 +42,8 @@ static inline void FMutatorChanged_DelegateWrapper(const FMulticastScriptDelegat
 	DECLARE_FUNCTION(execBeginPlay); \
 	DECLARE_FUNCTION(execDoEquipBP); \
 	DECLARE_FUNCTION(execDoUnEquipBP); \
-	DECLARE_FUNCTION(execRemoveMutator); \
-	DECLARE_FUNCTION(execAddMutator); \
+	DECLARE_FUNCTION(execRemoveModule); \
+	DECLARE_FUNCTION(execAddModule); \
 	DECLARE_FUNCTION(execOnUnequip); \
 	DECLARE_FUNCTION(execOnEquip); \
 	DECLARE_FUNCTION(execDoUse);
@@ -60,8 +60,8 @@ static inline void FMutatorChanged_DelegateWrapper(const FMulticastScriptDelegat
 	DECLARE_FUNCTION(execBeginPlay); \
 	DECLARE_FUNCTION(execDoEquipBP); \
 	DECLARE_FUNCTION(execDoUnEquipBP); \
-	DECLARE_FUNCTION(execRemoveMutator); \
-	DECLARE_FUNCTION(execAddMutator); \
+	DECLARE_FUNCTION(execRemoveModule); \
+	DECLARE_FUNCTION(execAddModule); \
 	DECLARE_FUNCTION(execOnUnequip); \
 	DECLARE_FUNCTION(execOnEquip); \
 	DECLARE_FUNCTION(execDoUse);

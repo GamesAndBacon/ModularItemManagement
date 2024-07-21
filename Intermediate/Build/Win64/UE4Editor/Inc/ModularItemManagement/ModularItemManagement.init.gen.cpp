@@ -13,7 +13,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeModularItemManagement_init() {}
 	MODULARITEMMANAGEMENT_API UFunction* Z_Construct_UDelegateFunction_UInventoryComponent_InventoryChanged__DelegateSignature();
 	MODULARITEMMANAGEMENT_API UFunction* Z_Construct_UDelegateFunction_UEquipmentComponent_EquipmentChanged__DelegateSignature();
-	MODULARITEMMANAGEMENT_API UFunction* Z_Construct_UDelegateFunction_UBaseItem_MutatorChanged__DelegateSignature();
+	MODULARITEMMANAGEMENT_API UFunction* Z_Construct_UDelegateFunction_UBaseItem_ModuleChanged__DelegateSignature();
 	UPackage* Z_Construct_UPackage__Script_ModularItemManagement()
 	{
 		static UPackage* ReturnPackage = nullptr;
@@ -22,7 +22,7 @@ void EmptyLinkFunctionForGeneratedCodeModularItemManagement_init() {}
 			static UObject* (*const SingletonFuncArray[])() = {
 				(UObject* (*)())Z_Construct_UDelegateFunction_UInventoryComponent_InventoryChanged__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_UEquipmentComponent_EquipmentChanged__DelegateSignature,
-				(UObject* (*)())Z_Construct_UDelegateFunction_UBaseItem_MutatorChanged__DelegateSignature,
+				(UObject* (*)())Z_Construct_UDelegateFunction_UBaseItem_ModuleChanged__DelegateSignature,
 			};
 			static const UE4CodeGen_Private::FPackageParams PackageParams = {
 				"/Script/ModularItemManagement",

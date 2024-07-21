@@ -267,9 +267,9 @@
 /FI"D:\Shain\Documents\Unreal Projects\ProjectLost\Intermediate\Build\Win64\ProjectLostEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
 /Yu"D:\Shain\Documents\Unreal Projects\ProjectLost\Intermediate\Build\Win64\ProjectLostEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
 /Fp"D:\Shain\Documents\Unreal Projects\ProjectLost\Intermediate\Build\Win64\ProjectLostEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
-"D:\Shain\Documents\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Source\ModularItemManagement\Private\BaseMutator.cpp"
+"D:\Shain\Documents\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Source\ModularItemManagement\Private\BaseModule.cpp"
 /FI"D:\Shain\Documents\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Intermediate\Build\Win64\UE4Editor\Development\ModularItemManagement\Definitions.ModularItemManagement.h"
-/Fo"D:\Shain\Documents\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Intermediate\Build\Win64\UE4Editor\Development\ModularItemManagement\BaseMutator.cpp.obj"
+/Fo"D:\Shain\Documents\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Intermediate\Build\Win64\UE4Editor\Development\ModularItemManagement\BaseModule.cpp.obj"
 /TP
 /GR-
 /W4
