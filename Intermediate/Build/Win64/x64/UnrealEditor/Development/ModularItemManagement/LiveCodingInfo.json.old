@@ -1,0 +1,29 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.ModularItemManagement.cpp.obj": [
+			"BaseItem.gen.cpp.obj",
+			"BaseMutator.gen.cpp.obj",
+			"Customizer.gen.cpp.obj",
+			"CustomizerComponent.gen.cpp.obj",
+			"EquipmentComponent.gen.cpp.obj",
+			"EquipmentInterface.gen.cpp.obj",
+			"InventoryComponent.gen.cpp.obj",
+			"InventoryInterface.gen.cpp.obj",
+			"ItemDataAsset.gen.cpp.obj",
+			"ItemsLib.gen.cpp.obj",
+			"ModularItemManagement.init.gen.cpp.obj",
+			"EquipmentInterface.cpp.obj",
+			"InventoryInterface.cpp.obj",
+			"Customizer.cpp.obj",
+			"CustomizerComponent.cpp.obj",
+			"EquipmentComponent.cpp.obj",
+			"InventoryComponent.cpp.obj",
+			"ItemsLib.cpp.obj",
+			"ModularItemManagement.cpp.obj",
+			"BaseItem.cpp.obj",
+			"BaseMutator.cpp.obj",
+			"ItemDataAsset.cpp.obj"
+		]
+	}
+}

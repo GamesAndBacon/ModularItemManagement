@@ -1,0 +1,13 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-ModularItemManagement-0002.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\Shain\Documents\Unreal Projects\ProjectLost\Intermediate\Build\Win64\ProjectLostEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"D:\Shain\Documents\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Intermediate\Build\Win64\UE4Editor\Development\ModularItemManagement\Module.ModularItemManagement.cpp.obj"
+"D:\Shain\Documents\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Intermediate\Build\Win64\UE4Editor\Development\ModularItemManagement\Module.ModularItemManagement.gen.cpp.obj"
+"D:\Shain\Documents\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Intermediate\Build\Win64\UE4Editor\Development\ModularItemManagement\Default.rc2.res"
+/OUT:"D:\Shain\Documents\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Intermediate\Build\Win64\UE4Editor\Development\ModularItemManagement\UE4Editor-ModularItemManagement-0002.lib"

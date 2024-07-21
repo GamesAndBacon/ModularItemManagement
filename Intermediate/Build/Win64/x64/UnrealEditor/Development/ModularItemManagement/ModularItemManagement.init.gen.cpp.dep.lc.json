@@ -1,0 +1,13 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\unreal projects\\dungeonsurvivors\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\modularitemmanagement.init.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\unreal projects\\dungeonsurvivors\\intermediate\\build\\win64\\x64\\dungeonsurvivorseditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "e:\\unreal projects\\dungeonsurvivors\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\modularitemmanagement\\definitions.modularitemmanagement.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

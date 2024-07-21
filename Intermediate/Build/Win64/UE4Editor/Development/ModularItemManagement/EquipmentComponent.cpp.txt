@@ -1,0 +1,5 @@
+D:\Shain\Documents\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Intermediate\Build\Win64\UE4Editor\Development\ModularItemManagement\Definitions.ModularItemManagement.h
+D:\Shain\Documents\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Source\ModularItemManagement\Public\EquipmentComponent.h
+D:\Shain\Documents\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Source\ModularItemManagement\Public\InventoryComponent.h
+D:\Shain\Documents\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Intermediate\Build\Win64\UE4Editor\Inc\ModularItemManagement\InventoryComponent.generated.h
+D:\Shain\Documents\Unreal Projects\ProjectLost\Plugins\ModularItemManagement\Intermediate\Build\Win64\UE4Editor\Inc\ModularItemManagement\EquipmentComponent.generated.h
