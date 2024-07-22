@@ -17,10 +17,10 @@ public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FModuleChanged, UItemModule*, Module);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FStackSizeChanged, int32, NewStackSize);  // New delegate for stack size changes
     
-    UPROPERTY(BlueprintReadOnly, SaveGame)
+    UPROPERTY(SaveGame)
     TArray<FInstancedStruct> ModuleData;
     
-    UPROPERTY(BlueprintReadOnly, SaveGame)
+    UPROPERTY(SaveGame)
     TArray<TSubclassOf<UItemModule>> ModuleClasses;
     
     UPROPERTY(BlueprintAssignable)
@@ -61,17 +61,17 @@ public:
     UFUNCTION(BlueprintCallable, Category = "ModularItems", meta = (DeterminesOutputType = " ModuleClass"))
     UItemModule* GetModule(TSubclassOf<UItemModule> ModuleClass, FInstancedStruct& outModuleData);
     
-    UFUNCTION(BlueprintCallable, Category = "ModularItems")
+    UFUNCTION(BlueprintCallable, Category = "ModularItems", meta = (CustomStructureParam = "Value"))
     void SetModule(UItemModule* Module, const FInstancedStruct& InstanceStruct);
         
-    UPROPERTY(BlueprintReadOnly,SaveGame)
+    UPROPERTY(saveGame)
     UItemDefinition* ItemData;
 
     UPROPERTY(BlueprintReadOnly, SaveGame, EditAnywhere)
     FGuid ItemID = FGuid::NewGuid();
 
     // New variable for owner
-    UPROPERTY(BlueprintReadOnly, SaveGame, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, SaveGame, EditAnywhere)
     AActor* Owner;
     
     // Inline getter for owner

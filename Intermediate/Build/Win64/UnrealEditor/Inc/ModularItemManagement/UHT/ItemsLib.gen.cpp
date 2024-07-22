@@ -140,7 +140,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UItems
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UItemsLib_CreateItem_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UItemsLib_CreateItem_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UItemsLib_CreateItem_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UItemsLib, nullptr, "CreateItem", nullptr, nullptr, Z_Construct_UFunction_UItemsLib_CreateItem_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UItemsLib_CreateItem_Statics::PropPointers), sizeof(Z_Construct_UFunction_UItemsLib_CreateItem_Statics::ItemsLib_eventCreateItem_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UItemsLib_CreateItem_Statics::Function_MetaDataParams), Z_Construct_UFunction_UItemsLib_CreateItem_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UItemsLib_CreateItem_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UItemsLib, nullptr, "CreateItem", nullptr, nullptr, Z_Construct_UFunction_UItemsLib_CreateItem_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UItemsLib_CreateItem_Statics::PropPointers), sizeof(Z_Construct_UFunction_UItemsLib_CreateItem_Statics::ItemsLib_eventCreateItem_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04022401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UItemsLib_CreateItem_Statics::Function_MetaDataParams), Z_Construct_UFunction_UItemsLib_CreateItem_Statics::Function_MetaDataParams) };
 static_assert(sizeof(Z_Construct_UFunction_UItemsLib_CreateItem_Statics::ItemsLib_eventCreateItem_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UItemsLib_CreateItem()
 {
@@ -157,7 +157,7 @@ DEFINE_FUNCTION(UItemsLib::execCreateItem)
 	P_GET_OBJECT(UObject,Z_Param_Outer);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	*(UItem**)Z_Param__Result=P_THIS->CreateItem(Z_Param_ItemDefinition,Z_Param_Outer);
+	*(UItem**)Z_Param__Result=UItemsLib::CreateItem(Z_Param_ItemDefinition,Z_Param_Outer);
 	P_NATIVE_END;
 }
 // End Class UItemsLib Function CreateItem
@@ -290,7 +290,7 @@ struct Z_Construct_UClass_UItemsLib_Statics
 #endif // WITH_METADATA
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UItemsLib_CreateItem, "CreateItem" }, // 2981561625
+		{ &Z_Construct_UFunction_UItemsLib_CreateItem, "CreateItem" }, // 2492596760
 		{ &Z_Construct_UFunction_UItemsLib_LoadItem, "LoadItem" }, // 2947372300
 		{ &Z_Construct_UFunction_UItemsLib_SaveItem, "SaveItem" }, // 360625310
 	};
@@ -344,10 +344,10 @@ struct Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemM
 		{ FItemRecord::StaticStruct, Z_Construct_UScriptStruct_FItemRecord_Statics::NewStructOps, TEXT("ItemRecord"), &Z_Registration_Info_UScriptStruct_ItemRecord, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FItemRecord), 1272658285U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UItemsLib, UItemsLib::StaticClass, TEXT("UItemsLib"), &Z_Registration_Info_UClass_UItemsLib, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UItemsLib), 3142759284U) },
+		{ Z_Construct_UClass_UItemsLib, UItemsLib::StaticClass, TEXT("UItemsLib"), &Z_Registration_Info_UClass_UItemsLib, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UItemsLib), 2363616009U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_ItemsLib_h_1363158852(TEXT("/Script/ModularItemManagement"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_ItemsLib_h_4279344074(TEXT("/Script/ModularItemManagement"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_ItemsLib_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_ItemsLib_h_Statics::ClassInfo),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_ItemsLib_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_ItemsLib_h_Statics::ScriptStructInfo),
 	nullptr, 0);

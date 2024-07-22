@@ -43,5 +43,5 @@ public:
 	static UItem* LoadItem(const FItemRecord& ItemRecord, UObject* Outer);
 	
 	UFUNCTION(BlueprintCallable, Category = "Item", meta = (DefaultToSelf = "Outer", DeterminesOutputType = "ItemClass"))
-	UItem* CreateItem(UItemDefinition* ItemDefinition, UObject* Outer);
+	static UItem* CreateItem(UItemDefinition* ItemDefinition, UObject* Outer);
 };

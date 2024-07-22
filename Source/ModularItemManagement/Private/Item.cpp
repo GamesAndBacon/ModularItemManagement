@@ -164,15 +164,9 @@ void UItem::SetModule(UItemModule* Module, const FInstancedStruct& InstanceStruc
         {
             ModuleData[Index].Reset();  // Explicitly clean up the old data
             ModuleData[Index] = InstanceStruct;
+            Module->OnAddedToItem(this);
+            ModuleAdded.Broadcast(Module);
         }
-        else
-        {
-            ModuleClasses.Add(ModuleClass);
-            ModuleData.Add(InstanceStruct);
-        }
-
-        Module->OnAddedToItem(this);
-        ModuleAdded.Broadcast(Module);
     }
     else
     {
