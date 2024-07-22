@@ -82,22 +82,26 @@ void UItem::Serialize(FArchive& Ar)
 }
 
 
-// Handling Modules
 void UItem::AddModule(TSubclassOf<UItemModule> ModuleClass, FInstancedStruct ModuleInstance)
 {
     if (ModuleClass)
     {
         int32 Index = ModuleClasses.Add(ModuleClass);
+
+        // Clean up the old value before replacing it
         if (ModuleData.IsValidIndex(Index))
         {
+            ModuleData[Index].Reset();  // Explicitly clean up the old data
             ModuleData[Index] = ModuleInstance;
         }
         else
         {
             ModuleData.Add(ModuleInstance);
         }
-        GetModuleDefaultObject(ModuleClass)->OnAddedToItem(this);
-        ModuleAdded.Broadcast(GetModuleDefaultObject(ModuleClass));
+
+        UItemModule* ModuleObject = GetModuleDefaultObject(ModuleClass);
+        ModuleObject->OnAddedToItem(this);
+        ModuleAdded.Broadcast(ModuleObject);
     }
 }
 
@@ -107,11 +111,20 @@ void UItem::RemoveModule(TSubclassOf<UItemModule> ModuleClass)
     if (Index != INDEX_NONE)
     {
         ModuleClasses.RemoveAt(Index);
-        ModuleData.RemoveAt(Index);
-        GetModuleDefaultObject(ModuleClass)->OnRemovedFromItem(this);
-        ModuleRemoved.Broadcast(GetModuleDefaultObject(ModuleClass));
+        
+        // Clean up the data before removing it
+        if (ModuleData.IsValidIndex(Index))
+        {
+            ModuleData[Index].Reset();  // Explicitly clean up the old data
+            ModuleData.RemoveAt(Index);
+        }
+
+        UItemModule* ModuleObject = GetModuleDefaultObject(ModuleClass);
+        ModuleObject->OnRemovedFromItem(this);
+        ModuleRemoved.Broadcast(ModuleObject);
     }
 }
+
 
 UItemModule* UItem::GetModuleDefaultObject(TSubclassOf<UItemModule> ModuleClass)
 {
@@ -140,8 +153,11 @@ void UItem::SetModuleData(UItemModule* Module, const FInstancedStruct& InstanceS
     {
         TSubclassOf<UItemModule> ModuleClass = Module->GetClass();
         int32 Index = ModuleClasses.IndexOfByKey(ModuleClass);
+
+        // Clean up the old value before replacing it
         if (Index != INDEX_NONE && ModuleData.IsValidIndex(Index))
         {
+            ModuleData[Index].Reset();  // Explicitly clean up the old data
             ModuleData[Index] = InstanceStruct;
         }
         else
@@ -149,6 +165,7 @@ void UItem::SetModuleData(UItemModule* Module, const FInstancedStruct& InstanceS
             ModuleClasses.Add(ModuleClass);
             ModuleData.Add(InstanceStruct);
         }
+
         Module->OnAddedToItem(this);
         ModuleAdded.Broadcast(Module);
     }
@@ -157,3 +174,4 @@ void UItem::SetModuleData(UItemModule* Module, const FInstancedStruct& InstanceS
         UE_LOG(LogTemp, Error, TEXT("SetModuleData: Module is null."));
     }
 }
+
