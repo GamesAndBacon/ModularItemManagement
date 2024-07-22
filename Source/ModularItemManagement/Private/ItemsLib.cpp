@@ -2,63 +2,34 @@
 #include "Item.h"
 #include "ItemModule.h"
 #include "Serialization/ObjectAndNameAsStringProxyArchive.h"
+#include "Serialization/MemoryWriter.h"
+#include "Serialization/MemoryReader.h"
 
 FItemRecord UItemsLib::SaveItem(UItem* Item)
 {
-    FItemRecord IR;
-    if (!Item)
-    {
-        IR.Class = nullptr;
-        return IR;
-    }
-    Item->OnItemSave();
-    IR.Class = Item->GetClass();
-    FMemoryWriter Writer(IR.ItemData, true);
-    Writer.ArIsSaveGame = true;
-    FObjectAndNameAsStringProxyArchive Ar(Writer, true);
-    Ar.ArIsSaveGame = true;
-    Ar.SetIsLoading(false);
-    Ar.SetIsSaving(true);
-    Item->Serialize(Ar);
+	FItemRecord ItemRecord;
+	ItemRecord.ItemGuid = Item->Guid;
+	ItemRecord.ItemName = Item->ItemData->ItemName;
+	ItemRecord.ModuleClasses = Item->ModuleClasses;
 
-    // Save the modules associated with the item
-    for (auto& ModulePair : Item->Modules)
-    {
-        if (ModulePair.Key)
-        {
-            ModulePair.Value.Serialize(Ar);
-        }
-    }
+	FMemoryWriter MemoryWriter(ItemRecord.ModuleData, true);
+	FObjectAndNameAsStringProxyArchive Archive(MemoryWriter, false);
+	Item->Serialize(Archive);
 
-    return IR;
+	return ItemRecord;
 }
 
-UItem* UItemsLib::LoadItem(FItemRecord IR, UObject* Outer)
+UItem* UItemsLib::LoadItem(const FItemRecord& ItemRecord, UObject* Outer)
 {
-    if (!IR.Class)
-        return nullptr;
+	UItem* NewItem = NewObject<UItem>(Outer);
+	NewItem->Guid = ItemRecord.ItemGuid;
+	NewItem->ItemData = NewObject<UItemDataAsset>();
+	NewItem->ItemData->ItemName = ItemRecord.ItemName;
+	NewItem->ModuleClasses = ItemRecord.ModuleClasses;
 
-    FMemoryReader Reader(IR.ItemData, true);
-    Reader.ArIsSaveGame = true;
-    FObjectAndNameAsStringProxyArchive Ar(Reader, false);
-    Ar.ArIsSaveGame = true;
-    Ar.SetIsLoading(true);
-    Ar.SetIsSaving(false);
-    UItem* Item = NewObject<UItem>(Outer, IR.Class);
-    Item->Serialize(Ar);
-    Item->OnItemLoad();
+	FMemoryReader MemoryReader(ItemRecord.ModuleData, true);
+	FObjectAndNameAsStringProxyArchive Archive(MemoryReader, true);
+	NewItem->Serialize(Archive);
 
-    // Load the modules associated with the item
-    for (auto& ModulePair : Item->Modules)
-    {
-        if (ModulePair.Key)
-        {
-            FInstancedStruct ModuleData;
-            ModuleData.InitializeAs(ModulePair.Value.GetScriptStruct());
-            ModuleData.Serialize(Reader);
-            Item->SetModuleData(ModulePair.Key.GetDefaultObject(), ModuleData);
-        }
-    }
-
-    return Item;
+	return NewItem;
 }

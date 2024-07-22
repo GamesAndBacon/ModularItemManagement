@@ -4,6 +4,8 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "ItemModule.h"
 #include "ItemDataAsset.h"
+#include "InstancedStruct.h"
+#include "Serialization/StructuredArchive.h"
 #include "ItemsLib.generated.h"
 
 class UItem;
@@ -12,32 +14,30 @@ USTRUCT(BlueprintType)
 struct FItemRecord
 {
 	GENERATED_BODY()
+
 public:
-	UPROPERTY(SaveGame)
-	UClass* Class;
+	UPROPERTY()
+	FGuid ItemGuid;
 
-	UPROPERTY(SaveGame)
-	TArray<uint8> ItemData;
+	UPROPERTY()
+	FString ItemName;
 
-	friend FArchive& operator<<(FArchive& Ar, FItemRecord& CompData)
-	{
-		Ar << CompData.Class;
-		Ar << CompData.ItemData;
-		return Ar;
-	}
+	UPROPERTY()
+	TArray<TSubclassOf<UItemModule>> ModuleClasses;
+
+	UPROPERTY()
+	TArray<uint8> ModuleData;
 };
 
-/**
- * 
- */
 UCLASS()
 class MODULARITEMMANAGEMENT_API UItemsLib : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
+
 public:
-	UFUNCTION(BlueprintCallable, Category = "Trinity|Item")
-	static FItemRecord SaveItem(UItem* item);
-    
-	UFUNCTION(BlueprintCallable, Category = "Trinity|Item")
-	static UItem* LoadItem(FItemRecord savedata, UObject* Outer); 
+	UFUNCTION(BlueprintCallable, Category = "Item")
+	static FItemRecord SaveItem(UItem* Item);
+
+	UFUNCTION(BlueprintCallable, Category = "Item")
+	static UItem* LoadItem(const FItemRecord& ItemRecord, UObject* Outer);
 };

@@ -38,13 +38,18 @@ static void FStackSizeChanged_DelegateWrapper(const FMulticastScriptDelegate& St
 
 
 #define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_14_CALLBACK_WRAPPERS
+#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_14_ARCHIVESERIALIZER \
+	DECLARE_FSTRUCTUREDARCHIVE_SERIALIZER(UItem, NO_API)
+
+
 #define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_14_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUItem(); \
 	friend struct Z_Construct_UClass_UItem_Statics; \
 public: \
 	DECLARE_CLASS(UItem, UObject, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/ModularItemManagement"), NO_API) \
-	DECLARE_SERIALIZER(UItem)
+	DECLARE_SERIALIZER(UItem) \
+	FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_14_ARCHIVESERIALIZER
 
 
 #define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_14_ENHANCED_CONSTRUCTORS \

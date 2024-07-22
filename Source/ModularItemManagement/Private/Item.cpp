@@ -1,5 +1,3 @@
-// BaseItem.cpp
-
 #include "Item.h"
 #include "Runtime/Engine/Classes/Kismet/GameplayStatics.h"
 
@@ -7,7 +5,6 @@
 UItem::UItem(const FObjectInitializer& ObjectInitializer)
     : Super(ObjectInitializer)
 {
-
 }
 
 // Override GetWorld to check if we are in the editor or in the game
@@ -33,52 +30,93 @@ void UItem::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimePro
 
 void UItem::InitItem()
 {
-    for (auto& Module  : ItemData->Modules)
+    for (auto& Module : ItemData->Modules)
     {
         AddModule(Module.Key, Module.Value);
     }
 }
 
-
-
 void UItem::OnItemSave()
 {
-
 }
 
 void UItem::OnItemLoad()
 {
-
 }
+
+void UItem::Serialize(FArchive& Ar)
+{
+    Super::Serialize(Ar);
+
+    if (Ar.IsSaving())
+    {
+        // Serialize ModuleClasses
+        Ar << ModuleClasses;
+
+        // Serialize the number of modules
+        int32 NumModules = ModuleData.Num();
+        Ar << NumModules;
+
+        // Serialize each module
+        for (FInstancedStruct& Module : ModuleData)
+        {
+            Module.Serialize(Ar);
+        }
+    }
+    else if (Ar.IsLoading())
+    {
+        // Deserialize ModuleClasses
+        Ar << ModuleClasses;
+
+        // Deserialize the number of modules
+        int32 NumModules;
+        Ar << NumModules;
+        ModuleData.SetNum(NumModules);
+
+        // Deserialize each module
+        for (FInstancedStruct& Module : ModuleData)
+        {
+            Module.Serialize(Ar);
+        }
+    }
+}
+
 
 // Handling Modules
-void UItem::AddModule(TSubclassOf<UItemModule> Module, FInstancedStruct ModuleData)
+void UItem::AddModule(TSubclassOf<UItemModule> ModuleClass, FInstancedStruct ModuleInstance)
 {
-    if(Module)
+    if (ModuleClass)
     {
-        FInstancedStruct newstruct = ModuleData;
-        Modules.Add(Module,newstruct);
-        GetModuleDefaultObject(Module)->OnAddedToItem(this);
-        ModuleAdded.Broadcast(GetModuleDefaultObject(Module));        
+        int32 Index = ModuleClasses.Add(ModuleClass);
+        if (ModuleData.IsValidIndex(Index))
+        {
+            ModuleData[Index] = ModuleInstance;
+        }
+        else
+        {
+            ModuleData.Add(ModuleInstance);
+        }
+        GetModuleDefaultObject(ModuleClass)->OnAddedToItem(this);
+        ModuleAdded.Broadcast(GetModuleDefaultObject(ModuleClass));
     }
 }
 
-void UItem::RemoveModule(TSubclassOf<UItemModule> Module)
+void UItem::RemoveModule(TSubclassOf<UItemModule> ModuleClass)
 {
-    if(Module)
+    int32 Index = ModuleClasses.IndexOfByKey(ModuleClass);
+    if (Index != INDEX_NONE)
     {
-        Modules.Remove(Module);
-        GetModuleDefaultObject(Module)->OnRemovedFromItem(this);
-        ModuleRemoved.Broadcast(GetModuleDefaultObject(Module));        
+        ModuleClasses.RemoveAt(Index);
+        ModuleData.RemoveAt(Index);
+        GetModuleDefaultObject(ModuleClass)->OnRemovedFromItem(this);
+        ModuleRemoved.Broadcast(GetModuleDefaultObject(ModuleClass));
     }
 }
 
-UItemModule* UItem::GetModuleDefaultObject(TSubclassOf<UItemModule> Module)
+UItemModule* UItem::GetModuleDefaultObject(TSubclassOf<UItemModule> ModuleClass)
 {
-   return Module.GetDefaultObject();
+    return ModuleClass.GetDefaultObject();
 }
-
-
 
 // We add our blank native events
 void UItem::BeginPlay_Implementation()
@@ -87,9 +125,10 @@ void UItem::BeginPlay_Implementation()
 
 UItemModule* UItem::GetModuleData(TSubclassOf<UItemModule> ModuleClass, FInstancedStruct& OutInstanceStruct)
 {
-    if (const FInstancedStruct* FoundStruct = Modules.Find(ModuleClass))
+    int32 Index = ModuleClasses.IndexOfByKey(ModuleClass);
+    if (Index != INDEX_NONE && ModuleData.IsValidIndex(Index))
     {
-        OutInstanceStruct = *FoundStruct;
+        OutInstanceStruct = ModuleData[Index];
         return GetModuleDefaultObject(ModuleClass);
     }
     return nullptr;
@@ -100,20 +139,21 @@ void UItem::SetModuleData(UItemModule* Module, const FInstancedStruct& InstanceS
     if (Module)
     {
         TSubclassOf<UItemModule> ModuleClass = Module->GetClass();
-
-        // Check if the ModuleClass already exists in the map
-        if (FInstancedStruct* ExistingStruct = Modules.Find(ModuleClass))
+        int32 Index = ModuleClasses.IndexOfByKey(ModuleClass);
+        if (Index != INDEX_NONE && ModuleData.IsValidIndex(Index))
         {
-            // Update the existing FInstancedStruct with the new data
-            *ExistingStruct = InstanceStruct;
+            ModuleData[Index] = InstanceStruct;
         }
         else
         {
-            // Add the new data if it doesn't exist
-            Modules.Add(ModuleClass, InstanceStruct);
+            ModuleClasses.Add(ModuleClass);
+            ModuleData.Add(InstanceStruct);
         }
-
         Module->OnAddedToItem(this);
         ModuleAdded.Broadcast(Module);
+    }
+    else
+    {
+        UE_LOG(LogTemp, Error, TEXT("SetModuleData: Module is null."));
     }
 }
