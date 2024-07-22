@@ -23,11 +23,11 @@ struct ItemModule_eventOnAddedToItem_Parms
 	UItem* Item;
 };
 static FName NAME_UItemModule_OnAddedToItem = FName(TEXT("OnAddedToItem"));
-void UItemModule::OnAddedToItem(UItem* Item)
+void UItemModule::OnAddedToItem(UItem* Item) const
 {
 	ItemModule_eventOnAddedToItem_Parms Parms;
 	Parms.Item=Item;
-	ProcessEvent(FindFunctionChecked(NAME_UItemModule_OnAddedToItem),&Parms);
+	const_cast<UItemModule*>(this)->ProcessEvent(FindFunctionChecked(NAME_UItemModule_OnAddedToItem),&Parms);
 }
 struct Z_Construct_UFunction_UItemModule_OnAddedToItem_Statics
 {
@@ -45,7 +45,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UItemM
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UItemModule_OnAddedToItem_Statics::NewProp_Item,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UItemModule_OnAddedToItem_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UItemModule_OnAddedToItem_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UItemModule, nullptr, "OnAddedToItem", nullptr, nullptr, Z_Construct_UFunction_UItemModule_OnAddedToItem_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UItemModule_OnAddedToItem_Statics::PropPointers), sizeof(ItemModule_eventOnAddedToItem_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020C00, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UItemModule_OnAddedToItem_Statics::Function_MetaDataParams), Z_Construct_UFunction_UItemModule_OnAddedToItem_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UItemModule_OnAddedToItem_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UItemModule, nullptr, "OnAddedToItem", nullptr, nullptr, Z_Construct_UFunction_UItemModule_OnAddedToItem_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UItemModule_OnAddedToItem_Statics::PropPointers), sizeof(ItemModule_eventOnAddedToItem_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x48020C00, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UItemModule_OnAddedToItem_Statics::Function_MetaDataParams), Z_Construct_UFunction_UItemModule_OnAddedToItem_Statics::Function_MetaDataParams) };
 static_assert(sizeof(ItemModule_eventOnAddedToItem_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UItemModule_OnAddedToItem()
 {
@@ -72,11 +72,11 @@ struct ItemModule_eventOnRemovedFromItem_Parms
 	UItem* Item;
 };
 static FName NAME_UItemModule_OnRemovedFromItem = FName(TEXT("OnRemovedFromItem"));
-void UItemModule::OnRemovedFromItem(UItem* Item)
+void UItemModule::OnRemovedFromItem(UItem* Item) const
 {
 	ItemModule_eventOnRemovedFromItem_Parms Parms;
 	Parms.Item=Item;
-	ProcessEvent(FindFunctionChecked(NAME_UItemModule_OnRemovedFromItem),&Parms);
+	const_cast<UItemModule*>(this)->ProcessEvent(FindFunctionChecked(NAME_UItemModule_OnRemovedFromItem),&Parms);
 }
 struct Z_Construct_UFunction_UItemModule_OnRemovedFromItem_Statics
 {
@@ -94,7 +94,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UItemM
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UItemModule_OnRemovedFromItem_Statics::NewProp_Item,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UItemModule_OnRemovedFromItem_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UItemModule_OnRemovedFromItem_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UItemModule, nullptr, "OnRemovedFromItem", nullptr, nullptr, Z_Construct_UFunction_UItemModule_OnRemovedFromItem_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UItemModule_OnRemovedFromItem_Statics::PropPointers), sizeof(ItemModule_eventOnRemovedFromItem_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020C00, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UItemModule_OnRemovedFromItem_Statics::Function_MetaDataParams), Z_Construct_UFunction_UItemModule_OnRemovedFromItem_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UItemModule_OnRemovedFromItem_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UItemModule, nullptr, "OnRemovedFromItem", nullptr, nullptr, Z_Construct_UFunction_UItemModule_OnRemovedFromItem_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UItemModule_OnRemovedFromItem_Statics::PropPointers), sizeof(ItemModule_eventOnRemovedFromItem_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x48020C00, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UItemModule_OnRemovedFromItem_Statics::Function_MetaDataParams), Z_Construct_UFunction_UItemModule_OnRemovedFromItem_Statics::Function_MetaDataParams) };
 static_assert(sizeof(ItemModule_eventOnRemovedFromItem_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UItemModule_OnRemovedFromItem()
 {
@@ -145,8 +145,8 @@ struct Z_Construct_UClass_UItemModule_Statics
 #endif // WITH_METADATA
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UItemModule_OnAddedToItem, "OnAddedToItem" }, // 196711084
-		{ &Z_Construct_UFunction_UItemModule_OnRemovedFromItem, "OnRemovedFromItem" }, // 4043361593
+		{ &Z_Construct_UFunction_UItemModule_OnAddedToItem, "OnAddedToItem" }, // 2455224677
+		{ &Z_Construct_UFunction_UItemModule_OnRemovedFromItem, "OnRemovedFromItem" }, // 74828238
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -195,10 +195,10 @@ UItemModule::~UItemModule() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_ItemModule_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UItemModule, UItemModule::StaticClass, TEXT("UItemModule"), &Z_Registration_Info_UClass_UItemModule, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UItemModule), 3837210516U) },
+		{ Z_Construct_UClass_UItemModule, UItemModule::StaticClass, TEXT("UItemModule"), &Z_Registration_Info_UClass_UItemModule, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UItemModule), 185029131U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_ItemModule_h_3215083808(TEXT("/Script/ModularItemManagement"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_ItemModule_h_3932638131(TEXT("/Script/ModularItemManagement"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_ItemModule_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_ItemModule_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

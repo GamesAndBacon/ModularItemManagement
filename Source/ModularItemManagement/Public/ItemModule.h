@@ -16,10 +16,10 @@ class MODULARITEMMANAGEMENT_API UItemModule : public UObject
 {
 	GENERATED_BODY()
 public:		
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
-	void OnAddedToItem(UItem* Item);
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
-	void OnRemovedFromItem(UItem* Item);
+	UFUNCTION(BlueprintNativeEvent)
+	void OnAddedToItem(UItem* Item) const;
+	UFUNCTION(BlueprintNativeEvent)
+	void OnRemovedFromItem(UItem* Item) const;
 
 
 };

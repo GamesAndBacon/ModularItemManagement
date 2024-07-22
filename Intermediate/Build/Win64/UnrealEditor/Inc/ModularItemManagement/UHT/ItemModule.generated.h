@@ -16,8 +16,8 @@ class UItem;
 #define MODULARITEMMANAGEMENT_ItemModule_generated_h
 
 #define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_ItemModule_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
-	virtual void OnRemovedFromItem_Implementation(UItem* Item); \
-	virtual void OnAddedToItem_Implementation(UItem* Item); \
+	virtual void OnRemovedFromItem_Implementation(UItem* Item) const; \
+	virtual void OnAddedToItem_Implementation(UItem* Item) const; \
 	DECLARE_FUNCTION(execOnRemovedFromItem); \
 	DECLARE_FUNCTION(execOnAddedToItem);
 

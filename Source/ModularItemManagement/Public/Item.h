@@ -47,7 +47,6 @@ public:
     UFUNCTION(BlueprintCallable, Category = "ModularItems")
     void RemoveModule(TSubclassOf<UItemModule> Module);
     
-
     UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "ModularItems")
     void BeginPlay();
 
@@ -63,16 +62,27 @@ public:
     UItemModule* GetModuleDefaultObject(TSubclassOf<UItemModule> Module);
         
     UFUNCTION(BlueprintCallable, Category = "ModularItems", meta = (DeterminesOutputType = " ModuleClass"))
-    UItemModule* GetModuleData(TSubclassOf<UItemModule> ModuleClass, FInstancedStruct& outModuleData);
+    UItemModule* GetModule(TSubclassOf<UItemModule> ModuleClass, FInstancedStruct& outModuleData);
     
     UFUNCTION(BlueprintCallable, Category = "ModularItems")
-    void SetModuleData(UItemModule* Module, const FInstancedStruct& InstanceStruct);
+    void SetModule(UItemModule* Module, const FInstancedStruct& InstanceStruct);
         
-    UPROPERTY(BlueprintReadOnly, SaveGame, EditAnywhere, Meta = (ExposeOnSpawn=true))
+    UPROPERTY(BlueprintReadOnly,SaveGame, EditAnywhere, Meta = (ExposeOnSpawn=true))
     UItemDataAsset* ItemData;
 
-    UPROPERTY(BlueprintReadWrite, SaveGame, EditAnywhere)
+    UPROPERTY(BlueprintReadOnly, SaveGame, EditAnywhere)
     FGuid Guid = FGuid::NewGuid();
-      
+
+    // New variable for owner
+    UPROPERTY(BlueprintReadOnly, SaveGame, EditAnywhere)
+    AActor* Owner;
+    
+    // Inline getter for owner
+    UFUNCTION(BlueprintCallable, Category = "ModularItems")
+    FORCEINLINE AActor* GetOwner() const { return Owner; }
+
+    // Function to get the data asset
+    UFUNCTION(BlueprintCallable, Category = "ModularItems", meta =(DeterminesOutputType = "return"))
+    UItemDataAsset* GetItemDataAsset() const;
 
 };

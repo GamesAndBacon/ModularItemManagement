@@ -19,8 +19,9 @@ void UItem::PostInitProperties()
 {
     Super::PostInitProperties();
     
-    if (GetOuter() && GetOuter()->GetWorld()) 
-        BeginPlay();
+    if (GetOuter() && GetOuter()->GetWorld())
+    {
+    }
 }
 
 void UItem::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
@@ -136,7 +137,7 @@ void UItem::BeginPlay_Implementation()
 {
 }
 
-UItemModule* UItem::GetModuleData(TSubclassOf<UItemModule> ModuleClass, FInstancedStruct& OutInstanceStruct)
+UItemModule* UItem::GetModule(TSubclassOf<UItemModule> ModuleClass, FInstancedStruct& OutInstanceStruct)
 {
     int32 Index = ModuleClasses.IndexOfByKey(ModuleClass);
     if (Index != INDEX_NONE && ModuleData.IsValidIndex(Index))
@@ -147,7 +148,7 @@ UItemModule* UItem::GetModuleData(TSubclassOf<UItemModule> ModuleClass, FInstanc
     return nullptr;
 }
 
-void UItem::SetModuleData(UItemModule* Module, const FInstancedStruct& InstanceStruct)
+void UItem::SetModule(UItemModule* Module, const FInstancedStruct& InstanceStruct)
 {
     if (Module)
     {
@@ -175,3 +176,7 @@ void UItem::SetModuleData(UItemModule* Module, const FInstancedStruct& InstanceS
     }
 }
 
+UItemDataAsset* UItem::GetItemDataAsset() const
+{
+    return ItemData;
+}
