@@ -48,6 +48,9 @@ public:
 	UPROPERTY(BlueprintAssignable)
 	FInventoryChanged ItemRemoved;
 
+	UPROPERTY(BlueprintAssignable)
+	FInventoryChanged ItemMoved;
+
 	UFUNCTION(BlueprintCallable, Category = "ModularItems")
 	UItem* GetItemAt(int32 Index);
 	

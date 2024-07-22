@@ -2,7 +2,7 @@
 #include "E:/Unreal Projects/ItemPlugin/plugins/ModularItemManagement/Intermediate/Build/Win64/UnrealEditor/Inc/ModularItemManagement/UHT/InventoryComponent.gen.cpp"
 #include "E:/Unreal Projects/ItemPlugin/plugins/ModularItemManagement/Intermediate/Build/Win64/UnrealEditor/Inc/ModularItemManagement/UHT/InventoryInterface.gen.cpp"
 #include "E:/Unreal Projects/ItemPlugin/plugins/ModularItemManagement/Intermediate/Build/Win64/UnrealEditor/Inc/ModularItemManagement/UHT/Item.gen.cpp"
-#include "E:/Unreal Projects/ItemPlugin/plugins/ModularItemManagement/Intermediate/Build/Win64/UnrealEditor/Inc/ModularItemManagement/UHT/ItemDataAsset.gen.cpp"
+#include "E:/Unreal Projects/ItemPlugin/plugins/ModularItemManagement/Intermediate/Build/Win64/UnrealEditor/Inc/ModularItemManagement/UHT/ItemDefinition.gen.cpp"
 #include "E:/Unreal Projects/ItemPlugin/plugins/ModularItemManagement/Intermediate/Build/Win64/UnrealEditor/Inc/ModularItemManagement/UHT/ItemModule.gen.cpp"
 #include "E:/Unreal Projects/ItemPlugin/plugins/ModularItemManagement/Intermediate/Build/Win64/UnrealEditor/Inc/ModularItemManagement/UHT/ItemsLib.gen.cpp"
 #include "E:/Unreal Projects/ItemPlugin/plugins/ModularItemManagement/Intermediate/Build/Win64/UnrealEditor/Inc/ModularItemManagement/UHT/ModularItemManagement.init.gen.cpp"

@@ -2,6 +2,7 @@
 	"BuildId": "33043543",
 	"Modules": 
 	{
-		"ModularItemManagement": "UnrealEditor-ModularItemManagement.dll"
+		"ModularItemManagement": "UnrealEditor-ModularItemManagement.dll",
+		"ModularItemManagementEditor": "UnrealEditor-ModularItemManagementEditor.dll"
 	}
 }

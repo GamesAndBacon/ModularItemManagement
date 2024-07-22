@@ -1,5 +1,5 @@
 #include "ItemsLib.h"
-#include "Item.h"
+
 #include "ItemModule.h"
 #include "Serialization/ObjectAndNameAsStringProxyArchive.h"
 #include "Serialization/MemoryWriter.h"
@@ -8,8 +8,7 @@
 FItemRecord UItemsLib::SaveItem(UItem* Item)
 {
 	FItemRecord ItemRecord;
-	ItemRecord.ItemGuid = Item->Guid;
-	ItemRecord.ItemName = Item->ItemData->ItemName;
+	ItemRecord.ItemGuid = Item->ItemID;
 	ItemRecord.ModuleClasses = Item->ModuleClasses;
 
 	FMemoryWriter MemoryWriter(ItemRecord.ModuleData, true);
@@ -22,14 +21,32 @@ FItemRecord UItemsLib::SaveItem(UItem* Item)
 UItem* UItemsLib::LoadItem(const FItemRecord& ItemRecord, UObject* Outer)
 {
 	UItem* NewItem = NewObject<UItem>(Outer);
-	NewItem->Guid = ItemRecord.ItemGuid;
-	NewItem->ItemData = NewObject<UItemDataAsset>();
-	NewItem->ItemData->ItemName = ItemRecord.ItemName;
+	NewItem->ItemID = ItemRecord.ItemGuid;
+	NewItem->ItemData = NewObject<UItemDefinition>();
 	NewItem->ModuleClasses = ItemRecord.ModuleClasses;
 
 	FMemoryReader MemoryReader(ItemRecord.ModuleData, true);
 	FObjectAndNameAsStringProxyArchive Archive(MemoryReader, true);
 	NewItem->Serialize(Archive);
+
+	return NewItem;
+}
+
+UItem* UItemsLib::CreateItem(UItemDefinition* ItemDefinition, UObject* Outer)
+{
+	if (!ItemDefinition->ItemClass || !ItemDefinition)
+	{
+		return nullptr;
+	}
+
+	// Create an instance of the ItemClass
+	UItem* NewItem = NewObject<UItem>(Outer, ItemDefinition->ItemClass);
+
+	if (NewItem)
+	{
+		// Pass the ItemDefinition to the new item
+		NewItem->Initialize(ItemDefinition);
+	}
 
 	return NewItem;
 }

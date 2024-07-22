@@ -1,6 +1,8 @@
 // InventoryComponent.cpp
 
 #include "InventoryComponent.h"
+
+#include "Item.h"
 #include "ModularItemManagement/Interfaces/InventoryInterface.h"
 
 // Sets default values for this component's properties
@@ -26,6 +28,7 @@ bool UInventoryComponent::AddItem(UItem* Item)
 {
     if (Item)
     {
+        Item-> Owner = GetOwner();
         Inventory.Add(Item);
         return true;
     }
@@ -64,5 +67,7 @@ void UInventoryComponent::SetItemAt(int32 Index, UItem* Item)
     if (Inventory.IsValidIndex(Index))
     {
         Inventory[Index] = Item;
+        ItemMoved.Broadcast(Item, Index);
     }
+
 }

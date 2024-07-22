@@ -1,4 +1,6 @@
 #include "Item.h"
+
+#include "ItemDefinition.h"
 #include "Runtime/Engine/Classes/Kismet/GameplayStatics.h"
 
 // Sets default values
@@ -29,8 +31,10 @@ void UItem::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimePro
     UObject::GetLifetimeReplicatedProps(OutLifetimeProps);
 }
 
-void UItem::InitItem()
+void UItem::Initialize(UItemDefinition* ItemDefinition)
 {
+    ItemData = ItemDefinition;
+    
     for (auto& Module : ItemData->Modules)
     {
         AddModule(Module.Key, Module.Value);
@@ -176,7 +180,7 @@ void UItem::SetModule(UItemModule* Module, const FInstancedStruct& InstanceStruc
     }
 }
 
-UItemDataAsset* UItem::GetItemDataAsset() const
+UItemDefinition* UItem::GetItemDefinition() const
 {
     return ItemData;
 }

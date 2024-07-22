@@ -10,7 +10,7 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class AActor;
-class UItemDataAsset;
+class UItemDefinition;
 class UItemModule;
 struct FInstancedStruct;
 #ifdef MODULARITEMMANAGEMENT_Item_generated_h
@@ -28,7 +28,7 @@ static void FStackSizeChanged_DelegateWrapper(const FMulticastScriptDelegate& St
 
 #define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
 	virtual void BeginPlay_Implementation(); \
-	DECLARE_FUNCTION(execGetItemDataAsset); \
+	DECLARE_FUNCTION(execGetItemDefinition); \
 	DECLARE_FUNCTION(execGetOwner); \
 	DECLARE_FUNCTION(execSetModule); \
 	DECLARE_FUNCTION(execGetModule); \
@@ -38,7 +38,7 @@ static void FStackSizeChanged_DelegateWrapper(const FMulticastScriptDelegate& St
 	DECLARE_FUNCTION(execBeginPlay); \
 	DECLARE_FUNCTION(execRemoveModule); \
 	DECLARE_FUNCTION(execAddModule); \
-	DECLARE_FUNCTION(execInitItem);
+	DECLARE_FUNCTION(execInitialize);
 
 
 #define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_14_CALLBACK_WRAPPERS

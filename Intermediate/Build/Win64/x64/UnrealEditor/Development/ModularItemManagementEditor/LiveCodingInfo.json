@@ -1,0 +1,12 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.ModularItemManagementEditor.cpp.obj": [
+			"CustomObjectFactory.gen.cpp.obj",
+			"ModularItemManagementEditor.init.gen.cpp.obj",
+			"CustomObjectFactory.cpp.obj",
+			"ModularItemManagementEditor.cpp.obj",
+			"ModularItemManagementEditorActions.cpp.obj"
+		]
+	}
+}

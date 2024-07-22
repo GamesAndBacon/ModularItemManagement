@@ -1,0 +1,28 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagementeditor\\private\\modularitemmanagementeditoractions.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\unreal projects\\itemplugin\\intermediate\\build\\win64\\x64\\itemplugineditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
+        "Includes": [
+            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\modularitemmanagementeditor\\definitions.modularitemmanagementeditor.h",
+            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagementeditor\\public\\modularitemmanagementeditoractions.h",
+            "e:\\epic games\\ue_5.4\\engine\\source\\developer\\assettools\\public\\assettypeactions_base.h",
+            "e:\\epic games\\ue_5.4\\engine\\source\\developer\\assettools\\public\\iassettools.h",
+            "e:\\epic games\\ue_5.4\\engine\\source\\developer\\assettools\\public\\assettypecategories.h",
+            "e:\\epic games\\ue_5.4\\engine\\source\\developer\\assettools\\public\\iassettypeactions.h",
+            "e:\\epic games\\ue_5.4\\engine\\source\\developer\\merge\\public\\merge.h",
+            "e:\\epic games\\ue_5.4\\engine\\source\\editor\\unrealed\\classes\\thumbnailrendering\\thumbnailmanager.h",
+            "e:\\epic games\\ue_5.4\\engine\\source\\editor\\unrealed\\classes\\thumbnailrendering\\thumbnailrenderer.h",
+            "e:\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\thumbnailrenderer.generated.h",
+            "e:\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\thumbnailmanager.generated.h",
+            "e:\\epic games\\ue_5.4\\engine\\source\\editor\\unrealed\\public\\automatedassetimportdata.h",
+            "e:\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\automatedassetimportdata.generated.h",
+            "e:\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\assettools\\uht\\iassettools.generated.h",
+            "e:\\epic games\\ue_5.4\\engine\\source\\developer\\assettools\\public\\assettoolsmodule.h",
+            "e:\\epic games\\ue_5.4\\engine\\source\\editor\\unrealed\\public\\toolkits\\simpleasseteditor.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

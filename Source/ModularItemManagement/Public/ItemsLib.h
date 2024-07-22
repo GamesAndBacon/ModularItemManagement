@@ -3,8 +3,9 @@
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "ItemModule.h"
-#include "ItemDataAsset.h"
+#include "ItemDefinition.h"
 #include "InstancedStruct.h"
+#include "Item.h"
 #include "Serialization/StructuredArchive.h"
 #include "ItemsLib.generated.h"
 
@@ -40,4 +41,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Item")
 	static UItem* LoadItem(const FItemRecord& ItemRecord, UObject* Outer);
+	
+	UFUNCTION(BlueprintCallable, Category = "Item", meta = (DefaultToSelf = "Outer", DeterminesOutputType = "ItemClass"))
+	UItem* CreateItem(UItemDefinition* ItemDefinition, UObject* Outer);
 };

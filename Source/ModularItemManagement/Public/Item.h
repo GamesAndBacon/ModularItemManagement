@@ -4,9 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "ItemModule.h"
-#include "ItemsLib.h"
-#include "ItemDataAsset.h"
 #include "Item.generated.h"
+
+class UItemDefinition;
 
 UCLASS(Blueprintable, BlueprintType)
 class MODULARITEMMANAGEMENT_API UItem : public UObject
@@ -16,7 +16,6 @@ class MODULARITEMMANAGEMENT_API UItem : public UObject
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FModuleChanged, UItemModule*, Module);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FStackSizeChanged, int32, NewStackSize);  // New delegate for stack size changes
-    
     
     UPROPERTY(BlueprintReadOnly, SaveGame)
     TArray<FInstancedStruct> ModuleData;
@@ -29,9 +28,7 @@ public:
 
     UPROPERTY(BlueprintAssignable)
     FModuleChanged ModuleRemoved;
-
     
-
     UItem(const FObjectInitializer& ObjectInitializer);
 
     virtual UWorld* GetWorld() const override;
@@ -39,7 +36,7 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
     UFUNCTION(BlueprintCallable, Category = "ModularItems")
-    void InitItem();
+    void Initialize(UItemDefinition* ItemDefinition);
     
     UFUNCTION(BlueprintCallable, Category = "ModularItems")
     void AddModule(TSubclassOf<UItemModule> Module, FInstancedStruct outModuleData);
@@ -67,11 +64,11 @@ public:
     UFUNCTION(BlueprintCallable, Category = "ModularItems")
     void SetModule(UItemModule* Module, const FInstancedStruct& InstanceStruct);
         
-    UPROPERTY(BlueprintReadOnly,SaveGame, EditAnywhere, Meta = (ExposeOnSpawn=true))
-    UItemDataAsset* ItemData;
+    UPROPERTY(BlueprintReadOnly,SaveGame)
+    UItemDefinition* ItemData;
 
     UPROPERTY(BlueprintReadOnly, SaveGame, EditAnywhere)
-    FGuid Guid = FGuid::NewGuid();
+    FGuid ItemID = FGuid::NewGuid();
 
     // New variable for owner
     UPROPERTY(BlueprintReadOnly, SaveGame, EditAnywhere)
@@ -82,7 +79,7 @@ public:
     FORCEINLINE AActor* GetOwner() const { return Owner; }
 
     // Function to get the data asset
-    UFUNCTION(BlueprintCallable, Category = "ModularItems", meta =(DeterminesOutputType = "return"))
-    UItemDataAsset* GetItemDataAsset() const;
+    UFUNCTION(BlueprintCallable, Category = "ModularItems")
+    UItemDefinition* GetItemDefinition() const;
 
 };

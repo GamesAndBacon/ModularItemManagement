@@ -10,3 +10,7 @@ void UItemModule::OnRemovedFromItem_Implementation(UItem* Item) const
 {
 }
 
+void UItemModule::OnModuleUpdated_Implementation(UItem* Item) const
+{
+}
+
