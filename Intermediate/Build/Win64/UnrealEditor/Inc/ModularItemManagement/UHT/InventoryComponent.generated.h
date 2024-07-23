@@ -19,10 +19,6 @@ class UItem;
 static void FInventoryChanged_DelegateWrapper(const FMulticastScriptDelegate& InventoryChanged, UItem* NewItem, int32 Index);
 
 
-#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_InventoryComponent_h_32_DELEGATE \
-static void FInventoryMoved_DelegateWrapper(const FMulticastScriptDelegate& InventoryMoved, UItem* Item1, int32 Index1, UItem* Item2, int32 Index2);
-
-
 #define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_InventoryComponent_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execMoveItem); \
 	DECLARE_FUNCTION(execGetItemAt); \

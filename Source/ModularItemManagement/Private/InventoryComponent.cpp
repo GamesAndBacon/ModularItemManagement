@@ -76,23 +76,29 @@ UItem* UInventoryComponent::GetItemAt(int32 Index)
  */
 void UInventoryComponent::MoveItem(int32 FromIndex, int32 ToIndex)
 {
-    if (!Inventory.IsValidIndex(ToIndex))
+    // Validate FromIndex
+    if (!Inventory.IsValidIndex(FromIndex))
     {
-        // Ensure the inventory array is large enough
-        if (ToIndex >= Inventory.Num())
-        {
-            Inventory.SetNum(ToIndex + 1); // Resize the array to fit the new index
-        }
+        UE_LOG(LogTemp, Warning, TEXT("FromIndex %d is out of bounds"), FromIndex);
+        return;
     }
+
+    // Ensure the inventory array is large enough for ToIndex
+    if (ToIndex >= Inventory.Num())
+    {
+        Inventory.SetNum(ToIndex + 1);
+    }
+    // Broadcast the move event
 
     // Get the items at the specified indices
     UItem* FromItem = Inventory[FromIndex];
     UItem* ToItem = Inventory[ToIndex];
 
+    
     // Swap the items
     Inventory[ToIndex] = FromItem;
+    ItemMoved.Broadcast(FromItem, ToIndex);
     Inventory[FromIndex] = ToItem;
+    ItemMoved.Broadcast(ToItem, FromIndex);
 
-    // Broadcast the move event
-    ItemMoved.Broadcast(FromItem, ToIndex, ToItem, FromIndex);
 }

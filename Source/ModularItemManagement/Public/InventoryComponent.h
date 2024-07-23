@@ -29,7 +29,6 @@ protected:
 public:
 	// Delegate for inventory changes
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FInventoryChanged, UItem*, NewItem, int32, Index);
-	DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FInventoryMoved, UItem*, Item1, int32, Index1, UItem*, Item2, int32, Index2);
 
 	// Called every frame but turned off
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
@@ -62,5 +61,5 @@ public:
 	FInventoryChanged ItemRemoved;
 
 	UPROPERTY(BlueprintAssignable, Category = "Inventory|Events")
-	FInventoryMoved ItemMoved;
+	FInventoryChanged ItemMoved;
 };
