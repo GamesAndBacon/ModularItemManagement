@@ -8,6 +8,13 @@
 
 class UItemDefinition;
 
+UENUM()
+enum class EStructResult : uint8
+{
+    Valid,
+    NotValid,
+};
+
 UCLASS(Blueprintable, BlueprintType)
 class MODULARITEMMANAGEMENT_API UItem : public UObject
 {
@@ -58,8 +65,8 @@ public:
     UFUNCTION()
     UItemModule* GetModuleDefaultObject(TSubclassOf<UItemModule> Module);
         
-    UFUNCTION(BlueprintCallable, Category = "ModularItems", meta = (DeterminesOutputType = " ModuleClass"))
-    UItemModule* GetModule(TSubclassOf<UItemModule> ModuleClass, FInstancedStruct& outModuleData);
+    UFUNCTION(BlueprintCallable, Category = "ModularItems", meta = (DeterminesOutputType = " ModuleClass", ExpandEnumAsExecs = "ExecResult"))
+    UItemModule* GetModule(EStructResult& ExecResult, TSubclassOf<UItemModule> ModuleClass, FInstancedStruct& outModuleData);
     
     UFUNCTION(BlueprintCallable, Category = "ModularItems", meta = (CustomStructureParam = "Value"))
     void SetModule(UItemModule* Module, const FInstancedStruct& InstanceStruct);

@@ -141,14 +141,16 @@ void UItem::BeginPlay_Implementation()
 {
 }
 
-UItemModule* UItem::GetModule(TSubclassOf<UItemModule> ModuleClass, FInstancedStruct& OutInstanceStruct)
+UItemModule* UItem::GetModule(EStructResult& ExecResult,TSubclassOf<UItemModule> ModuleClass, FInstancedStruct& outModuleData)
 {
     int32 Index = ModuleClasses.IndexOfByKey(ModuleClass);
     if (Index != INDEX_NONE && ModuleData.IsValidIndex(Index))
     {
-        OutInstanceStruct = ModuleData[Index];
+        outModuleData = ModuleData[Index];
+        ExecResult = EStructResult::Valid;
         return GetModuleDefaultObject(ModuleClass);
     }
+    ExecResult = EStructResult::NotValid;
     return nullptr;
 }
 
