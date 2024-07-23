@@ -17,7 +17,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnModuleChanged, UItem*, Item, FIn
  * UItemModule class
  * Represents a module that can be added to an item.
  */
-UCLASS(EditInlineNew, Blueprintable, BlueprintType)
+UCLASS(EditInlineNew, Blueprintable, BlueprintType, meta = (ShowWorldContextPin))
 class MODULARITEMMANAGEMENT_API UItemModule : public UObject
 {
 	GENERATED_BODY()

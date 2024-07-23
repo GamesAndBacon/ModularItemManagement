@@ -97,8 +97,8 @@ void UInventoryComponent::MoveItem(int32 FromIndex, int32 ToIndex)
     
     // Swap the items
     Inventory[ToIndex] = FromItem;
-    ItemMoved.Broadcast(FromItem, ToIndex);
+    ItemMoved.Broadcast(FromItem, FromIndex);
     Inventory[FromIndex] = ToItem;
-    ItemMoved.Broadcast(ToItem, FromIndex);
+    ItemMoved.Broadcast(ToItem, ToIndex);
 
 }
