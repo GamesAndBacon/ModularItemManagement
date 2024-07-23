@@ -20,69 +20,11 @@ MODULARITEMMANAGEMENT_API UClass* Z_Construct_UClass_UItem();
 MODULARITEMMANAGEMENT_API UClass* Z_Construct_UClass_UItem_NoRegister();
 MODULARITEMMANAGEMENT_API UClass* Z_Construct_UClass_UItemDefinition_NoRegister();
 MODULARITEMMANAGEMENT_API UClass* Z_Construct_UClass_UItemModule_NoRegister();
-MODULARITEMMANAGEMENT_API UEnum* Z_Construct_UEnum_ModularItemManagement_EStructResult();
 MODULARITEMMANAGEMENT_API UFunction* Z_Construct_UDelegateFunction_UItem_ModuleChanged__DelegateSignature();
 MODULARITEMMANAGEMENT_API UFunction* Z_Construct_UDelegateFunction_UItem_StackSizeChanged__DelegateSignature();
 STRUCTUTILS_API UScriptStruct* Z_Construct_UScriptStruct_FInstancedStruct();
 UPackage* Z_Construct_UPackage__Script_ModularItemManagement();
 // End Cross Module References
-
-// Begin Enum EStructResult
-static FEnumRegistrationInfo Z_Registration_Info_UEnum_EStructResult;
-static UEnum* EStructResult_StaticEnum()
-{
-	if (!Z_Registration_Info_UEnum_EStructResult.OuterSingleton)
-	{
-		Z_Registration_Info_UEnum_EStructResult.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_ModularItemManagement_EStructResult, (UObject*)Z_Construct_UPackage__Script_ModularItemManagement(), TEXT("EStructResult"));
-	}
-	return Z_Registration_Info_UEnum_EStructResult.OuterSingleton;
-}
-template<> MODULARITEMMANAGEMENT_API UEnum* StaticEnum<EStructResult>()
-{
-	return EStructResult_StaticEnum();
-}
-struct Z_Construct_UEnum_ModularItemManagement_EStructResult_Statics
-{
-#if WITH_METADATA
-	static constexpr UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "/**\n * Enumeration for struct results.\n */" },
-#endif
-		{ "Data.Name", "EStructResult::Data" },
-		{ "ModuleRelativePath", "Public/Item.h" },
-		{ "NoData.Name", "EStructResult::NoData" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Enumeration for struct results." },
-#endif
-	};
-#endif // WITH_METADATA
-	static constexpr UECodeGen_Private::FEnumeratorParam Enumerators[] = {
-		{ "EStructResult::Data", (int64)EStructResult::Data },
-		{ "EStructResult::NoData", (int64)EStructResult::NoData },
-	};
-	static const UECodeGen_Private::FEnumParams EnumParams;
-};
-const UECodeGen_Private::FEnumParams Z_Construct_UEnum_ModularItemManagement_EStructResult_Statics::EnumParams = {
-	(UObject*(*)())Z_Construct_UPackage__Script_ModularItemManagement,
-	nullptr,
-	"EStructResult",
-	"EStructResult",
-	Z_Construct_UEnum_ModularItemManagement_EStructResult_Statics::Enumerators,
-	RF_Public|RF_Transient|RF_MarkAsNative,
-	UE_ARRAY_COUNT(Z_Construct_UEnum_ModularItemManagement_EStructResult_Statics::Enumerators),
-	EEnumFlags::None,
-	(uint8)UEnum::ECppForm::EnumClass,
-	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UEnum_ModularItemManagement_EStructResult_Statics::Enum_MetaDataParams), Z_Construct_UEnum_ModularItemManagement_EStructResult_Statics::Enum_MetaDataParams)
-};
-UEnum* Z_Construct_UEnum_ModularItemManagement_EStructResult()
-{
-	if (!Z_Registration_Info_UEnum_EStructResult.InnerSingleton)
-	{
-		UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_EStructResult.InnerSingleton, Z_Construct_UEnum_ModularItemManagement_EStructResult_Statics::EnumParams);
-	}
-	return Z_Registration_Info_UEnum_EStructResult.InnerSingleton;
-}
-// End Enum EStructResult
 
 // Begin Delegate FModuleChanged
 struct Z_Construct_UDelegateFunction_UItem_ModuleChanged__DelegateSignature_Statics
@@ -314,7 +256,6 @@ struct Z_Construct_UFunction_UItem_GetModule_Statics
 {
 	struct Item_eventGetModule_Parms
 	{
-		EStructResult ExecResult;
 		TSubclassOf<UItemModule> ModuleClass;
 		FInstancedStruct OutModuleData;
 		UItemModule* ReturnValue;
@@ -323,26 +264,19 @@ struct Z_Construct_UFunction_UItem_GetModule_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Item|Modules" },
 		{ "DeterminesOutputType", "ModuleClass" },
-		{ "ExpandEnumAsExecs", "ExecResult" },
 		{ "ModuleRelativePath", "Public/Item.h" },
 	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FBytePropertyParams NewProp_ExecResult_Underlying;
-	static const UECodeGen_Private::FEnumPropertyParams NewProp_ExecResult;
 	static const UECodeGen_Private::FClassPropertyParams NewProp_ModuleClass;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_OutModuleData;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_UItem_GetModule_Statics::NewProp_ExecResult_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_UItem_GetModule_Statics::NewProp_ExecResult = { "ExecResult", nullptr, (EPropertyFlags)0x0010000000000180, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Item_eventGetModule_Parms, ExecResult), Z_Construct_UEnum_ModularItemManagement_EStructResult, METADATA_PARAMS(0, nullptr) }; // 3811010607
 const UECodeGen_Private::FClassPropertyParams Z_Construct_UFunction_UItem_GetModule_Statics::NewProp_ModuleClass = { "ModuleClass", nullptr, (EPropertyFlags)0x0014000000000080, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Item_eventGetModule_Parms, ModuleClass), Z_Construct_UClass_UClass, Z_Construct_UClass_UItemModule_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UItem_GetModule_Statics::NewProp_OutModuleData = { "OutModuleData", nullptr, (EPropertyFlags)0x0010000000000180, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Item_eventGetModule_Parms, OutModuleData), Z_Construct_UScriptStruct_FInstancedStruct, METADATA_PARAMS(0, nullptr) }; // 174410355
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UItem_GetModule_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Item_eventGetModule_Parms, ReturnValue), Z_Construct_UClass_UItemModule_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UItem_GetModule_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UItem_GetModule_Statics::NewProp_ExecResult_Underlying,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UItem_GetModule_Statics::NewProp_ExecResult,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UItem_GetModule_Statics::NewProp_ModuleClass,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UItem_GetModule_Statics::NewProp_OutModuleData,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UItem_GetModule_Statics::NewProp_ReturnValue,
@@ -361,12 +295,11 @@ UFunction* Z_Construct_UFunction_UItem_GetModule()
 }
 DEFINE_FUNCTION(UItem::execGetModule)
 {
-	P_GET_ENUM_REF(EStructResult,Z_Param_Out_ExecResult);
 	P_GET_OBJECT(UClass,Z_Param_ModuleClass);
 	P_GET_STRUCT_REF(FInstancedStruct,Z_Param_Out_OutModuleData);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	*(UItemModule**)Z_Param__Result=P_THIS->GetModule((EStructResult&)(Z_Param_Out_ExecResult),Z_Param_ModuleClass,Z_Param_Out_OutModuleData);
+	*(UItemModule**)Z_Param__Result=P_THIS->GetModule(Z_Param_ModuleClass,Z_Param_Out_OutModuleData);
 	P_NATIVE_END;
 }
 // End Class UItem Function GetModule
@@ -748,7 +681,7 @@ struct Z_Construct_UClass_UItem_Statics
 		{ &Z_Construct_UFunction_UItem_AddModule, "AddModule" }, // 2912892798
 		{ &Z_Construct_UFunction_UItem_BeginPlay, "BeginPlay" }, // 3313980347
 		{ &Z_Construct_UFunction_UItem_GetItemDefinition, "GetItemDefinition" }, // 3425188333
-		{ &Z_Construct_UFunction_UItem_GetModule, "GetModule" }, // 304167685
+		{ &Z_Construct_UFunction_UItem_GetModule, "GetModule" }, // 802123460
 		{ &Z_Construct_UFunction_UItem_GetModuleDefaultObject, "GetModuleDefaultObject" }, // 2595119885
 		{ &Z_Construct_UFunction_UItem_GetOwner, "GetOwner" }, // 3963918085
 		{ &Z_Construct_UFunction_UItem_Initialize, "Initialize" }, // 997940159
@@ -826,16 +759,13 @@ IMPLEMENT_FSTRUCTUREDARCHIVE_SERIALIZER(UItem)
 // Begin Registration
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_Statics
 {
-	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
-		{ EStructResult_StaticEnum, TEXT("EStructResult"), &Z_Registration_Info_UEnum_EStructResult, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3811010607U) },
-	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UItem, UItem::StaticClass, TEXT("UItem"), &Z_Registration_Info_UClass_UItem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UItem), 3921699064U) },
+		{ Z_Construct_UClass_UItem, UItem::StaticClass, TEXT("UItem"), &Z_Registration_Info_UClass_UItem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UItem), 3325243524U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_4275069940(TEXT("/Script/ModularItemManagement"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_2385497666(TEXT("/Script/ModularItemManagement"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_Statics::ClassInfo),
 	nullptr, 0,
-	Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_Statics::EnumInfo));
+	nullptr, 0);
 // End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

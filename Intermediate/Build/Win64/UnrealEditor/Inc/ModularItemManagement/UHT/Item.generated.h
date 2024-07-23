@@ -12,22 +12,21 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class AActor;
 class UItemDefinition;
 class UItemModule;
-enum class EStructResult : uint8;
 struct FInstancedStruct;
 #ifdef MODULARITEMMANAGEMENT_Item_generated_h
 #error "Item.generated.h already included, missing '#pragma once' in Item.h"
 #endif
 #define MODULARITEMMANAGEMENT_Item_generated_h
 
-#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_32_DELEGATE \
+#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_22_DELEGATE \
 static void FModuleChanged_DelegateWrapper(const FMulticastScriptDelegate& ModuleChanged, UItemModule* Module, FInstancedStruct ModuleData);
 
 
-#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_33_DELEGATE \
+#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_23_DELEGATE \
 static void FStackSizeChanged_DelegateWrapper(const FMulticastScriptDelegate& StackSizeChanged, int32 NewStackSize);
 
 
-#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_28_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
 	virtual void BeginPlay_Implementation(); \
 	DECLARE_FUNCTION(execGetOwner); \
 	DECLARE_FUNCTION(execGetItemDefinition); \
@@ -42,22 +41,22 @@ static void FStackSizeChanged_DelegateWrapper(const FMulticastScriptDelegate& St
 	DECLARE_FUNCTION(execInitialize);
 
 
-#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_28_CALLBACK_WRAPPERS
-#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_28_ARCHIVESERIALIZER \
+#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_18_CALLBACK_WRAPPERS
+#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_18_ARCHIVESERIALIZER \
 	DECLARE_FSTRUCTUREDARCHIVE_SERIALIZER(UItem, NO_API)
 
 
-#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_28_INCLASS_NO_PURE_DECLS \
+#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_18_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUItem(); \
 	friend struct Z_Construct_UClass_UItem_Statics; \
 public: \
 	DECLARE_CLASS(UItem, UObject, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/ModularItemManagement"), NO_API) \
 	DECLARE_SERIALIZER(UItem) \
-	FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_28_ARCHIVESERIALIZER
+	FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_18_ARCHIVESERIALIZER
 
 
-#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_28_ENHANCED_CONSTRUCTORS \
+#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_18_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UItem(UItem&&); \
@@ -69,14 +68,14 @@ public: \
 	NO_API virtual ~UItem();
 
 
-#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_25_PROLOG
-#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_28_GENERATED_BODY \
+#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_15_PROLOG
+#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_18_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_28_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_28_CALLBACK_WRAPPERS \
-	FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_28_INCLASS_NO_PURE_DECLS \
-	FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_28_ENHANCED_CONSTRUCTORS \
+	FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_18_CALLBACK_WRAPPERS \
+	FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_18_INCLASS_NO_PURE_DECLS \
+	FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_18_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -86,13 +85,5 @@ template<> MODULARITEMMANAGEMENT_API UClass* StaticClass<class UItem>();
 #undef CURRENT_FILE_ID
 #define CURRENT_FILE_ID FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h
 
-
-#define FOREACH_ENUM_ESTRUCTRESULT(op) \
-	op(EStructResult::Data) \
-	op(EStructResult::NoData) 
-
-enum class EStructResult : uint8;
-template<> struct TIsUEnumClass<EStructResult> { enum { Value = true }; };
-template<> MODULARITEMMANAGEMENT_API UEnum* StaticEnum<EStructResult>();
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

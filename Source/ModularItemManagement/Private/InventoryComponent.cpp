@@ -74,24 +74,25 @@ UItem* UInventoryComponent::GetItemAt(int32 Index)
 /**
  * Moves an item to the specified index, swapping if necessary.
  */
-void UInventoryComponent::MoveIndex(int32 Index, UItem* Item)
+void UInventoryComponent::MoveItem(int32 FromIndex, int32 ToIndex)
 {
-    if (Inventory.IsValidIndex(Index))
+    if (!Inventory.IsValidIndex(ToIndex))
     {
-        UItem* ExistingItem = Inventory[Index];
-        if (ExistingItem != nullptr)
+        // Ensure the inventory array is large enough
+        if (ToIndex >= Inventory.Num())
         {
-            // Swap items
-            const int32 ExistingIndex = Inventory.Find(Item);
-            if (ExistingIndex != INDEX_NONE)
-            {
-                Inventory[ExistingIndex] = ExistingItem;
-                ItemMoved.Broadcast(ExistingItem, ExistingIndex, Item, Index);
-                return;
-            }
+            Inventory.SetNum(ToIndex + 1); // Resize the array to fit the new index
         }
-
-        Inventory[Index] = Item;
-        ItemMoved.Broadcast(nullptr, INDEX_NONE, Item, Index);
     }
+
+    // Get the items at the specified indices
+    UItem* FromItem = Inventory[FromIndex];
+    UItem* ToItem = Inventory[ToIndex];
+
+    // Swap the items
+    Inventory[ToIndex] = FromItem;
+    Inventory[FromIndex] = ToItem;
+
+    // Broadcast the move event
+    ItemMoved.Broadcast(FromItem, ToIndex, ToItem, FromIndex);
 }

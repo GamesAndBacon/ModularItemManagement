@@ -48,7 +48,7 @@ public:
 	UItem* GetItemAt(int32 Index);
 	
 	UFUNCTION(BlueprintCallable, Category = "Inventory|Management")
-	void MoveIndex(int32 Index, UItem* Item);
+	void MoveItem(int32 FromIndex, int32 ToIndex);
 
 	// Inventory array
 	UPROPERTY(EditAnywhere)

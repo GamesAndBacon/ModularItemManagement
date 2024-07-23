@@ -163,16 +163,15 @@ void UItem::BeginPlay_Implementation()
 /**
  * Gets the module instance and its data.
  */
-UItemModule* UItem::GetModule(EStructResult& ExecResult,TSubclassOf<UItemModule> ModuleClass, FInstancedStruct& OutModuleData)
+UItemModule* UItem::GetModule(TSubclassOf<UItemModule> ModuleClass, FInstancedStruct& OutModuleData)
 {
     int32 Index = ModuleClasses.IndexOfByKey(ModuleClass);
     if (Index != INDEX_NONE && ModuleData.IsValidIndex(Index))
     {
         OutModuleData = ModuleData[Index];
-        ExecResult = EStructResult::Data;
+  
         return GetModuleDefaultObject(ModuleClass);
     }
-    ExecResult = EStructResult::NoData;
     return GetModuleDefaultObject(ModuleClass);
 }
 

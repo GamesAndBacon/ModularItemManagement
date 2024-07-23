@@ -9,16 +9,6 @@
 class UItemDefinition;
 
 /**
- * Enumeration for struct results.
- */
-UENUM()
-enum class EStructResult : uint8
-{
-    Data,
-    NoData,
-};
-
-/**
  * UItem class
  * Represents an item that can contain multiple modules.
  */
@@ -85,8 +75,8 @@ public:
     UFUNCTION()
     UItemModule* GetModuleDefaultObject(TSubclassOf<UItemModule> Module);
 
-    UFUNCTION(BlueprintCallable, Category = "Item|Modules", meta = (DeterminesOutputType = "ModuleClass", ExpandEnumAsExecs = "ExecResult"))
-    UItemModule* GetModule(EStructResult& ExecResult, TSubclassOf<UItemModule> ModuleClass, FInstancedStruct& OutModuleData);
+    UFUNCTION(BlueprintCallable, Category = "Item|Modules", meta = (DeterminesOutputType = "ModuleClass"))
+    UItemModule* GetModule(TSubclassOf<UItemModule> ModuleClass, FInstancedStruct& OutModuleData);
     
     UFUNCTION(BlueprintCallable, Category = "Item|Modules", meta = (CustomStructureParam = "Value"))
     void SetModule(UItemModule* Module, const FInstancedStruct& InstanceStruct);

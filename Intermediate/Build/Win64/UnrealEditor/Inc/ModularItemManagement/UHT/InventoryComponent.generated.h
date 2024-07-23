@@ -24,7 +24,7 @@ static void FInventoryMoved_DelegateWrapper(const FMulticastScriptDelegate& Inve
 
 
 #define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_InventoryComponent_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
-	DECLARE_FUNCTION(execMoveIndex); \
+	DECLARE_FUNCTION(execMoveItem); \
 	DECLARE_FUNCTION(execGetItemAt); \
 	DECLARE_FUNCTION(execGetInventory); \
 	DECLARE_FUNCTION(execRemoveItem); \
