@@ -190,9 +190,8 @@ void UItem::SetModule(UItemModule* Module, const FInstancedStruct& InstanceStruc
         {
             ModuleData[Index].Reset();  // Explicitly clean up the old data
             ModuleData[Index] = InstanceStruct;
-            Module->OnAddedToItem(this,InstanceStruct);
-            Module->OnAddedToItemEvent.Broadcast(this,InstanceStruct);
-            ModuleAdded.Broadcast(Module, InstanceStruct);
+            Module->OnModuleUpdated(this,InstanceStruct);
+            Module->OnModuleUpdatedEvent.Broadcast(this,InstanceStruct);
         }
     }
     else

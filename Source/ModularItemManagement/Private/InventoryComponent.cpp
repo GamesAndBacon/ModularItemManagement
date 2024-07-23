@@ -30,8 +30,29 @@ bool UInventoryComponent::AddItem(UItem* Item)
     if (Item)
     {
         Item->Owner = GetOwner();
-        int Index = Inventory.Add(Item);
-        ItemAdded.Broadcast(Item, Index);
+        
+        // Find the first empty slot
+        int EmptySlotIndex = INDEX_NONE;
+        for (int i = 0; i < Inventory.Num(); i++)
+        {
+            if (Inventory[i] == nullptr)
+            {
+                EmptySlotIndex = i;
+                break;
+            }
+        }
+
+        // If no empty slot is found, add to the end
+        if (EmptySlotIndex == INDEX_NONE)
+        {
+            EmptySlotIndex = Inventory.Add(Item);
+        }
+        else
+        {
+            Inventory[EmptySlotIndex] = Item;
+        }
+
+        ItemAdded.Broadcast(Item, EmptySlotIndex);
         return true;
     }
     return false;
@@ -88,8 +109,7 @@ void UInventoryComponent::MoveItem(int32 FromIndex, int32 ToIndex)
     {
         Inventory.SetNum(ToIndex + 1);
     }
-    // Broadcast the move event
-
+  
     // Get the items at the specified indices
     UItem* FromItem = Inventory[FromIndex];
     UItem* ToItem = Inventory[ToIndex];
@@ -97,8 +117,8 @@ void UInventoryComponent::MoveItem(int32 FromIndex, int32 ToIndex)
     
     // Swap the items
     Inventory[ToIndex] = FromItem;
-    ItemMoved.Broadcast(FromItem, FromIndex);
+    ItemMoved.Broadcast(FromItem, ToIndex);
     Inventory[FromIndex] = ToItem;
-    ItemMoved.Broadcast(ToItem, ToIndex);
+    ItemMoved.Broadcast(ToItem, FromIndex);
 
 }

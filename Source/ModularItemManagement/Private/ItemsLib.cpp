@@ -60,3 +60,8 @@ UItem* UItemsLib::CreateItem(UItemDefinition* ItemDefinition, UObject* Outer)
 
 	return NewItem;
 }
+
+UItemModule* UItemsLib::GetModule(TSubclassOf<UItemModule> ModuleClass)
+{
+	return ModuleClass.GetDefaultObject();
+}

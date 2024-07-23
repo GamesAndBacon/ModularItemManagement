@@ -54,4 +54,7 @@ public:
 	
 	UFUNCTION(BlueprintCallable, Category = "Item|Creation", meta = (DefaultToSelf = "Outer", DeterminesOutputType = "ItemClass"))
 	static UItem* CreateItem(UItemDefinition* ItemDefinition, UObject* Outer);
+
+	UFUNCTION(BlueprintCallable, Category = "Item|Creation", meta = (DefaultToSelf = "Outer", DeterminesOutputType = "ItemClass"))
+	static UItemModule* GetModule(TSubclassOf<UItemModule> ModuleClass);
 };

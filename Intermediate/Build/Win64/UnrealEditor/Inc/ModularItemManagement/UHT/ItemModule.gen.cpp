@@ -274,6 +274,7 @@ struct Z_Construct_UClass_UItemModule_Statics
 		{ "IncludePath", "ItemModule.h" },
 		{ "IsBlueprintBase", "true" },
 		{ "ModuleRelativePath", "Public/ItemModule.h" },
+		{ "ShowWorldContextPin", "" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "UItemModule class\nRepresents a module that can be added to an item." },
 #endif
@@ -363,10 +364,10 @@ UItemModule::~UItemModule() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_ItemModule_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UItemModule, UItemModule::StaticClass, TEXT("UItemModule"), &Z_Registration_Info_UClass_UItemModule, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UItemModule), 3433119849U) },
+		{ Z_Construct_UClass_UItemModule, UItemModule::StaticClass, TEXT("UItemModule"), &Z_Registration_Info_UClass_UItemModule, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UItemModule), 3529251403U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_ItemModule_h_272169673(TEXT("/Script/ModularItemManagement"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_ItemModule_h_2492162892(TEXT("/Script/ModularItemManagement"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_ItemModule_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_ItemModule_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
