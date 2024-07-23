@@ -9,10 +9,9 @@
 
 class UItem;
 
-// Declare dynamic multicast delegates for blueprint events
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnAddedToItem, UItem*, Item);
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnRemovedFromItem, UItem*, Item);
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnModuleUpdated, UItem*, Item);
+// Declare dynamic multicast delegate for module changes
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnModuleChanged, UItem*, Item, FInstancedStruct, ModuleData);
+
 
 /**
  * UItemModule class
@@ -26,21 +25,21 @@ class MODULARITEMMANAGEMENT_API UItemModule : public UObject
 public:
 	// Blueprint Native Events
 	UFUNCTION(BlueprintNativeEvent)
-	void OnAddedToItem(UItem* Item) const;
+	void OnAddedToItem(UItem* Item, FInstancedStruct ModuleData) const;
 	
 	UFUNCTION(BlueprintNativeEvent)
-	void OnRemovedFromItem(UItem* Item) const;
+	void OnRemovedFromItem(UItem* Item, FInstancedStruct ModuleData) const;
 	
 	UFUNCTION(BlueprintNativeEvent)
-	void OnModuleUpdated(UItem* Item) const;
+	void OnModuleUpdated(UItem* Item, FInstancedStruct ModuleData) const;
 
 	// BlueprintAssignable events
 	UPROPERTY(BlueprintAssignable, Category = "ItemModule")
-	FOnAddedToItem OnAddedToItemEvent;
+	FOnModuleChanged OnAddedToItemEvent;
 	
 	UPROPERTY(BlueprintAssignable, Category = "ItemModule")
-	FOnRemovedFromItem OnRemovedFromItemEvent;
+	FOnModuleChanged OnRemovedFromItemEvent;
 	
 	UPROPERTY(BlueprintAssignable, Category = "ItemModule")
-	FOnModuleUpdated OnModuleUpdatedEvent;
+	FOnModuleChanged OnModuleUpdatedEvent;
 };

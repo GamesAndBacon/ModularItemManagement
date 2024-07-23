@@ -29,7 +29,7 @@ class MODULARITEMMANAGEMENT_API UItem : public UObject
 
 public:
     // Delegates for module changes
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FModuleChanged, UItemModule*, Module);
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FModuleChanged, UItemModule*, Module, FInstancedStruct, ModuleData);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FStackSizeChanged, int32, NewStackSize); // Delegate for stack size changes
     
     // Constructor

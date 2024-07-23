@@ -90,6 +90,7 @@ struct Z_Construct_UDelegateFunction_UItem_ModuleChanged__DelegateSignature_Stat
 	struct Item_eventModuleChanged_Parms
 	{
 		UItemModule* Module;
+		FInstancedStruct ModuleData;
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
@@ -103,12 +104,15 @@ struct Z_Construct_UDelegateFunction_UItem_ModuleChanged__DelegateSignature_Stat
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Module;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_ModuleData;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UDelegateFunction_UItem_ModuleChanged__DelegateSignature_Statics::NewProp_Module = { "Module", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Item_eventModuleChanged_Parms, Module), Z_Construct_UClass_UItemModule_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UDelegateFunction_UItem_ModuleChanged__DelegateSignature_Statics::NewProp_ModuleData = { "ModuleData", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Item_eventModuleChanged_Parms, ModuleData), Z_Construct_UScriptStruct_FInstancedStruct, METADATA_PARAMS(0, nullptr) }; // 174410355
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_UItem_ModuleChanged__DelegateSignature_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_UItem_ModuleChanged__DelegateSignature_Statics::NewProp_Module,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_UItem_ModuleChanged__DelegateSignature_Statics::NewProp_ModuleData,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_UItem_ModuleChanged__DelegateSignature_Statics::PropPointers) < 2048);
 const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_UItem_ModuleChanged__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UItem, nullptr, "ModuleChanged__DelegateSignature", nullptr, nullptr, Z_Construct_UDelegateFunction_UItem_ModuleChanged__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_UItem_ModuleChanged__DelegateSignature_Statics::PropPointers), sizeof(Z_Construct_UDelegateFunction_UItem_ModuleChanged__DelegateSignature_Statics::Item_eventModuleChanged_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_UItem_ModuleChanged__DelegateSignature_Statics::Function_MetaDataParams), Z_Construct_UDelegateFunction_UItem_ModuleChanged__DelegateSignature_Statics::Function_MetaDataParams) };
@@ -122,14 +126,16 @@ UFunction* Z_Construct_UDelegateFunction_UItem_ModuleChanged__DelegateSignature(
 	}
 	return ReturnFunction;
 }
-void UItem::FModuleChanged_DelegateWrapper(const FMulticastScriptDelegate& ModuleChanged, UItemModule* Module)
+void UItem::FModuleChanged_DelegateWrapper(const FMulticastScriptDelegate& ModuleChanged, UItemModule* Module, FInstancedStruct ModuleData)
 {
 	struct Item_eventModuleChanged_Parms
 	{
 		UItemModule* Module;
+		FInstancedStruct ModuleData;
 	};
 	Item_eventModuleChanged_Parms Parms;
 	Parms.Module=Module;
+	Parms.ModuleData=ModuleData;
 	ModuleChanged.ProcessMulticastDelegate<UObject>(&Parms);
 }
 // End Delegate FModuleChanged
@@ -746,7 +752,7 @@ struct Z_Construct_UClass_UItem_Statics
 		{ &Z_Construct_UFunction_UItem_GetModuleDefaultObject, "GetModuleDefaultObject" }, // 2595119885
 		{ &Z_Construct_UFunction_UItem_GetOwner, "GetOwner" }, // 3963918085
 		{ &Z_Construct_UFunction_UItem_Initialize, "Initialize" }, // 997940159
-		{ &Z_Construct_UDelegateFunction_UItem_ModuleChanged__DelegateSignature, "ModuleChanged__DelegateSignature" }, // 3282821514
+		{ &Z_Construct_UDelegateFunction_UItem_ModuleChanged__DelegateSignature, "ModuleChanged__DelegateSignature" }, // 484736492
 		{ &Z_Construct_UFunction_UItem_OnItemLoad, "OnItemLoad" }, // 2352256040
 		{ &Z_Construct_UFunction_UItem_OnItemSave, "OnItemSave" }, // 1942221815
 		{ &Z_Construct_UFunction_UItem_RemoveModule, "RemoveModule" }, // 1496451043
@@ -763,8 +769,8 @@ const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UItem_Statics:
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UItem_Statics::NewProp_ModuleData = { "ModuleData", nullptr, (EPropertyFlags)0x0010000001000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UItem, ModuleData), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ModuleData_MetaData), NewProp_ModuleData_MetaData) }; // 174410355
 const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_UItem_Statics::NewProp_ModuleClasses_Inner = { "ModuleClasses", nullptr, (EPropertyFlags)0x0004000000000000, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_UClass, Z_Construct_UClass_UItemModule_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UItem_Statics::NewProp_ModuleClasses = { "ModuleClasses", nullptr, (EPropertyFlags)0x0014000001000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UItem, ModuleClasses), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ModuleClasses_MetaData), NewProp_ModuleClasses_MetaData) };
-const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UItem_Statics::NewProp_ModuleAdded = { "ModuleAdded", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UItem, ModuleAdded), Z_Construct_UDelegateFunction_UItem_ModuleChanged__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ModuleAdded_MetaData), NewProp_ModuleAdded_MetaData) }; // 3282821514
-const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UItem_Statics::NewProp_ModuleRemoved = { "ModuleRemoved", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UItem, ModuleRemoved), Z_Construct_UDelegateFunction_UItem_ModuleChanged__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ModuleRemoved_MetaData), NewProp_ModuleRemoved_MetaData) }; // 3282821514
+const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UItem_Statics::NewProp_ModuleAdded = { "ModuleAdded", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UItem, ModuleAdded), Z_Construct_UDelegateFunction_UItem_ModuleChanged__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ModuleAdded_MetaData), NewProp_ModuleAdded_MetaData) }; // 484736492
+const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UItem_Statics::NewProp_ModuleRemoved = { "ModuleRemoved", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UItem, ModuleRemoved), Z_Construct_UDelegateFunction_UItem_ModuleChanged__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ModuleRemoved_MetaData), NewProp_ModuleRemoved_MetaData) }; // 484736492
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UItem_Statics::NewProp_ItemData = { "ItemData", nullptr, (EPropertyFlags)0x0010000001000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UItem, ItemData), Z_Construct_UClass_UItemDefinition_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemData_MetaData), NewProp_ItemData_MetaData) };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UItem_Statics::NewProp_ItemID = { "ItemID", nullptr, (EPropertyFlags)0x0010000001000015, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UItem, ItemID), Z_Construct_UScriptStruct_FGuid, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemID_MetaData), NewProp_ItemID_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UItem_Statics::NewProp_Owner = { "Owner", nullptr, (EPropertyFlags)0x0010000001000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UItem, Owner), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Owner_MetaData), NewProp_Owner_MetaData) };
@@ -824,10 +830,10 @@ struct Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemM
 		{ EStructResult_StaticEnum, TEXT("EStructResult"), &Z_Registration_Info_UEnum_EStructResult, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3811010607U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UItem, UItem::StaticClass, TEXT("UItem"), &Z_Registration_Info_UClass_UItem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UItem), 1977139421U) },
+		{ Z_Construct_UClass_UItem, UItem::StaticClass, TEXT("UItem"), &Z_Registration_Info_UClass_UItem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UItem), 3921699064U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_139701293(TEXT("/Script/ModularItemManagement"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_4275069940(TEXT("/Script/ModularItemManagement"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_Statics::ClassInfo),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_Statics::EnumInfo));

@@ -105,6 +105,10 @@ void UItem::AddModule(TSubclassOf<UItemModule> ModuleClass, FInstancedStruct Mod
         // Clean up the old value before replacing it
         if (ModuleData.IsValidIndex(Index))
         {
+            UItemModule* ModuleObject = GetModuleDefaultObject(ModuleClass);
+            ModuleObject->OnAddedToItem(this,ModuleData[Index]);
+            ModuleObject->OnAddedToItemEvent.Broadcast(this,ModuleData[Index]);
+            ModuleAdded.Broadcast(ModuleObject,ModuleData[Index]);
             ModuleData[Index].Reset();  // Explicitly clean up the old data
             ModuleData[Index] = ModuleInstance;
         }
@@ -113,9 +117,6 @@ void UItem::AddModule(TSubclassOf<UItemModule> ModuleClass, FInstancedStruct Mod
             ModuleData.Add(ModuleInstance);
         }
 
-        UItemModule* ModuleObject = GetModuleDefaultObject(ModuleClass);
-        ModuleObject->OnAddedToItem(this);
-        ModuleAdded.Broadcast(ModuleObject);
     }
 }
 
@@ -124,21 +125,25 @@ void UItem::AddModule(TSubclassOf<UItemModule> ModuleClass, FInstancedStruct Mod
  */
 void UItem::RemoveModule(TSubclassOf<UItemModule> ModuleClass)
 {
+    
     int32 Index = ModuleClasses.IndexOfByKey(ModuleClass);
     if (Index != INDEX_NONE)
     {
+        UItemModule* ModuleObject = GetModuleDefaultObject(ModuleClass);
         ModuleClasses.RemoveAt(Index);
         
         // Clean up the data before removing it
         if (ModuleData.IsValidIndex(Index))
         {
+            ModuleObject->OnRemovedFromItem(this,ModuleData[Index]);
+            ModuleObject->OnRemovedFromItemEvent.Broadcast(this,ModuleData[Index]);
+            ModuleRemoved.Broadcast(ModuleObject,ModuleData[Index]);
             ModuleData[Index].Reset();  // Explicitly clean up the old data
             ModuleData.RemoveAt(Index);
         }
 
-        UItemModule* ModuleObject = GetModuleDefaultObject(ModuleClass);
-        ModuleObject->OnRemovedFromItem(this);
-        ModuleRemoved.Broadcast(ModuleObject);
+       
+    
     }
 }
 
@@ -186,8 +191,9 @@ void UItem::SetModule(UItemModule* Module, const FInstancedStruct& InstanceStruc
         {
             ModuleData[Index].Reset();  // Explicitly clean up the old data
             ModuleData[Index] = InstanceStruct;
-            Module->OnAddedToItem(this);
-            ModuleAdded.Broadcast(Module);
+            Module->OnAddedToItem(this,InstanceStruct);
+            Module->OnAddedToItemEvent.Broadcast(this,InstanceStruct);
+            ModuleAdded.Broadcast(Module, InstanceStruct);
         }
     }
     else

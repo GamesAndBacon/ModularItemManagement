@@ -20,7 +20,7 @@ struct FInstancedStruct;
 #define MODULARITEMMANAGEMENT_Item_generated_h
 
 #define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_32_DELEGATE \
-static void FModuleChanged_DelegateWrapper(const FMulticastScriptDelegate& ModuleChanged, UItemModule* Module);
+static void FModuleChanged_DelegateWrapper(const FMulticastScriptDelegate& ModuleChanged, UItemModule* Module, FInstancedStruct ModuleData);
 
 
 #define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_33_DELEGATE \
