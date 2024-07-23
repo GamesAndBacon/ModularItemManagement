@@ -1,4 +1,4 @@
-// InventoryComponent.h
+// Created by Shain Furby
 
 #pragma once
 
@@ -9,13 +9,17 @@
 class UItem;
 class UItemModule;
 
+/**
+ * UInventoryComponent class
+ * Actor component that manages an inventory of items.
+ */
 UCLASS(ClassGroup = (ModularItems), meta = (BlueprintSpawnableComponent))
 class MODULARITEMMANAGEMENT_API UInventoryComponent : public UActorComponent
 {
 	GENERATED_BODY()
 
 public:
-	// Sets default values for this component's properties
+	// Constructor
 	UInventoryComponent();
 
 protected:
@@ -25,36 +29,38 @@ protected:
 public:
 	// Delegate for inventory changes
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FInventoryChanged, UItem*, NewItem, int32, Index);
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FInventoryMoved, UItem*, Item1, int32, Index1, UItem*, Item2, int32, Index2);
 
 	// Called every frame but turned off
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-	UFUNCTION(BlueprintCallable, Category = "ModularItems")
+	// Inventory management functions
+	UFUNCTION(BlueprintCallable, Category = "Inventory|Management")
 	bool AddItem(UItem* Item);
 
-	UFUNCTION(BlueprintCallable, Category = "ModularItems")
-	bool RemoveItem(UItem* Item, int32 index);
+	UFUNCTION(BlueprintCallable, Category = "Inventory|Management")
+	bool RemoveItem(UItem* Item, int32 Index);
 	
+	UFUNCTION(BlueprintCallable, Category = "Inventory|Access")
+	const TArray<UItem*>& GetInventory() const;
+		
+	UFUNCTION(BlueprintCallable, Category = "Inventory|Access")
+	UItem* GetItemAt(int32 Index);
+	
+	UFUNCTION(BlueprintCallable, Category = "Inventory|Management")
+	void MoveIndex(int32 Index, UItem* Item);
+
+	// Inventory array
 	UPROPERTY(EditAnywhere)
 	TArray<UItem*> Inventory;
 
-	UFUNCTION(BlueprintCallable, Category = "ModularItems")
-	const TArray<UItem*>& GetInventory() const;
-		
-	// Declare functions for our delegate
-	UPROPERTY(BlueprintAssignable)
+	// Inventory change events
+	UPROPERTY(BlueprintAssignable, Category = "Inventory|Events")
 	FInventoryChanged ItemAdded;
 
-	UPROPERTY(BlueprintAssignable)
+	UPROPERTY(BlueprintAssignable, Category = "Inventory|Events")
 	FInventoryChanged ItemRemoved;
 
-	UPROPERTY(BlueprintAssignable)
-	FInventoryChanged ItemMoved;
-
-	UFUNCTION(BlueprintCallable, Category = "ModularItems")
-	UItem* GetItemAt(int32 Index);
-	
-	UFUNCTION(BlueprintCallable, Category = "ModularItems")
-	void SetItemAt(int32 Index, UItem* Item);
-
+	UPROPERTY(BlueprintAssignable, Category = "Inventory|Events")
+	FInventoryMoved ItemMoved;
 };

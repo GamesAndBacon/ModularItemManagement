@@ -1,3 +1,5 @@
+// Created by Shain Furby
+
 #pragma once
 
 #include "CoreMinimal.h"
@@ -11,6 +13,9 @@
 
 class UItem;
 
+/**
+ * Struct representing an item record, used for saving and loading items.
+ */
 USTRUCT(BlueprintType)
 struct FItemRecord
 {
@@ -30,18 +35,23 @@ public:
 	TArray<uint8> ModuleData;
 };
 
+/**
+ * UItemsLib class
+ * Blueprint function library for handling items.
+ */
 UCLASS()
 class MODULARITEMMANAGEMENT_API UItemsLib : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
 
 public:
-	UFUNCTION(BlueprintCallable, Category = "Item")
+	// Functions for item management
+	UFUNCTION(BlueprintCallable, Category = "Item|SaveLoad")
 	static FItemRecord SaveItem(UItem* Item);
 
-	UFUNCTION(BlueprintCallable, Category = "Item")
+	UFUNCTION(BlueprintCallable, Category = "Item|SaveLoad")
 	static UItem* LoadItem(const FItemRecord& ItemRecord, UObject* Outer);
 	
-	UFUNCTION(BlueprintCallable, Category = "Item", meta = (DefaultToSelf = "Outer", DeterminesOutputType = "ItemClass"))
+	UFUNCTION(BlueprintCallable, Category = "Item|Creation", meta = (DefaultToSelf = "Outer", DeterminesOutputType = "ItemClass"))
 	static UItem* CreateItem(UItemDefinition* ItemDefinition, UObject* Outer);
 };

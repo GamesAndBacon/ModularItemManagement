@@ -1,10 +1,14 @@
-#include "ItemsLib.h"
+// Created by Shain Furby
 
+#include "ItemsLib.h"
 #include "ItemModule.h"
 #include "Serialization/ObjectAndNameAsStringProxyArchive.h"
 #include "Serialization/MemoryWriter.h"
 #include "Serialization/MemoryReader.h"
 
+/**
+ * Saves the given item to an FItemRecord.
+ */
 FItemRecord UItemsLib::SaveItem(UItem* Item)
 {
 	FItemRecord ItemRecord;
@@ -18,6 +22,9 @@ FItemRecord UItemsLib::SaveItem(UItem* Item)
 	return ItemRecord;
 }
 
+/**
+ * Loads an item from the given FItemRecord.
+ */
 UItem* UItemsLib::LoadItem(const FItemRecord& ItemRecord, UObject* Outer)
 {
 	UItem* NewItem = NewObject<UItem>(Outer);
@@ -32,6 +39,9 @@ UItem* UItemsLib::LoadItem(const FItemRecord& ItemRecord, UObject* Outer)
 	return NewItem;
 }
 
+/**
+ * Creates a new item from the given item definition.
+ */
 UItem* UItemsLib::CreateItem(UItemDefinition* ItemDefinition, UObject* Outer)
 {
 	if (!ItemDefinition->ItemClass || !ItemDefinition)

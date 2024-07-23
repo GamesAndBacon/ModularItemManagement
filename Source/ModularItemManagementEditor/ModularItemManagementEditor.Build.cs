@@ -1,7 +1,10 @@
 using System.IO;
 using UnrealBuildTool;
 
-public class ModularItemManagementEditor: ModuleRules
+/**
+ * Build rules for the ModularItemManagementEditor module.
+ */
+public class ModularItemManagementEditor : ModuleRules
 {
 	public ModularItemManagementEditor(ReadOnlyTargetRules Target) : base(Target)
 	{
@@ -9,20 +12,17 @@ public class ModularItemManagementEditor: ModuleRules
 
 		PrecompileForTargets = PrecompileTargetsType.Any;
 
-        PublicIncludePaths.AddRange(
+		PublicIncludePaths.AddRange(
 			new string[] {
-				// ... add public include paths required here ...
-
-    }
-			);
+				// Add public include paths required here
+			}
+		);
 				
-		
 		PrivateIncludePaths.AddRange(
 			new string[] {
-				// ... add other private include paths required here ...
+				// Add other private include paths required here
 			}
-			);
-
+		);
 
 		PublicDependencyModuleNames.AddRange(
 			new string[]
@@ -41,12 +41,9 @@ public class ModularItemManagementEditor: ModuleRules
 				"AssetTools",
 				"AssetRegistry",
 				"EditorStyle"
-                
-				// ... add other public dependencies that you statically link with here ...
+				// Add other public dependencies that you statically link with here
 			}
-			);
-		
-
+		);
 
 		PrivateDependencyModuleNames.AddRange(
 			new string[]
@@ -55,18 +52,15 @@ public class ModularItemManagementEditor: ModuleRules
 				"Slate",
 				"SlateCore",
 				"DeveloperSettings",
-
-        
-				// ... add private dependencies that you statically link with here ...	
+				// Add private dependencies that you statically link with here
 			}
-			);
-		
-		
+		);
+
 		DynamicallyLoadedModuleNames.AddRange(
 			new string[]
 			{
-				// ... add any modules that your module loads dynamically here ...
+				// Add any modules that your module loads dynamically here
 			}
-			);
+		);
 	}
 }

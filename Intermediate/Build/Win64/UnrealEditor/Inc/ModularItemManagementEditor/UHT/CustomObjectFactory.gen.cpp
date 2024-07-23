@@ -31,8 +31,14 @@ struct Z_Construct_UClass_UItemModFactory_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "/**\n * Factory class for creating UItemModule objects.\n */" },
+#endif
 		{ "IncludePath", "CustomObjectFactory.h" },
 		{ "ModuleRelativePath", "Public/CustomObjectFactory.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Factory class for creating UItemModule objects." },
+#endif
 	};
 #endif // WITH_METADATA
 	static UObject* (*const DependentSingletons[])();
@@ -90,8 +96,14 @@ struct Z_Construct_UClass_UItemDefFactory_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "/**\n * Factory class for creating UItemDefinition data assets.\n */" },
+#endif
 		{ "IncludePath", "CustomObjectFactory.h" },
 		{ "ModuleRelativePath", "Public/CustomObjectFactory.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Factory class for creating UItemDefinition data assets." },
+#endif
 	};
 #endif // WITH_METADATA
 	static UObject* (*const DependentSingletons[])();
@@ -140,11 +152,11 @@ UItemDefFactory::~UItemDefFactory() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagementEditor_Public_CustomObjectFactory_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UItemModFactory, UItemModFactory::StaticClass, TEXT("UItemModFactory"), &Z_Registration_Info_UClass_UItemModFactory, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UItemModFactory), 200338930U) },
-		{ Z_Construct_UClass_UItemDefFactory, UItemDefFactory::StaticClass, TEXT("UItemDefFactory"), &Z_Registration_Info_UClass_UItemDefFactory, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UItemDefFactory), 428855979U) },
+		{ Z_Construct_UClass_UItemModFactory, UItemModFactory::StaticClass, TEXT("UItemModFactory"), &Z_Registration_Info_UClass_UItemModFactory, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UItemModFactory), 169425829U) },
+		{ Z_Construct_UClass_UItemDefFactory, UItemDefFactory::StaticClass, TEXT("UItemDefFactory"), &Z_Registration_Info_UClass_UItemDefFactory, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UItemDefFactory), 2866937365U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagementEditor_Public_CustomObjectFactory_h_2692829696(TEXT("/Script/ModularItemManagementEditor"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagementEditor_Public_CustomObjectFactory_h_170143845(TEXT("/Script/ModularItemManagementEditor"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagementEditor_Public_CustomObjectFactory_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagementEditor_Public_CustomObjectFactory_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

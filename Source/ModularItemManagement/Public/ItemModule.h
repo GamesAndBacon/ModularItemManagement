@@ -1,3 +1,5 @@
+// Created by Shain Furby
+
 #pragma once
 
 #include "CoreMinimal.h"
@@ -13,13 +15,16 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnRemovedFromItem, UItem*, Item);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnModuleUpdated, UItem*, Item);
 
 /**
- * 
+ * UItemModule class
+ * Represents a module that can be added to an item.
  */
 UCLASS(EditInlineNew, Blueprintable, BlueprintType)
 class MODULARITEMMANAGEMENT_API UItemModule : public UObject
 {
 	GENERATED_BODY()
+
 public:
+	// Blueprint Native Events
 	UFUNCTION(BlueprintNativeEvent)
 	void OnAddedToItem(UItem* Item) const;
 	

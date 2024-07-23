@@ -1,4 +1,4 @@
-// BaseItem.h
+// Created by Shain Furby
 
 #pragma once
 
@@ -8,50 +8,70 @@
 
 class UItemDefinition;
 
+/**
+ * Enumeration for struct results.
+ */
 UENUM()
 enum class EStructResult : uint8
 {
-    Valid,
-    NotValid,
+    Data,
+    NoData,
 };
 
+/**
+ * UItem class
+ * Represents an item that can contain multiple modules.
+ */
 UCLASS(Blueprintable, BlueprintType)
 class MODULARITEMMANAGEMENT_API UItem : public UObject
 {
     GENERATED_BODY()
 
 public:
+    // Delegates for module changes
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FModuleChanged, UItemModule*, Module);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FStackSizeChanged, int32, NewStackSize);  // New delegate for stack size changes
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FStackSizeChanged, int32, NewStackSize); // Delegate for stack size changes
     
+    // Constructor
+    UItem(const FObjectInitializer& ObjectInitializer);
+
+    // Properties
     UPROPERTY(SaveGame)
     TArray<FInstancedStruct> ModuleData;
     
     UPROPERTY(SaveGame)
     TArray<TSubclassOf<UItemModule>> ModuleClasses;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, Category = "Item|Events")
     FModuleChanged ModuleAdded;
 
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, Category = "Item|Events")
     FModuleChanged ModuleRemoved;
-    
-    UItem(const FObjectInitializer& ObjectInitializer);
 
+    UPROPERTY(SaveGame)
+    UItemDefinition* ItemData;
+
+    UPROPERTY(BlueprintReadOnly, SaveGame, EditAnywhere, Category = "Item|Properties")
+    FGuid ItemID = FGuid::NewGuid();
+
+    UPROPERTY(BlueprintReadWrite, SaveGame, EditAnywhere, Category = "Item|Properties")
+    AActor* Owner;
+
+    // Functions
     virtual UWorld* GetWorld() const override;
     virtual void PostInitProperties() override;
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
-    UFUNCTION(BlueprintCallable, Category = "ModularItems")
+    UFUNCTION(BlueprintCallable, Category = "Item|Initialization")
     void Initialize(UItemDefinition* ItemDefinition);
+
+    UFUNCTION(BlueprintCallable, Category = "Item|Modules")
+    void AddModule(TSubclassOf<UItemModule> Module, FInstancedStruct OutModuleData);
     
-    UFUNCTION(BlueprintCallable, Category = "ModularItems")
-    void AddModule(TSubclassOf<UItemModule> Module, FInstancedStruct outModuleData);
-    
-    UFUNCTION(BlueprintCallable, Category = "ModularItems")
+    UFUNCTION(BlueprintCallable, Category = "Item|Modules")
     void RemoveModule(TSubclassOf<UItemModule> Module);
-    
-    UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "ModularItems")
+
+    UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Item|Lifecycle")
     void BeginPlay();
 
     UFUNCTION()
@@ -61,32 +81,20 @@ public:
     void OnItemLoad();
 
     virtual void Serialize(FArchive& Ar) override;
-    
+
     UFUNCTION()
     UItemModule* GetModuleDefaultObject(TSubclassOf<UItemModule> Module);
-        
-    UFUNCTION(BlueprintCallable, Category = "ModularItems", meta = (DeterminesOutputType = " ModuleClass", ExpandEnumAsExecs = "ExecResult"))
-    UItemModule* GetModule(EStructResult& ExecResult, TSubclassOf<UItemModule> ModuleClass, FInstancedStruct& outModuleData);
+
+    UFUNCTION(BlueprintCallable, Category = "Item|Modules", meta = (DeterminesOutputType = "ModuleClass", ExpandEnumAsExecs = "ExecResult"))
+    UItemModule* GetModule(EStructResult& ExecResult, TSubclassOf<UItemModule> ModuleClass, FInstancedStruct& OutModuleData);
     
-    UFUNCTION(BlueprintCallable, Category = "ModularItems", meta = (CustomStructureParam = "Value"))
+    UFUNCTION(BlueprintCallable, Category = "Item|Modules", meta = (CustomStructureParam = "Value"))
     void SetModule(UItemModule* Module, const FInstancedStruct& InstanceStruct);
-        
-    UPROPERTY(saveGame)
-    UItemDefinition* ItemData;
 
-    UPROPERTY(BlueprintReadOnly, SaveGame, EditAnywhere)
-    FGuid ItemID = FGuid::NewGuid();
-
-    // New variable for owner
-    UPROPERTY(BlueprintReadWrite, SaveGame, EditAnywhere)
-    AActor* Owner;
-    
-    // Inline getter for owner
-    UFUNCTION(BlueprintCallable, Category = "ModularItems")
-    FORCEINLINE AActor* GetOwner() const { return Owner; }
-
-    // Function to get the data asset
-    UFUNCTION(BlueprintCallable, Category = "ModularItems")
+    UFUNCTION(BlueprintCallable, Category = "Item|Properties")
     UItemDefinition* GetItemDefinition() const;
 
+    // Inline getter for owner
+    UFUNCTION(BlueprintCallable, Category = "Item|Properties")
+    FORCEINLINE AActor* GetOwner() const { return Owner; }
 };

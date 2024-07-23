@@ -1,5 +1,6 @@
-#include "Item.h"
+// Created by Shain Furby
 
+#include "Item.h"
 #include "ItemDefinition.h"
 #include "Runtime/Engine/Classes/Kismet/GameplayStatics.h"
 
@@ -31,6 +32,9 @@ void UItem::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimePro
     UObject::GetLifetimeReplicatedProps(OutLifetimeProps);
 }
 
+/**
+ * Initializes the item with the given item definition.
+ */
 void UItem::Initialize(UItemDefinition* ItemDefinition)
 {
     ItemData = ItemDefinition;
@@ -49,6 +53,9 @@ void UItem::OnItemLoad()
 {
 }
 
+/**
+ * Serializes the item.
+ */
 void UItem::Serialize(FArchive& Ar)
 {
     Super::Serialize(Ar);
@@ -86,7 +93,9 @@ void UItem::Serialize(FArchive& Ar)
     }
 }
 
-
+/**
+ * Adds a module to the item.
+ */
 void UItem::AddModule(TSubclassOf<UItemModule> ModuleClass, FInstancedStruct ModuleInstance)
 {
     if (ModuleClass)
@@ -110,6 +119,9 @@ void UItem::AddModule(TSubclassOf<UItemModule> ModuleClass, FInstancedStruct Mod
     }
 }
 
+/**
+ * Removes a module from the item.
+ */
 void UItem::RemoveModule(TSubclassOf<UItemModule> ModuleClass)
 {
     int32 Index = ModuleClasses.IndexOfByKey(ModuleClass);
@@ -130,7 +142,9 @@ void UItem::RemoveModule(TSubclassOf<UItemModule> ModuleClass)
     }
 }
 
-
+/**
+ * Gets the default object of the given module class.
+ */
 UItemModule* UItem::GetModuleDefaultObject(TSubclassOf<UItemModule> ModuleClass)
 {
     return ModuleClass.GetDefaultObject();
@@ -141,19 +155,25 @@ void UItem::BeginPlay_Implementation()
 {
 }
 
-UItemModule* UItem::GetModule(EStructResult& ExecResult,TSubclassOf<UItemModule> ModuleClass, FInstancedStruct& outModuleData)
+/**
+ * Gets the module instance and its data.
+ */
+UItemModule* UItem::GetModule(EStructResult& ExecResult,TSubclassOf<UItemModule> ModuleClass, FInstancedStruct& OutModuleData)
 {
     int32 Index = ModuleClasses.IndexOfByKey(ModuleClass);
     if (Index != INDEX_NONE && ModuleData.IsValidIndex(Index))
     {
-        outModuleData = ModuleData[Index];
-        ExecResult = EStructResult::Valid;
+        OutModuleData = ModuleData[Index];
+        ExecResult = EStructResult::Data;
         return GetModuleDefaultObject(ModuleClass);
     }
-    ExecResult = EStructResult::NotValid;
-    return nullptr;
+    ExecResult = EStructResult::NoData;
+    return GetModuleDefaultObject(ModuleClass);
 }
 
+/**
+ * Sets the module instance data.
+ */
 void UItem::SetModule(UItemModule* Module, const FInstancedStruct& InstanceStruct)
 {
     if (Module)
@@ -176,6 +196,9 @@ void UItem::SetModule(UItemModule* Module, const FInstancedStruct& InstanceStruc
     }
 }
 
+/**
+ * Gets the item definition.
+ */
 UItemDefinition* UItem::GetItemDefinition() const
 {
     return ItemData;
