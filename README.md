@@ -28,6 +28,8 @@ The plugin is structured around several core classes:
 - `UItemsLib`: Provides utility functions for item creation, saving, and loading.
 - `UInventoryComponent`: Manages an inventory of items for an actor.
 
+The key feature of this plugin is the use of `FInstancedStruct`. This Unreal Engine structure allows any user-defined struct to be used as module data, providing flexibility and enabling complex data handling. By leveraging `FInstancedStruct`, the plugin can store and manage heterogeneous data types in a uniform way.
+
 ### Key Components
 
 #### UItem
