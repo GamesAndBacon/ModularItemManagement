@@ -1,6 +1,4 @@
-# Creating the content for the README.md file in markdown format
 
-readme_content = """
 ## Modular Item Management Plugin Documentation
 
 ### Overview
@@ -116,3 +114,62 @@ To create an item, define an `UItemDefinition` and use the `CreateItem` function
 UItemDefinition* ItemDefinition = ...; // Obtain or create the item definition
 UObject* Outer = ...; // Specify the outer object, typically the owning actor
 UItem* NewItem = UItemsLib::CreateItem(ItemDefinition, Outer);
+```
+
+#### Managing Inventory
+
+To manage inventory, use the `UInventoryComponent`.
+
+```cpp
+UInventoryComponent* InventoryComponent = ...; // Obtain the inventory component
+UItem* Item = ...; // Obtain or create the item
+
+// Add item to inventory
+InventoryComponent->AddItem(Item);
+
+// Remove item from inventory
+int32 Index = ...; // Specify the index of the item to remove
+InventoryComponent->RemoveItem(Item, Index);
+
+// Move item within inventory
+int32 FromIndex = ...; // Specify the source index
+int32 ToIndex = ...; // Specify the destination index
+InventoryComponent->MoveItem(FromIndex, ToIndex);
+```
+
+#### Extending the System
+
+To extend the system, create new `UItemModule` classes and add them to `UItemDefinition`.
+
+```cpp
+UItemModule* NewModule = ...; // Create or obtain a new module
+FInstancedStruct ModuleData = ...; // Create the module data
+
+// Add module to item definition
+ItemDefinition->Modules.Add(NewModule->GetClass(), ModuleData);
+```
+
+### Example Use Cases
+
+**Example 1: Creating a Health Potion**
+
+1. Define a new `UItemDefinition` for the health potion.
+2. Add modules to the health potion definition to specify its properties and effects.
+3. Use `UItemsLib` to create the health potion item in the game.
+
+**Example 2: Managing Player Inventory**
+
+1. Add an `UInventoryComponent` to the player character.
+2. Use the inventory component to add, remove, and move items within the player's inventory.
+3. Respond to inventory events to update the UI or trigger game logic.
+
+### Images
+
+1. **UItem Class Diagram**
+   ![UItem Class Diagram](images/UItem_Class_Diagram.png)
+2. **UInventoryComponent Flowchart**
+   ![UInventoryComponent Flowchart](images/UInventoryComponent_Flowchart.png)
+
+---
+
+This documentation provides a comprehensive overview of the Modular Item Management plugin. For more detailed examples and advanced usage, refer to the plugin's source code and sample projects.
