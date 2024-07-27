@@ -7,7 +7,7 @@
         "Includes": [
             "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\modularitemmanagement\\definitions.modularitemmanagement.h",
             "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\inventorycomponent.gen.cpp",
-            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\inventorycomponent.h",
+            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\inventory\\inventorycomponent.h",
             "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\inventorycomponent.generated.h",
             "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\inventoryinterface.gen.cpp",
             "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\interfaces\\inventoryinterface.h",

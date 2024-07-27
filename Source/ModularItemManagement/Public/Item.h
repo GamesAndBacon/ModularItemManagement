@@ -38,6 +38,10 @@ public:
     UPROPERTY(BlueprintAssignable, Category = "Item|Events")
     FModuleChanged ModuleRemoved;
 
+	UPROPERTY(BlueprintAssignable, Category = "Item|Events")
+	FModuleChanged ModuleUpdated;
+	
+
     UPROPERTY(SaveGame)
     UItemDefinition* ItemData;
 

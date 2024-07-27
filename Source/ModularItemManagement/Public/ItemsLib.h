@@ -5,7 +5,6 @@
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "ItemModule.h"
-#include "ItemDefinition.h"
 #include "InstancedStruct.h"
 #include "Item.h"
 #include "Serialization/StructuredArchive.h"

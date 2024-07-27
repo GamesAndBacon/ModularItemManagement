@@ -4,7 +4,7 @@
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
-// IWYU pragma: private, include "InventoryComponent.h"
+// IWYU pragma: private, include "Inventory/InventoryComponent.h"
 #include "UObject/ObjectMacros.h"
 #include "UObject/ScriptMacros.h"
 
@@ -15,19 +15,23 @@ class UItem;
 #endif
 #define MODULARITEMMANAGEMENT_InventoryComponent_generated_h
 
-#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_InventoryComponent_h_31_DELEGATE \
+#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Inventory_InventoryComponent_h_31_DELEGATE \
 static void FInventoryChanged_DelegateWrapper(const FMulticastScriptDelegate& InventoryChanged, UItem* NewItem, int32 Index);
 
 
-#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_InventoryComponent_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Inventory_InventoryComponent_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execGetFirstEmptySlot); \
+	DECLARE_FUNCTION(execGetAdjacentSlots); \
 	DECLARE_FUNCTION(execMoveItem); \
+	DECLARE_FUNCTION(execSetItemAt); \
 	DECLARE_FUNCTION(execGetItemAt); \
 	DECLARE_FUNCTION(execGetInventory); \
 	DECLARE_FUNCTION(execRemoveItem); \
+	DECLARE_FUNCTION(execAddItemWithAdditionalIndices); \
 	DECLARE_FUNCTION(execAddItem);
 
 
-#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_InventoryComponent_h_19_INCLASS_NO_PURE_DECLS \
+#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Inventory_InventoryComponent_h_19_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUInventoryComponent(); \
 	friend struct Z_Construct_UClass_UInventoryComponent_Statics; \
@@ -36,7 +40,7 @@ public: \
 	DECLARE_SERIALIZER(UInventoryComponent)
 
 
-#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_InventoryComponent_h_19_ENHANCED_CONSTRUCTORS \
+#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Inventory_InventoryComponent_h_19_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UInventoryComponent(UInventoryComponent&&); \
@@ -48,13 +52,13 @@ public: \
 	NO_API virtual ~UInventoryComponent();
 
 
-#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_InventoryComponent_h_16_PROLOG
-#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_InventoryComponent_h_19_GENERATED_BODY \
+#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Inventory_InventoryComponent_h_16_PROLOG
+#define FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Inventory_InventoryComponent_h_19_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_InventoryComponent_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_InventoryComponent_h_19_INCLASS_NO_PURE_DECLS \
-	FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_InventoryComponent_h_19_ENHANCED_CONSTRUCTORS \
+	FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Inventory_InventoryComponent_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Inventory_InventoryComponent_h_19_INCLASS_NO_PURE_DECLS \
+	FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Inventory_InventoryComponent_h_19_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -62,7 +66,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> MODULARITEMMANAGEMENT_API UClass* StaticClass<class UInventoryComponent>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_InventoryComponent_h
+#define CURRENT_FILE_ID FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Inventory_InventoryComponent_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

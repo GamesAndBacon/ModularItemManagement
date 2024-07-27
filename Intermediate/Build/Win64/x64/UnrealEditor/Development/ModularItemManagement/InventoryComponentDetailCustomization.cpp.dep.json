@@ -1,0 +1,28 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\private\\inventory\\inventorycomponentdetailcustomization.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\unreal projects\\itemplugin\\intermediate\\build\\win64\\x64\\itemplugineditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
+        "Includes": [
+            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\modularitemmanagement\\definitions.modularitemmanagement.h",
+            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\inventory\\inventorycomponentdetailcustomization.h",
+            "e:\\epic games\\ue_5.4\\engine\\source\\editor\\propertyeditor\\public\\idetailcustomization.h",
+            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\inventory\\inventorycomponent.h",
+            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\inventorycomponent.generated.h",
+            "e:\\epic games\\ue_5.4\\engine\\source\\editor\\propertyeditor\\public\\detaillayoutbuilder.h",
+            "e:\\epic games\\ue_5.4\\engine\\source\\editor\\propertyeditor\\public\\idetailpropertyrow.h",
+            "e:\\epic games\\ue_5.4\\engine\\source\\editor\\propertyeditor\\public\\detailcategorybuilder.h",
+            "e:\\epic games\\ue_5.4\\engine\\source\\editor\\propertyeditor\\public\\idetailcustomnodebuilder.h",
+            "e:\\epic games\\ue_5.4\\engine\\source\\editor\\propertyeditor\\public\\detailbuildertypes.h",
+            "e:\\epic games\\ue_5.4\\engine\\source\\editor\\propertyeditor\\public\\propertyeditorcopypaste.h",
+            "e:\\epic games\\ue_5.4\\engine\\source\\editor\\propertyeditor\\public\\detailwidgetrow.h",
+            "e:\\epic games\\ue_5.4\\engine\\source\\editor\\propertyeditor\\public\\idetailchildrenbuilder.h",
+            "e:\\epic games\\ue_5.4\\engine\\source\\runtime\\slate\\public\\widgets\\input\\snumericentrybox.h",
+            "e:\\epic games\\ue_5.4\\engine\\source\\runtime\\slate\\public\\widgets\\input\\sspinbox.h",
+            "e:\\epic games\\ue_5.4\\engine\\source\\runtime\\slate\\public\\widgets\\colors\\scolorblock.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

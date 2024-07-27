@@ -1,6 +1,8 @@
 // Created by Shain Furby
 
 #include "ItemsLib.h"
+
+#include "ItemDefinition.h"
 #include "ItemModule.h"
 #include "Serialization/ObjectAndNameAsStringProxyArchive.h"
 #include "Serialization/MemoryWriter.h"

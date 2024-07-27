@@ -12,7 +12,6 @@
 			"InventoryInterface.cpp.obj",
 			"InventoryComponent.cpp.obj",
 			"Item.cpp.obj",
-			"ItemDataAsset.cpp.obj",
 			"ItemDefinition.cpp.obj",
 			"ItemModule.cpp.obj",
 			"ItemsLib.cpp.obj",

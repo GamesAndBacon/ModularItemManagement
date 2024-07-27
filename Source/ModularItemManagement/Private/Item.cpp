@@ -116,7 +116,6 @@ void UItem::AddModule(TSubclassOf<UItemModule> ModuleClass, FInstancedStruct Mod
         {
             ModuleData.Add(ModuleInstance);
         }
-
     }
 }
 
@@ -141,9 +140,6 @@ void UItem::RemoveModule(TSubclassOf<UItemModule> ModuleClass)
             ModuleData[Index].Reset();  // Explicitly clean up the old data
             ModuleData.RemoveAt(Index);
         }
-
-       
-    
     }
 }
 
@@ -192,6 +188,7 @@ void UItem::SetModule(UItemModule* Module, const FInstancedStruct& InstanceStruc
             ModuleData[Index] = InstanceStruct;
             Module->OnModuleUpdated(this,InstanceStruct);
             Module->OnModuleUpdatedEvent.Broadcast(this,InstanceStruct);
+            ModuleUpdated.Broadcast(Module,InstanceStruct);
         }
     }
     else

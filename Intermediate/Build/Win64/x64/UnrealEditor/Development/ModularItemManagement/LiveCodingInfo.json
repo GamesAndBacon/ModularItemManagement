@@ -11,6 +11,7 @@
 			"ModularItemManagement.init.gen.cpp.obj",
 			"InventoryInterface.cpp.obj",
 			"InventoryComponent.cpp.obj",
+			"InventoryComponentDetailCustomization.cpp.obj",
 			"Item.cpp.obj",
 			"ItemDefinition.cpp.obj",
 			"ItemModule.cpp.obj",

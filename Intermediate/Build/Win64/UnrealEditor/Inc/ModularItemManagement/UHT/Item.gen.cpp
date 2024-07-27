@@ -654,6 +654,10 @@ struct Z_Construct_UClass_UItem_Statics
 		{ "Category", "Item|Events" },
 		{ "ModuleRelativePath", "Public/Item.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ModuleUpdated_MetaData[] = {
+		{ "Category", "Item|Events" },
+		{ "ModuleRelativePath", "Public/Item.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ItemData_MetaData[] = {
 		{ "ModuleRelativePath", "Public/Item.h" },
 	};
@@ -672,6 +676,7 @@ struct Z_Construct_UClass_UItem_Statics
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_ModuleClasses;
 	static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_ModuleAdded;
 	static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_ModuleRemoved;
+	static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_ModuleUpdated;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ItemData;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_ItemID;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Owner;
@@ -704,6 +709,7 @@ const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_UItem_Statics::
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UItem_Statics::NewProp_ModuleClasses = { "ModuleClasses", nullptr, (EPropertyFlags)0x0014000001000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UItem, ModuleClasses), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ModuleClasses_MetaData), NewProp_ModuleClasses_MetaData) };
 const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UItem_Statics::NewProp_ModuleAdded = { "ModuleAdded", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UItem, ModuleAdded), Z_Construct_UDelegateFunction_UItem_ModuleChanged__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ModuleAdded_MetaData), NewProp_ModuleAdded_MetaData) }; // 484736492
 const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UItem_Statics::NewProp_ModuleRemoved = { "ModuleRemoved", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UItem, ModuleRemoved), Z_Construct_UDelegateFunction_UItem_ModuleChanged__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ModuleRemoved_MetaData), NewProp_ModuleRemoved_MetaData) }; // 484736492
+const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UItem_Statics::NewProp_ModuleUpdated = { "ModuleUpdated", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UItem, ModuleUpdated), Z_Construct_UDelegateFunction_UItem_ModuleChanged__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ModuleUpdated_MetaData), NewProp_ModuleUpdated_MetaData) }; // 484736492
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UItem_Statics::NewProp_ItemData = { "ItemData", nullptr, (EPropertyFlags)0x0010000001000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UItem, ItemData), Z_Construct_UClass_UItemDefinition_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemData_MetaData), NewProp_ItemData_MetaData) };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UItem_Statics::NewProp_ItemID = { "ItemID", nullptr, (EPropertyFlags)0x0010000001000015, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UItem, ItemID), Z_Construct_UScriptStruct_FGuid, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemID_MetaData), NewProp_ItemID_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UItem_Statics::NewProp_Owner = { "Owner", nullptr, (EPropertyFlags)0x0010000001000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UItem, Owner), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Owner_MetaData), NewProp_Owner_MetaData) };
@@ -714,6 +720,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UItem_Sta
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UItem_Statics::NewProp_ModuleClasses,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UItem_Statics::NewProp_ModuleAdded,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UItem_Statics::NewProp_ModuleRemoved,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UItem_Statics::NewProp_ModuleUpdated,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UItem_Statics::NewProp_ItemData,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UItem_Statics::NewProp_ItemID,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UItem_Statics::NewProp_Owner,
@@ -760,10 +767,10 @@ IMPLEMENT_FSTRUCTUREDARCHIVE_SERIALIZER(UItem)
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UItem, UItem::StaticClass, TEXT("UItem"), &Z_Registration_Info_UClass_UItem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UItem), 3325243524U) },
+		{ Z_Construct_UClass_UItem, UItem::StaticClass, TEXT("UItem"), &Z_Registration_Info_UClass_UItem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UItem), 1366293793U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_2385497666(TEXT("/Script/ModularItemManagement"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_600041672(TEXT("/Script/ModularItemManagement"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Item_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

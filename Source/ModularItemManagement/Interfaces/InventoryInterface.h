@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "InventoryComponent.h"
+#include "Inventory/InventoryComponent.h"
 #include "GameFramework/Actor.h"
 #include "UObject/Interface.h"
 #include "InventoryInterface.generated.h"
