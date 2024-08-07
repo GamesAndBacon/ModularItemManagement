@@ -2,19 +2,29 @@
 	"RemapUnityFiles": 
 	{
 		"Module.ModularItemManagement.cpp.obj": [
+			"GridComponent.gen.cpp.obj",
+			"GridManager.gen.cpp.obj",
+			"GridModifierComponent.gen.cpp.obj",
 			"InventoryComponent.gen.cpp.obj",
 			"InventoryInterface.gen.cpp.obj",
+			"ISMGridComponent.gen.cpp.obj",
 			"Item.gen.cpp.obj",
 			"ItemDefinition.gen.cpp.obj",
 			"ItemModule.gen.cpp.obj",
+			"ItemModuleSubSystem.gen.cpp.obj",
 			"ItemsLib.gen.cpp.obj",
 			"ModularItemManagement.init.gen.cpp.obj",
 			"InventoryInterface.cpp.obj",
+			"GridComponent.cpp.obj",
+			"GridManager.cpp.obj",
+			"GridModifierComponent.cpp.obj",
+			"ISMGridComponent.cpp.obj",
 			"InventoryComponent.cpp.obj",
 			"InventoryComponentDetailCustomization.cpp.obj",
 			"Item.cpp.obj",
 			"ItemDefinition.cpp.obj",
 			"ItemModule.cpp.obj",
+			"ItemModuleSubSystem.cpp.obj",
 			"ItemsLib.cpp.obj",
 			"ModularItemManagement.cpp.obj"
 		]

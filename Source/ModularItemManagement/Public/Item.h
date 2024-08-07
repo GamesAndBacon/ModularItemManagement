@@ -8,6 +8,13 @@
 
 class UItemDefinition;
 
+UENUM()
+enum class EModuleResult : uint8
+{
+	Valid   UMETA(DisplayName = "Valid"),
+	Invalid UMETA(DisplayName = "Invalid")
+};
+
 /**
  * UItem class
  * Represents an item that can contain multiple modules.
@@ -29,7 +36,7 @@ public:
     UPROPERTY(SaveGame)
     TArray<FInstancedStruct> ModuleData;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadOnly,SaveGame)
     TArray<TSubclassOf<UItemModule>> ModuleClasses;
     
     UPROPERTY(BlueprintAssignable, Category = "Item|Events")
@@ -59,9 +66,9 @@ public:
     UFUNCTION(BlueprintCallable, Category = "Item|Initialization")
     void Initialize(UItemDefinition* ItemDefinition);
 
-    UFUNCTION(BlueprintCallable, Category = "Item|Modules")
-    void AddModule(TSubclassOf<UItemModule> Module, FInstancedStruct OutModuleData);
-    
+	UFUNCTION(BlueprintCallable, Category = "Item|Modules", meta = (DeterminesOutputType = "ModuleClass"))
+    UItemModule* AddModule(TSubclassOf<UItemModule> ModuleClass, FInstancedStruct ModuleInstance, FInstancedStruct& OutInstance);
+          
     UFUNCTION(BlueprintCallable, Category = "Item|Modules")
     void RemoveModule(TSubclassOf<UItemModule> Module);
 
@@ -79,11 +86,11 @@ public:
     UFUNCTION()
     UItemModule* GetModuleDefaultObject(TSubclassOf<UItemModule> Module);
 
-    UFUNCTION(BlueprintCallable, Category = "Item|Modules", meta = (DeterminesOutputType = "ModuleClass"))
-    UItemModule* GetModule(TSubclassOf<UItemModule> ModuleClass, FInstancedStruct& OutModuleData);
+    UFUNCTION(BlueprintCallable, Category = "Item|Modules", meta = (DeterminesOutputType = "ModuleClass", ExpandEnumAsExecs = "ExecPins"))
+    UItemModule* GetModule(EModuleResult& ExecPins, TSubclassOf<UItemModule> ModuleClass, FInstancedStruct& OutModuleData);
     
-    UFUNCTION(BlueprintCallable, Category = "Item|Modules", meta = (CustomStructureParam = "Value"))
-    void SetModule(UItemModule* Module, const FInstancedStruct& InstanceStruct);
+    UFUNCTION(BlueprintCallable, Category = "Item|Modules")
+    void SetModule(UItemModule* Module, const FInstancedStruct& InstanceStruct, bool silentupdate = false);
 
     UFUNCTION(BlueprintCallable, Category = "Item|Properties")
     UItemDefinition* GetItemDefinition() const;

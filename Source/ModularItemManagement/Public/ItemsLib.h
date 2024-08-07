@@ -51,9 +51,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Item|SaveLoad")
 	static UItem* LoadItem(const FItemRecord& ItemRecord, UObject* Outer);
 	
-	UFUNCTION(BlueprintCallable, Category = "Item|Creation", meta = (DefaultToSelf = "Outer", DeterminesOutputType = "ItemClass"))
+	UFUNCTION(BlueprintCallable, Category = "Item|Creation", meta = (DefaultToSelf = "Outer"))
 	static UItem* CreateItem(UItemDefinition* ItemDefinition, UObject* Outer);
 
-	UFUNCTION(BlueprintCallable, Category = "Item|Creation", meta = (DefaultToSelf = "Outer", DeterminesOutputType = "ItemClass"))
+	UFUNCTION(BlueprintCallable, Category = "Item|Creation", meta = (DefaultToSelf = "Outer", DeterminesOutputType = "ModuleClass"))
 	static UItemModule* GetModule(TSubclassOf<UItemModule> ModuleClass);
 };

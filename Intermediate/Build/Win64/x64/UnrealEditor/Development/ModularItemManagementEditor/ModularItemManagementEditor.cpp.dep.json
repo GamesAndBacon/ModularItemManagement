@@ -1,12 +1,12 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagementeditor\\private\\modularitemmanagementeditor.cpp",
+        "Source": "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\source\\modularitemmanagementeditor\\private\\modularitemmanagementeditor.cpp",
         "ProvidedModule": "",
-        "PCH": "e:\\unreal projects\\itemplugin\\intermediate\\build\\win64\\x64\\itemplugineditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
+        "PCH": "e:\\unreal projects\\gridsystemtest\\intermediate\\build\\win64\\x64\\gridsystemtesteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
         "Includes": [
-            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\modularitemmanagementeditor\\definitions.modularitemmanagementeditor.h",
-            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagementeditor\\public\\modularitemmanagementeditor.h",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\modularitemmanagementeditor\\definitions.modularitemmanagementeditor.h",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\source\\modularitemmanagementeditor\\public\\modularitemmanagementeditor.h",
             "e:\\epic games\\ue_5.4\\engine\\source\\developer\\assettools\\public\\iassettools.h",
             "e:\\epic games\\ue_5.4\\engine\\source\\developer\\assettools\\public\\assettypecategories.h",
             "e:\\epic games\\ue_5.4\\engine\\source\\developer\\assettools\\public\\iassettypeactions.h",
@@ -18,12 +18,12 @@
             "e:\\epic games\\ue_5.4\\engine\\source\\editor\\unrealed\\public\\automatedassetimportdata.h",
             "e:\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\automatedassetimportdata.generated.h",
             "e:\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\assettools\\uht\\iassettools.generated.h",
-            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagementeditor\\public\\modularitemmanagementeditoractions.h",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\source\\modularitemmanagementeditor\\public\\modularitemmanagementeditoractions.h",
             "e:\\epic games\\ue_5.4\\engine\\source\\developer\\assettools\\public\\assettypeactions_base.h",
             "e:\\epic games\\ue_5.4\\engine\\source\\developer\\assettools\\public\\assettoolsmodule.h",
             "e:\\epic games\\ue_5.4\\engine\\source\\editor\\unrealed\\public\\toolkits\\simpleasseteditor.h",
-            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\itemdefinition.h",
-            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\itemmodule.h",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\itemdefinition.h",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\itemmodule.h",
             "e:\\epic games\\ue_5.4\\engine\\plugins\\experimental\\structutils\\source\\structutils\\public\\instancedstruct.h",
             "e:\\epic games\\ue_5.4\\engine\\plugins\\experimental\\structutils\\source\\structutils\\public\\structutils.h",
             "e:\\epic games\\ue_5.4\\engine\\plugins\\experimental\\structutils\\intermediate\\build\\win64\\unrealeditor\\inc\\structutils\\uht\\instancedstruct.generated.h",
@@ -33,10 +33,10 @@
             "e:\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\math\\unitconversion.h",
             "e:\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\math\\unitconversion.inl",
             "e:\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\internationalization\\polyglottextdata.h",
-            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\itemmodule.generated.h",
-            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\item.h",
-            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\item.generated.h",
-            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\itemdefinition.generated.h"
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\itemmodule.generated.h",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\item.h",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\item.generated.h",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\itemdefinition.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

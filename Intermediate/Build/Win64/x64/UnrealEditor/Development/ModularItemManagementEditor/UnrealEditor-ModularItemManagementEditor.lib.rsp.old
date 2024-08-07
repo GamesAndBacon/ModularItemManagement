@@ -1,0 +1,15 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-ModularItemManagementEditor.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"E:\Unreal Projects\ItemPlugin\Intermediate\Build\Win64\x64\ItemPluginEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h.obj"
+"E:\Unreal Projects\ItemPlugin\plugins\ModularItemManagement\Intermediate\Build\Win64\x64\UnrealEditor\Development\ModularItemManagementEditor\Module.ModularItemManagementEditor.cpp.obj"
+"E:\Unreal Projects\ItemPlugin\plugins\ModularItemManagement\Intermediate\Build\Win64\x64\UnrealEditor\Development\ModularItemManagementEditor\CustomObjectFactory.cpp.obj"
+"E:\Unreal Projects\ItemPlugin\plugins\ModularItemManagement\Intermediate\Build\Win64\x64\UnrealEditor\Development\ModularItemManagementEditor\ModularItemManagementEditor.cpp.obj"
+"E:\Unreal Projects\ItemPlugin\plugins\ModularItemManagement\Intermediate\Build\Win64\x64\UnrealEditor\Development\ModularItemManagementEditor\ModularItemManagementEditorActions.cpp.obj"
+"E:\Unreal Projects\ItemPlugin\plugins\ModularItemManagement\Intermediate\Build\Win64\x64\UnrealEditor\Development\ModularItemManagementEditor\Default.rc2.res"
+/OUT:"E:\Unreal Projects\ItemPlugin\plugins\ModularItemManagement\Intermediate\Build\Win64\x64\UnrealEditor\Development\ModularItemManagementEditor\UnrealEditor-ModularItemManagementEditor.lib"

@@ -12,6 +12,7 @@ void EmptyLinkFunctionForGeneratedCodeItemModule() {}
 
 // Begin Cross Module References
 COREUOBJECT_API UClass* Z_Construct_UClass_UObject();
+ENGINE_API UClass* Z_Construct_UClass_UWorld_NoRegister();
 MODULARITEMMANAGEMENT_API UClass* Z_Construct_UClass_UItem_NoRegister();
 MODULARITEMMANAGEMENT_API UClass* Z_Construct_UClass_UItemModule();
 MODULARITEMMANAGEMENT_API UClass* Z_Construct_UClass_UItemModule_NoRegister();
@@ -75,6 +76,61 @@ void FOnModuleChanged_DelegateWrapper(const FMulticastScriptDelegate& OnModuleCh
 	OnModuleChanged.ProcessMulticastDelegate<UObject>(&Parms);
 }
 // End Delegate FOnModuleChanged
+
+// Begin Class UItemModule Function BeginPlay
+struct ItemModule_eventBeginPlay_Parms
+{
+	UWorld* outer;
+};
+static FName NAME_UItemModule_BeginPlay = FName(TEXT("BeginPlay"));
+void UItemModule::BeginPlay(UWorld* outer)
+{
+	ItemModule_eventBeginPlay_Parms Parms;
+	Parms.outer=outer;
+	ProcessEvent(FindFunctionChecked(NAME_UItemModule_BeginPlay),&Parms);
+}
+struct Z_Construct_UFunction_UItemModule_BeginPlay_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// New BeginPlay method\n" },
+#endif
+		{ "ModuleRelativePath", "Public/ItemModule.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "New BeginPlay method" },
+#endif
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_outer;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UItemModule_BeginPlay_Statics::NewProp_outer = { "outer", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ItemModule_eventBeginPlay_Parms, outer), Z_Construct_UClass_UWorld_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UItemModule_BeginPlay_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UItemModule_BeginPlay_Statics::NewProp_outer,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UItemModule_BeginPlay_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UItemModule_BeginPlay_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UItemModule, nullptr, "BeginPlay", nullptr, nullptr, Z_Construct_UFunction_UItemModule_BeginPlay_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UItemModule_BeginPlay_Statics::PropPointers), sizeof(ItemModule_eventBeginPlay_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020C00, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UItemModule_BeginPlay_Statics::Function_MetaDataParams), Z_Construct_UFunction_UItemModule_BeginPlay_Statics::Function_MetaDataParams) };
+static_assert(sizeof(ItemModule_eventBeginPlay_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UItemModule_BeginPlay()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UItemModule_BeginPlay_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UItemModule::execBeginPlay)
+{
+	P_GET_OBJECT(UWorld,Z_Param_outer);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->BeginPlay_Implementation(Z_Param_outer);
+	P_NATIVE_END;
+}
+// End Class UItemModule Function BeginPlay
 
 // Begin Class UItemModule Function OnAddedToItem
 struct ItemModule_eventOnAddedToItem_Parms
@@ -252,6 +308,7 @@ void UItemModule::StaticRegisterNativesUItemModule()
 {
 	UClass* Class = UItemModule::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "BeginPlay", &UItemModule::execBeginPlay },
 		{ "OnAddedToItem", &UItemModule::execOnAddedToItem },
 		{ "OnModuleUpdated", &UItemModule::execOnModuleUpdated },
 		{ "OnRemovedFromItem", &UItemModule::execOnRemovedFromItem },
@@ -304,6 +361,7 @@ struct Z_Construct_UClass_UItemModule_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_UItemModule_BeginPlay, "BeginPlay" }, // 1500691203
 		{ &Z_Construct_UFunction_UItemModule_OnAddedToItem, "OnAddedToItem" }, // 2120240324
 		{ &Z_Construct_UFunction_UItemModule_OnModuleUpdated, "OnModuleUpdated" }, // 1594584096
 		{ &Z_Construct_UFunction_UItemModule_OnRemovedFromItem, "OnRemovedFromItem" }, // 1953477468
@@ -361,14 +419,14 @@ UItemModule::~UItemModule() {}
 // End Class UItemModule
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_ItemModule_h_Statics
+struct Z_CompiledInDeferFile_FID_Unreal_Projects_GridSystemTest_plugins_ModularItemManagement_Source_ModularItemManagement_Public_ItemModule_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UItemModule, UItemModule::StaticClass, TEXT("UItemModule"), &Z_Registration_Info_UClass_UItemModule, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UItemModule), 3529251403U) },
+		{ Z_Construct_UClass_UItemModule, UItemModule::StaticClass, TEXT("UItemModule"), &Z_Registration_Info_UClass_UItemModule, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UItemModule), 1052992360U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_ItemModule_h_2492162892(TEXT("/Script/ModularItemManagement"),
-	Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_ItemModule_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_ItemPlugin_plugins_ModularItemManagement_Source_ModularItemManagement_Public_ItemModule_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_GridSystemTest_plugins_ModularItemManagement_Source_ModularItemManagement_Public_ItemModule_h_3190118138(TEXT("/Script/ModularItemManagement"),
+	Z_CompiledInDeferFile_FID_Unreal_Projects_GridSystemTest_plugins_ModularItemManagement_Source_ModularItemManagement_Public_ItemModule_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_GridSystemTest_plugins_ModularItemManagement_Source_ModularItemManagement_Public_ItemModule_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

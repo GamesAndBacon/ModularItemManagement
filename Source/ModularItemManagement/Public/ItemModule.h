@@ -13,6 +13,7 @@ class UItem;
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnModuleChanged, UItem*, Item, FInstancedStruct, ModuleData);
 
 
+
 /**
  * UItemModule class
  * Represents a module that can be added to an item.
@@ -23,6 +24,7 @@ class MODULARITEMMANAGEMENT_API UItemModule : public UObject
 	GENERATED_BODY()
 
 public:
+	
 	// Blueprint Native Events
 	UFUNCTION(BlueprintNativeEvent)
 	void OnAddedToItem(UItem* Item, FInstancedStruct ModuleData) const;
@@ -32,7 +34,11 @@ public:
 	
 	UFUNCTION(BlueprintNativeEvent)
 	void OnModuleUpdated(UItem* Item, FInstancedStruct ModuleData) const;
-
+	
+	// New BeginPlay method
+	UFUNCTION(BlueprintNativeEvent)
+	void BeginPlay(UWorld* outer);
+	
 	// BlueprintAssignable events
 	UPROPERTY(BlueprintAssignable, Category = "ItemModule")
 	FOnModuleChanged OnAddedToItemEvent;

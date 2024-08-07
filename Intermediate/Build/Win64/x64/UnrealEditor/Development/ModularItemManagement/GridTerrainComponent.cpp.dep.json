@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\private\\grid\\gridterraincomponent.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\unreal projects\\gridsystemtest\\intermediate\\build\\win64\\x64\\gridsystemtesteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
+        "Includes": [
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\modularitemmanagement\\definitions.modularitemmanagement.h",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\grid\\gridterraincomponent.h",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\gridterraincomponent.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

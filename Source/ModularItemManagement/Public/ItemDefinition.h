@@ -14,7 +14,7 @@ class MODULARITEMMANAGEMENT_API UItemDefinition : public UDataAsset
 
 public:
 	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Item Data")
+	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="Item Data")
 	TSubclassOf<UItem> ItemClass = UItem::StaticClass();
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Item Data")

@@ -9,7 +9,7 @@ public class ModularItemManagement : ModuleRules
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 		
 		PublicIncludePaths.AddRange(
-			new string[] {"StructUtils",
+			new string[] {"StructUtils"
 				// ... add public include paths required here ...
 			}
 			);
@@ -25,7 +25,7 @@ public class ModularItemManagement : ModuleRules
 		PublicDependencyModuleNames.AddRange(
 			new string[]
 			{
-				"Core", "GameplayTags","StructUtils","InputCore",
+				"Core", "GameplayTags","StructUtils","InputCore", "RealtimeMeshComponent"
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);

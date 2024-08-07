@@ -2,6 +2,10 @@
 
 #include "ItemModule.h"
 
+void UItemModule::BeginPlay_Implementation(UWorld* outer)
+{
+}
+
 void UItemModule::OnAddedToItem_Implementation(UItem* Item, FInstancedStruct ModuleData) const
 {
 }

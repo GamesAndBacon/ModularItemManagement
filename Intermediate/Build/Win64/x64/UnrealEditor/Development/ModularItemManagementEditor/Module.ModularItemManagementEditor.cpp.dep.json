@@ -1,15 +1,15 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\modularitemmanagementeditor\\module.modularitemmanagementeditor.cpp",
+        "Source": "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\modularitemmanagementeditor\\module.modularitemmanagementeditor.cpp",
         "ProvidedModule": "",
-        "PCH": "e:\\unreal projects\\itemplugin\\intermediate\\build\\win64\\x64\\itemplugineditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
+        "PCH": "e:\\unreal projects\\gridsystemtest\\intermediate\\build\\win64\\x64\\gridsystemtesteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
         "Includes": [
-            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\modularitemmanagementeditor\\definitions.modularitemmanagementeditor.h",
-            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagementeditor\\uht\\customobjectfactory.gen.cpp",
-            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagementeditor\\public\\customobjectfactory.h",
-            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagementeditor\\uht\\customobjectfactory.generated.h",
-            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagementeditor\\uht\\modularitemmanagementeditor.init.gen.cpp"
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\modularitemmanagementeditor\\definitions.modularitemmanagementeditor.h",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagementeditor\\uht\\customobjectfactory.gen.cpp",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\source\\modularitemmanagementeditor\\public\\customobjectfactory.h",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagementeditor\\uht\\customobjectfactory.generated.h",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagementeditor\\uht\\modularitemmanagementeditor.init.gen.cpp"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

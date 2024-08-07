@@ -1,16 +1,16 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\private\\modularitemmanagement.cpp",
+        "Source": "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\private\\modularitemmanagement.cpp",
         "ProvidedModule": "",
-        "PCH": "e:\\unreal projects\\itemplugin\\intermediate\\build\\win64\\x64\\itemplugineditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
+        "PCH": "e:\\unreal projects\\gridsystemtest\\intermediate\\build\\win64\\x64\\gridsystemtesteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
         "Includes": [
-            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\modularitemmanagement\\definitions.modularitemmanagement.h",
-            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\modularitemmanagement.h",
-            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\inventory\\inventorycomponentdetailcustomization.h",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\modularitemmanagement\\definitions.modularitemmanagement.h",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\modularitemmanagement.h",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\inventory\\inventorycomponentdetailcustomization.h",
             "e:\\epic games\\ue_5.4\\engine\\source\\editor\\propertyeditor\\public\\idetailcustomization.h",
-            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\inventory\\inventorycomponent.h",
-            "e:\\unreal projects\\itemplugin\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\inventorycomponent.generated.h"
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\inventory\\inventorycomponent.h",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\inventorycomponent.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

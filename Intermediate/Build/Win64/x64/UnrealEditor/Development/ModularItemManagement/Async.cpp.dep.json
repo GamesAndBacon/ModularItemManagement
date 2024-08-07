@@ -1,0 +1,33 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\private\\grid\\async.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\unreal projects\\gridsystemtest\\intermediate\\build\\win64\\x64\\gridsystemtesteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
+        "Includes": [
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\modularitemmanagement\\definitions.modularitemmanagement.h",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\grid\\async.h",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\grid\\gridmanager.h",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\item.h",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\itemmodule.h",
+            "e:\\epic games\\ue_5.4\\engine\\plugins\\experimental\\structutils\\source\\structutils\\public\\instancedstruct.h",
+            "e:\\epic games\\ue_5.4\\engine\\plugins\\experimental\\structutils\\source\\structutils\\public\\structutils.h",
+            "e:\\epic games\\ue_5.4\\engine\\plugins\\experimental\\structutils\\intermediate\\build\\win64\\unrealeditor\\inc\\structutils\\uht\\instancedstruct.generated.h",
+            "e:\\epic games\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\noexporttypes.h",
+            "e:\\epic games\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\propertyaccessutil.h",
+            "e:\\epic games\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\serialization\\testundeclaredscriptstructobjectreferences.h",
+            "e:\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\math\\unitconversion.h",
+            "e:\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\math\\unitconversion.inl",
+            "e:\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\internationalization\\polyglottextdata.h",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\itemmodule.generated.h",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\item.generated.h",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\itemdefinition.h",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\itemdefinition.generated.h",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\gridmanager.generated.h",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\source\\modularitemmanagement\\public\\itemslib.h",
+            "e:\\unreal projects\\gridsystemtest\\plugins\\modularitemmanagement\\intermediate\\build\\win64\\unrealeditor\\inc\\modularitemmanagement\\uht\\itemslib.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

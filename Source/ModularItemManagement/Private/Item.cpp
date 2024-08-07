@@ -24,6 +24,7 @@ void UItem::PostInitProperties()
     
     if (GetOuter() && GetOuter()->GetWorld())
     {
+        Owner = Cast<AActor>(GetOuter());
     }
 }
 
@@ -38,10 +39,11 @@ void UItem::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimePro
 void UItem::Initialize(UItemDefinition* ItemDefinition)
 {
     ItemData = ItemDefinition;
+    FInstancedStruct outstruct;
     
     for (auto& Module : ItemData->Modules)
     {
-        AddModule(Module.Key, Module.Value);
+        AddModule(Module.Key, Module.Value, outstruct);
     }
 }
 
@@ -96,7 +98,7 @@ void UItem::Serialize(FArchive& Ar)
 /**
  * Adds a module to the item.
  */
-void UItem::AddModule(TSubclassOf<UItemModule> ModuleClass, FInstancedStruct ModuleInstance)
+UItemModule* UItem::AddModule(TSubclassOf<UItemModule> ModuleClass, FInstancedStruct ModuleInstance, FInstancedStruct& OutInstance)
 {
     if (ModuleClass)
     {
@@ -111,12 +113,21 @@ void UItem::AddModule(TSubclassOf<UItemModule> ModuleClass, FInstancedStruct Mod
             ModuleAdded.Broadcast(ModuleObject,ModuleData[Index]);
             ModuleData[Index].Reset();  // Explicitly clean up the old data
             ModuleData[Index] = ModuleInstance;
+            OutInstance = ModuleInstance;
+            return ModuleObject;
         }
         else
         {
+            UItemModule* ModuleObject = GetModuleDefaultObject(ModuleClass);
             ModuleData.Add(ModuleInstance);
+            ModuleObject->OnAddedToItem(this,ModuleData[Index]);
+            ModuleObject->OnAddedToItemEvent.Broadcast(this,ModuleData[Index]);
+            ModuleAdded.Broadcast(ModuleObject,ModuleData[Index]);
+            OutInstance = ModuleInstance;
+            return ModuleObject;
         }
     }
+    return nullptr;
 }
 
 /**
@@ -159,22 +170,23 @@ void UItem::BeginPlay_Implementation()
 /**
  * Gets the module instance and its data.
  */
-UItemModule* UItem::GetModule(TSubclassOf<UItemModule> ModuleClass, FInstancedStruct& OutModuleData)
+UItemModule* UItem::GetModule(EModuleResult& ExecPins,TSubclassOf<UItemModule> ModuleClass, FInstancedStruct& OutModuleData)
 {
     int32 Index = ModuleClasses.IndexOfByKey(ModuleClass);
     if (Index != INDEX_NONE && ModuleData.IsValidIndex(Index))
     {
+        ExecPins = EModuleResult::Valid;
         OutModuleData = ModuleData[Index];
-  
         return GetModuleDefaultObject(ModuleClass);
     }
+    ExecPins = EModuleResult::Invalid;
     return GetModuleDefaultObject(ModuleClass);
 }
 
 /**
  * Sets the module instance data.
  */
-void UItem::SetModule(UItemModule* Module, const FInstancedStruct& InstanceStruct)
+void UItem::SetModule(UItemModule* Module, const FInstancedStruct& InstanceStruct, bool SilentUpdate)
 {
     if (Module)
     {
@@ -186,9 +198,12 @@ void UItem::SetModule(UItemModule* Module, const FInstancedStruct& InstanceStruc
         {
             ModuleData[Index].Reset();  // Explicitly clean up the old data
             ModuleData[Index] = InstanceStruct;
+            if(!SilentUpdate)
+            {
             Module->OnModuleUpdated(this,InstanceStruct);
             Module->OnModuleUpdatedEvent.Broadcast(this,InstanceStruct);
             ModuleUpdated.Broadcast(Module,InstanceStruct);
+            }
         }
     }
     else
