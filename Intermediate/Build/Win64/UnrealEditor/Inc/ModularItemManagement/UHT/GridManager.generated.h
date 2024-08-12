@@ -28,6 +28,7 @@ MODULARITEMMANAGEMENT_API void FOnGridInitialized_DelegateWrapper(const FMultica
 #define FID_Unreal_Projects_GridSystemTest_plugins_ModularItemManagement_Source_ModularItemManagement_Public_Grid_GridManager_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execOnItemAddedToGrid); \
 	DECLARE_FUNCTION(execHashPosition); \
+	DECLARE_FUNCTION(execGenerateNextCell); \
 	DECLARE_FUNCTION(execSelectItemDefinitionForNextCell); \
 	DECLARE_FUNCTION(execGetGrid); \
 	DECLARE_FUNCTION(execGetCellCenter); \

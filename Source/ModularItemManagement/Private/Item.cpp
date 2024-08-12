@@ -10,12 +10,23 @@ UItem::UItem(const FObjectInitializer& ObjectInitializer)
 {
 }
 
-// Override GetWorld to check if we are in the editor or in the game
 UWorld* UItem::GetWorld() const
 {
-    if (GIsEditor && !GIsPlayInEditorWorld) return nullptr;
-    else if (GetOuter()) return GetOuter()->GetWorld();
-    else return nullptr;
+    // Check if the outer object is valid and can return a world.
+    if (UObject* Outer = GetOuter())
+    {
+        // Get the world from the outer object
+        UWorld* World = Outer->GetWorld();
+
+        // If a valid world was found, return it
+        if (World)
+        {
+            return World;
+        }
+    }
+
+    // If all else fails, use the default world context
+    return GWorld;
 }
 
 void UItem::PostInitProperties()
@@ -159,7 +170,18 @@ void UItem::RemoveModule(TSubclassOf<UItemModule> ModuleClass)
  */
 UItemModule* UItem::GetModuleDefaultObject(TSubclassOf<UItemModule> ModuleClass)
 {
-    return ModuleClass.GetDefaultObject();
+    UItemModule* module = ModuleClass.GetDefaultObject();
+    
+    if(module->initialized)
+    {
+        return module;
+    }
+    else
+    {
+        module->BeginPlay(GetWorld());
+        module->initialized = true;
+        return module;
+    }
 }
 
 // We add our blank native events
@@ -219,3 +241,5 @@ UItemDefinition* UItem::GetItemDefinition() const
 {
     return ItemData;
 }
+
+

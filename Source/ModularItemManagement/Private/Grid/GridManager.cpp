@@ -3,15 +3,15 @@
 #include "TimerManager.h"
 #include "ItemsLib.h"
 
-AGridManager::AGridManager()
+AGridManager::AGridManager() 
 {
+    DefaultCellDefinition = nullptr;
     PrimaryActorTick.bCanEverTick = false;
     CellSize = 100.f;
     Width = 100;
     Height = 100;
     CurrentX = 0;
     CurrentY = 0;
-    bIsGenerating = false;
     CellsPerSecond = 2000;
 }
 
@@ -31,8 +31,7 @@ void AGridManager::InitializeGrid()
     
     CurrentX = 0;
     CurrentY = 0;
-    bIsGenerating = true;
-    GetWorld()->GetTimerManager().SetTimer(TimerHandle_GenerateCell, this, &AGridManager::GenerateNextCell, 1.0f/CellsPerSecond, true);
+    
 }
 
 bool AGridManager::AddItemToGrid(UItem* Item, FVector2D Position)
@@ -69,6 +68,7 @@ void AGridManager::RemoveItemFromGrid(FVector2D Position)
                 Item->RemoveModule(ModulePair.Key);
             }
             OnItemRemovedFromGridEvent.Broadcast(Item, Position);
+            Grid.Remove(Hash);
         }
     }
 }
@@ -153,11 +153,9 @@ void AGridManager::OnItemAddedToGrid_Implementation(UItem* Item, FVector2D Posit
 
 void AGridManager::GenerateNextCell()
 {
-    if (!bIsGenerating) return;
-
     FVector2D currentpos = FVector2d(CurrentX, CurrentY);
-    
     FVector2D Position = GetCellCenter(currentpos);
+    
     UItem* NewItem = UItemsLib::CreateItem(SelectItemDefinitionForNextCell(currentpos), this);
     AddItemToGrid(NewItem, Position);
 
@@ -170,18 +168,60 @@ void AGridManager::GenerateNextCell()
 
     if (CurrentX >= Width)
     {
-        bIsGenerating = false;
-        GetWorld()->GetTimerManager().ClearTimer(TimerHandle_GenerateCell);
         OnGridInitializedEvent.Broadcast();
     }
 }
 
 void AGridManager::CleanupGrid()
 {
-    Grid.Empty();
+    // While the Grid has more than one element
+    while (!Grid.IsEmpty())
+    {
+        TArray<int32> keys;
+        Grid.GetKeys(keys);
+        // Get the first element in the Grid (key and value pair)
+        int32 FirstKey = keys[0];
+        
+        // Convert the hash to the grid position
+        FVector2D Position = HashToPosition(FirstKey);
+        
+        // Remove the item from the grid
+        RemoveItemFromGrid(Position);
+    }
 }
+
+
+
+
 
 UItemModule* AGridManager::GetModuleDefaultObject(TSubclassOf<UItemModule> ModuleClass)
 {
-    return ModuleClass.GetDefaultObject();
+    UItemModule* module = ModuleClass.GetDefaultObject();
+    
+    if(module->initialized)
+    {
+        return module;
+    }
+    else
+    {
+        module->BeginPlay(GetWorld());
+        module->initialized = true;
+        return module;
+    }
 }
+
+FVector2D AGridManager::HashToPosition(int32 Hash) const
+{
+    int32 Y = Hash / Width;
+    int32 X = Hash - (Y * Width);
+    
+    FVector2D Position;
+    Position.X = X * CellSize;
+    Position.Y = Y * CellSize;
+    
+    // Log the recovered Position
+    UE_LOG(LogTemp, Warning, TEXT("Recovered Position: X = %f, Y = %f"), Position.X, Position.Y);
+
+    return Position;
+}
+

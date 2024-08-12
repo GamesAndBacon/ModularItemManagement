@@ -25,7 +25,7 @@ public class ModularItemManagement : ModuleRules
 		PublicDependencyModuleNames.AddRange(
 			new string[]
 			{
-				"Core", "GameplayTags","StructUtils","InputCore", "RealtimeMeshComponent"
+				"Core", "GameplayTags","StructUtils","InputCore"
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);

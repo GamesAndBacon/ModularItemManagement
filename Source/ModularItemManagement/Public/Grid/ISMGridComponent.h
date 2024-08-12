@@ -157,9 +157,6 @@ public:
 	void RemoveAllInstances(FVector2D Cell);
 
 private:
-	UInstancedStaticMeshComponent* GetOrCreateISMComponent(UStaticMesh* Mesh);
-	void ReturnISMComponentToPool(UInstancedStaticMeshComponent* ISMComponent);
-	UInstancedStaticMeshComponent* GetISMComponentFromPool(UStaticMesh* Mesh);
-
-	TMap<UStaticMesh*, TArray<UInstancedStaticMeshComponent*>> ISMComponentPool;
+	UInstancedStaticMeshComponent* GetOrCreateISMComponent(UStaticMesh* Mesh);	
+	TMap<UStaticMesh*, UInstancedStaticMeshComponent*> ISMComponentMap;
 };

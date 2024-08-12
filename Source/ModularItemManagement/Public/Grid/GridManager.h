@@ -51,6 +51,9 @@ public:
     UFUNCTION(BlueprintNativeEvent, Category = "Grid")
     UItemDefinition* SelectItemDefinitionForNextCell(FVector2D position);
     virtual UItemDefinition* SelectItemDefinitionForNextCell_Implementation(FVector2D position);
+    
+    UFUNCTION(BlueprintCallable, Category = "Grid")
+    void GenerateNextCell();
 
     UPROPERTY(BlueprintAssignable, Category = "Grid")
     FOnItemAddedToGrid OnItemAddedToGridEvent;
@@ -76,7 +79,7 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Grid")
     float CellsPerSecond;
         
-    UPROPERTY()
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Grid")
     TMap<int32, UItem*> Grid;
     
     UFUNCTION()
@@ -96,12 +99,9 @@ private:
      
     int32 CurrentX;
     int32 CurrentY;
-    TSubclassOf<UItem> ItemClass;
-    bool bIsGenerating;
-
-
-    void GenerateNextCell();
+    
+    
     void CleanupGrid();
-    void FinishInitialization();
     UItemModule* GetModuleDefaultObject(TSubclassOf<UItemModule> ModuleClass);
+    FVector2D HashToPosition(int32 Hash) const;
 };

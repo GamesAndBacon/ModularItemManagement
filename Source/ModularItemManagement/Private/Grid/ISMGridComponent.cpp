@@ -14,16 +14,12 @@ void UISMGridComponent::BeginPlay()
 void UISMGridComponent::EndPlay(const EEndPlayReason::Type EndPlayReason)
 {
     Super::EndPlay(EndPlayReason);
-
-    // Cleanup pool
-    for (auto& Pair : ISMComponentPool)
+    
+    for (auto& Pair : ISMComponentMap)
     {
-        for (UInstancedStaticMeshComponent* ISMComponent : Pair.Value)
-        {
-            ISMComponent->DestroyComponent();
-        }
+        Pair.Value->DestroyComponent();
     }
-    ISMComponentPool.Empty();
+    ISMComponentMap.Empty();
 }
 
 void UISMGridComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
@@ -102,15 +98,9 @@ void UISMGridComponent::RemoveInstancesByGUID(FGuid GUID)
             FGridCellInstanceData& InstanceData = InstanceArray.Data[i];
             if (InstanceData.GUID == GUID)
             {
-                if (InstanceData.ISMComponent)
+                if (InstanceData.ISMComponent && InstanceData.InstanceIndex >= 0 && InstanceData.InstanceIndex < InstanceData.ISMComponent->GetInstanceCount())
                 {
-                    if (InstanceData.ISMComponent->RemoveInstance(InstanceData.InstanceIndex))
-                    {
-                        if (InstanceData.ISMComponent->GetInstanceCount() == 0)
-                        {
-                            ReturnISMComponentToPool(InstanceData.ISMComponent);
-                        }
-                    }
+                    InstanceData.ISMComponent->RemoveInstance(InstanceData.InstanceIndex);
                 }
                 InstanceArray.Data.RemoveAt(i);
             }
@@ -121,7 +111,6 @@ void UISMGridComponent::RemoveInstancesByGUID(FGuid GUID)
         }
     }
 }
-
 
 void UISMGridComponent::RemoveAllInstances(FVector2D Cell)
 {
@@ -134,11 +123,6 @@ void UISMGridComponent::RemoveAllInstances(FVector2D Cell)
             if (InstanceData.ISMComponent)
             {
                 InstanceData.ISMComponent->RemoveInstance(InstanceData.InstanceIndex);
-                if (InstanceData.ISMComponent->GetInstanceCount() == 0)
-                {
-                    // Optionally, return the ISMComponent to the pool if it's empty
-                    ReturnISMComponentToPool(InstanceData.ISMComponent);
-                }
             }
         }
         Instances.Empty();  // Clear the instances array
@@ -177,33 +161,19 @@ void UISMGridComponent::RemoveAllInstances(FVector2D Cell)
 
 UInstancedStaticMeshComponent* UISMGridComponent::GetOrCreateISMComponent(UStaticMesh* Mesh)
 {
-    UInstancedStaticMeshComponent* ISMComponent = GetISMComponentFromPool(Mesh);
+    UInstancedStaticMeshComponent** ISMComponentPtr = ISMComponentMap.Find(Mesh);
 
-    if (!ISMComponent)
+    if (!ISMComponentPtr)
     {
-        ISMComponent = NewObject<UInstancedStaticMeshComponent>(this, UInstancedStaticMeshComponent::StaticClass());
-        ISMComponent->RegisterComponent();
-        ISMComponent->SetStaticMesh(Mesh);
-        GetOwner()->AddInstanceComponent(ISMComponent);
+        UInstancedStaticMeshComponent* NewISMComponent = NewObject<UInstancedStaticMeshComponent>(this, UInstancedStaticMeshComponent::StaticClass());
+        NewISMComponent->RegisterComponent();
+        NewISMComponent->SetStaticMesh(Mesh);
+        GetOwner()->AddInstanceComponent(NewISMComponent);
+        ISMComponentMap.Add(Mesh, NewISMComponent);
+        return NewISMComponent;
     }
 
-    return ISMComponent;
+    return *ISMComponentPtr;
 }
 
-void UISMGridComponent::ReturnISMComponentToPool(UInstancedStaticMeshComponent* ISMComponent)
-{
-    ISMComponent->ClearInstances();
-    UStaticMesh* Mesh = ISMComponent->GetStaticMesh();
-    ISMComponentPool.FindOrAdd(Mesh).Add(ISMComponent);
-}
-
-UInstancedStaticMeshComponent* UISMGridComponent::GetISMComponentFromPool(UStaticMesh* Mesh)
-{
-    if (ISMComponentPool.Contains(Mesh) && ISMComponentPool[Mesh].Num() > 0)
-    {
-        return ISMComponentPool[Mesh].Pop();
-    }
-
-    return nullptr;
-}
 

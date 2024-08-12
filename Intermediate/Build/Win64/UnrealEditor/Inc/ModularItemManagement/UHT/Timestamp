@@ -1,11 +1,10 @@
-E:\Unreal Projects\GridSystemTest\plugins\ModularItemManagement\Source\ModularItemManagement\Public\Item.h
-E:\Unreal Projects\GridSystemTest\plugins\ModularItemManagement\Source\ModularItemManagement\Public\ItemModule.h
-E:\Unreal Projects\GridSystemTest\plugins\ModularItemManagement\Source\ModularItemManagement\Public\ItemDefinition.h
-E:\Unreal Projects\GridSystemTest\plugins\ModularItemManagement\Source\ModularItemManagement\Public\Inventory\InventoryComponent.h
 E:\Unreal Projects\GridSystemTest\plugins\ModularItemManagement\Source\ModularItemManagement\Public\ItemsLib.h
-E:\Unreal Projects\GridSystemTest\plugins\ModularItemManagement\Source\ModularItemManagement\Public\Grid\GridModifierComponent.h
 E:\Unreal Projects\GridSystemTest\plugins\ModularItemManagement\Source\ModularItemManagement\Public\Grid\GridComponent.h
-E:\Unreal Projects\GridSystemTest\plugins\ModularItemManagement\Source\ModularItemManagement\Public\Grid\GridManager.h
+E:\Unreal Projects\GridSystemTest\plugins\ModularItemManagement\Source\ModularItemManagement\Public\Item.h
+E:\Unreal Projects\GridSystemTest\plugins\ModularItemManagement\Source\ModularItemManagement\Public\Grid\GridModifierComponent.h
+E:\Unreal Projects\GridSystemTest\plugins\ModularItemManagement\Source\ModularItemManagement\Public\Inventory\InventoryComponent.h
 E:\Unreal Projects\GridSystemTest\plugins\ModularItemManagement\Source\ModularItemManagement\Public\Grid\ISMGridComponent.h
-E:\Unreal Projects\GridSystemTest\plugins\ModularItemManagement\Source\ModularItemManagement\Public\ItemModuleSubSystem.h
+E:\Unreal Projects\GridSystemTest\plugins\ModularItemManagement\Source\ModularItemManagement\Public\ItemDefinition.h
+E:\Unreal Projects\GridSystemTest\plugins\ModularItemManagement\Source\ModularItemManagement\Public\ItemModule.h
+E:\Unreal Projects\GridSystemTest\plugins\ModularItemManagement\Source\ModularItemManagement\Public\Grid\GridManager.h
 E:\Unreal Projects\GridSystemTest\plugins\ModularItemManagement\Source\ModularItemManagement\Interfaces\InventoryInterface.h

@@ -48,4 +48,6 @@ public:
 	
 	UPROPERTY(BlueprintAssignable, Category = "ItemModule")
 	FOnModuleChanged OnModuleUpdatedEvent;
+
+	bool initialized = false;
 };

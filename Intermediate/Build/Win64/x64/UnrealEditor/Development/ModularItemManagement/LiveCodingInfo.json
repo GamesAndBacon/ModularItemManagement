@@ -11,7 +11,6 @@
 			"Item.gen.cpp.obj",
 			"ItemDefinition.gen.cpp.obj",
 			"ItemModule.gen.cpp.obj",
-			"ItemModuleSubSystem.gen.cpp.obj",
 			"ItemsLib.gen.cpp.obj",
 			"ModularItemManagement.init.gen.cpp.obj",
 			"InventoryInterface.cpp.obj",
@@ -24,7 +23,6 @@
 			"Item.cpp.obj",
 			"ItemDefinition.cpp.obj",
 			"ItemModule.cpp.obj",
-			"ItemModuleSubSystem.cpp.obj",
 			"ItemsLib.cpp.obj",
 			"ModularItemManagement.cpp.obj"
 		]
